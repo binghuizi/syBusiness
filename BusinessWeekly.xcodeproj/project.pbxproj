@@ -7,13 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330AF04DD7818122320E7D7F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 743E439B62411F950913710B /* libPods.a */; };
+		7A02F19A1C5C79BD00652756 /* 29号标题.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A02F1991C5C79BD00652756 /* 29号标题.plist */; };
+		7A02F1A11C5CBEAB00652756 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7A02F19E1C5CBEAB00652756 /* ProgressHUD.bundle */; };
+		7A02F1A21C5CBEAB00652756 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A02F1A01C5CBEAB00652756 /* ProgressHUD.m */; };
+		7A02F1A41C5CCD0D00652756 /* 30号主页.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A02F1A31C5CCD0D00652756 /* 30号主页.plist */; };
+		7A02F1A71C5CD00100652756 /* RecommModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A02F1A61C5CD00100652756 /* RecommModel.m */; };
 		7A8F9F091C579BAC0095E755 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F9F081C579BAC0095E755 /* main.m */; };
 		7A8F9F0C1C579BAC0095E755 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F9F0B1C579BAC0095E755 /* AppDelegate.m */; };
 		7A8F9F0E1C579BAC0095E755 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A8F9F0D1C579BAC0095E755 /* Assets.xcassets */; };
 		7A8F9F111C579BAC0095E755 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A8F9F0F1C579BAC0095E755 /* LaunchScreen.storyboard */; };
+		7AE5ADDB1C5B526000979ABA /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE5ADDA1C5B526000979ABA /* RecommendViewController.m */; };
+		7AE5ADE41C5B5B0A00979ABA /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE5ADE01C5B5B0A00979ABA /* blueArrow.png */; };
+		7AE5ADE51C5B5B0A00979ABA /* blueArrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE5ADE11C5B5B0A00979ABA /* blueArrowDown.png */; };
+		7AE5ADE61C5B5B0A00979ABA /* PullingRefreshTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE5ADE31C5B5B0A00979ABA /* PullingRefreshTableView.m */; };
+		7AE5ADE91C5B626100979ABA /* HWTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE5ADE81C5B626100979ABA /* HWTools.m */; };
+		7AE5ADEC1C5B958E00979ABA /* ArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE5ADEB1C5B958E00979ABA /* ArticleModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C08F35D477CC11F7E515FFA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		465C5F87BE649A03EFE09134 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		743E439B62411F950913710B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A02F1991C5C79BD00652756 /* 29号标题.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "29号标题.plist"; sourceTree = "<group>"; };
+		7A02F19E1C5CBEAB00652756 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		7A02F19F1C5CBEAB00652756 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		7A02F1A01C5CBEAB00652756 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		7A02F1A31C5CCD0D00652756 /* 30号主页.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "30号主页.plist"; sourceTree = "<group>"; };
+		7A02F1A51C5CD00100652756 /* RecommModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommModel.h; sourceTree = "<group>"; };
+		7A02F1A61C5CD00100652756 /* RecommModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommModel.m; sourceTree = "<group>"; };
 		7A8F9F041C579BAC0095E755 /* BusinessWeekly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessWeekly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A8F9F081C579BAC0095E755 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7A8F9F0A1C579BAC0095E755 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -21,6 +43,18 @@
 		7A8F9F0D1C579BAC0095E755 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A8F9F101C579BAC0095E755 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A8F9F121C579BAC0095E755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AE5ADD91C5B526000979ABA /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
+		7AE5ADDA1C5B526000979ABA /* RecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
+		7AE5ADDD1C5B54D500979ABA /* HWDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWDefine.h; sourceTree = "<group>"; };
+		7AE5ADDE1C5B56B500979ABA /* business.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = business.pch; sourceTree = "<group>"; };
+		7AE5ADE01C5B5B0A00979ABA /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
+		7AE5ADE11C5B5B0A00979ABA /* blueArrowDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrowDown.png; sourceTree = "<group>"; };
+		7AE5ADE21C5B5B0A00979ABA /* PullingRefreshTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullingRefreshTableView.h; sourceTree = "<group>"; };
+		7AE5ADE31C5B5B0A00979ABA /* PullingRefreshTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullingRefreshTableView.m; sourceTree = "<group>"; };
+		7AE5ADE71C5B626100979ABA /* HWTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTools.h; sourceTree = "<group>"; };
+		7AE5ADE81C5B626100979ABA /* HWTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTools.m; sourceTree = "<group>"; };
+		7AE5ADEA1C5B958E00979ABA /* ArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleModel.h; sourceTree = "<group>"; };
+		7AE5ADEB1C5B958E00979ABA /* ArticleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,17 +62,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				330AF04DD7818122320E7D7F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53E9A58D22D345044C66343E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C08F35D477CC11F7E515FFA /* Pods.debug.xcconfig */,
+				465C5F87BE649A03EFE09134 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7A02F19D1C5CBEAB00652756 /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				7A02F19E1C5CBEAB00652756 /* ProgressHUD.bundle */,
+				7A02F19F1C5CBEAB00652756 /* ProgressHUD.h */,
+				7A02F1A01C5CBEAB00652756 /* ProgressHUD.m */,
+			);
+			name = ProgressHUD;
+			path = tools/ProgressHUD;
+			sourceTree = "<group>";
+		};
 		7A8F9EFB1C579BAC0095E755 = {
 			isa = PBXGroup;
 			children = (
 				7A8F9F061C579BAC0095E755 /* BusinessWeekly */,
 				7A8F9F051C579BAC0095E755 /* Products */,
+				53E9A58D22D345044C66343E /* Pods */,
+				FF6F8111D93B53CCF43349B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,6 +110,8 @@
 		7A8F9F061C579BAC0095E755 /* BusinessWeekly */ = {
 			isa = PBXGroup;
 			children = (
+				7AE5ADD31C5B520900979ABA /* Class */,
+				7AE5ADD81C5B520900979ABA /* Library */,
 				7A8F9F0A1C579BAC0095E755 /* AppDelegate.h */,
 				7A8F9F0B1C579BAC0095E755 /* AppDelegate.m */,
 				7A8F9F0D1C579BAC0095E755 /* Assets.xcassets */,
@@ -71,6 +130,93 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7AE5ADD31C5B520900979ABA /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				7AE5ADD41C5B520900979ABA /* Recommend */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		7AE5ADD41C5B520900979ABA /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				7AE5ADD51C5B520900979ABA /* Controllers */,
+				7AE5ADD61C5B520900979ABA /* Modes */,
+				7AE5ADD71C5B520900979ABA /* Views */,
+			);
+			path = Recommend;
+			sourceTree = "<group>";
+		};
+		7AE5ADD51C5B520900979ABA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7AE5ADD91C5B526000979ABA /* RecommendViewController.h */,
+				7AE5ADDA1C5B526000979ABA /* RecommendViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7AE5ADD61C5B520900979ABA /* Modes */ = {
+			isa = PBXGroup;
+			children = (
+				7A02F1991C5C79BD00652756 /* 29号标题.plist */,
+				7A02F1A31C5CCD0D00652756 /* 30号主页.plist */,
+				7AE5ADEA1C5B958E00979ABA /* ArticleModel.h */,
+				7AE5ADEB1C5B958E00979ABA /* ArticleModel.m */,
+				7A02F1A51C5CD00100652756 /* RecommModel.h */,
+				7A02F1A61C5CD00100652756 /* RecommModel.m */,
+			);
+			path = Modes;
+			sourceTree = "<group>";
+		};
+		7AE5ADD71C5B520900979ABA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7AE5ADD81C5B520900979ABA /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				7A02F19D1C5CBEAB00652756 /* ProgressHUD */,
+				7AE5ADDF1C5B5B0A00979ABA /* PullingRefreshTableView */,
+				7AE5ADDC1C5B544F00979ABA /* tools */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		7AE5ADDC1C5B544F00979ABA /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				7AE5ADDD1C5B54D500979ABA /* HWDefine.h */,
+				7AE5ADDE1C5B56B500979ABA /* business.pch */,
+				7AE5ADE71C5B626100979ABA /* HWTools.h */,
+				7AE5ADE81C5B626100979ABA /* HWTools.m */,
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
+		7AE5ADDF1C5B5B0A00979ABA /* PullingRefreshTableView */ = {
+			isa = PBXGroup;
+			children = (
+				7AE5ADE01C5B5B0A00979ABA /* blueArrow.png */,
+				7AE5ADE11C5B5B0A00979ABA /* blueArrowDown.png */,
+				7AE5ADE21C5B5B0A00979ABA /* PullingRefreshTableView.h */,
+				7AE5ADE31C5B5B0A00979ABA /* PullingRefreshTableView.m */,
+			);
+			path = PullingRefreshTableView;
+			sourceTree = "<group>";
+		};
+		FF6F8111D93B53CCF43349B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				743E439B62411F950913710B /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,9 +224,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A8F9F151C579BAC0095E755 /* Build configuration list for PBXNativeTarget "BusinessWeekly" */;
 			buildPhases = (
+				65A0C5A29F75A54B1163ADCB /* Check Pods Manifest.lock */,
 				7A8F9F001C579BAC0095E755 /* Sources */,
 				7A8F9F011C579BAC0095E755 /* Frameworks */,
 				7A8F9F021C579BAC0095E755 /* Resources */,
+				9AD56F6F5E6439CCC400BEA4 /* Embed Pods Frameworks */,
+				8F8A09930EFD1E01A1D496A7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,12 +278,65 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A02F19A1C5C79BD00652756 /* 29号标题.plist in Resources */,
+				7AE5ADE41C5B5B0A00979ABA /* blueArrow.png in Resources */,
+				7A02F1A11C5CBEAB00652756 /* ProgressHUD.bundle in Resources */,
 				7A8F9F0E1C579BAC0095E755 /* Assets.xcassets in Resources */,
 				7A8F9F111C579BAC0095E755 /* LaunchScreen.storyboard in Resources */,
+				7AE5ADE51C5B5B0A00979ABA /* blueArrowDown.png in Resources */,
+				7A02F1A41C5CCD0D00652756 /* 30号主页.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		65A0C5A29F75A54B1163ADCB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8F8A09930EFD1E01A1D496A7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9AD56F6F5E6439CCC400BEA4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7A8F9F001C579BAC0095E755 /* Sources */ = {
@@ -142,7 +344,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A8F9F0C1C579BAC0095E755 /* AppDelegate.m in Sources */,
+				7AE5ADE61C5B5B0A00979ABA /* PullingRefreshTableView.m in Sources */,
+				7AE5ADEC1C5B958E00979ABA /* ArticleModel.m in Sources */,
+				7A02F1A21C5CBEAB00652756 /* ProgressHUD.m in Sources */,
+				7A02F1A71C5CD00100652756 /* RecommModel.m in Sources */,
 				7A8F9F091C579BAC0095E755 /* main.m in Sources */,
+				7AE5ADE91C5B626100979ABA /* HWTools.m in Sources */,
+				7AE5ADDB1C5B526000979ABA /* RecommendViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,8 +450,11 @@
 		};
 		7A8F9F161C579BAC0095E755 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C08F35D477CC11F7E515FFA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BusinessWeekly/Library/tools/business.pch";
 				INFOPLIST_FILE = BusinessWeekly/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iOS.huI.BusinessWeekly;
@@ -253,8 +464,11 @@
 		};
 		7A8F9F171C579BAC0095E755 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 465C5F87BE649A03EFE09134 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BusinessWeekly/Library/tools/business.pch";
 				INFOPLIST_FILE = BusinessWeekly/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iOS.huI.BusinessWeekly;
@@ -281,6 +495,7 @@
 				7A8F9F171C579BAC0095E755 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
