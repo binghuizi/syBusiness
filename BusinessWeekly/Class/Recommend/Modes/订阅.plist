@@ -1,0 +1,1196 @@
+{
+articletag =     (
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = "\U63a8\U8350";
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 1;
+devices = "1,2";
+enablesubscribe = 1;
+group = 3;
+haveChildren = 0;
+isRadio = 0;
+isfix = 1;
+modifyuser = "";
+originalCatId = 15;
+parent = "app_1";
+phoneColumnProperty =             {
+"android_template" = "bloomberg/bloomberg-column-index";
+cname = "\U63a8\U8350";
+color = "25,67,171";
+ename = Highlights;
+"iphone_template" = "column-General-homePage";
+isindex = 1;
+link = "";
+name = "\U63a8\U8350";
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 0;
+notinTodayExtension = 0;
+positionNum = 2;
+"subscriptPicture_l" =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/issue_0/category/2015/1020/56260bab08bb9_480x270.png";
+}
+);
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_15";
+type = 0;
+updatetime = 1456196319;
+},
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = "\U91d1\U878d";
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 1;
+devices = "1,2";
+enablesubscribe = 1;
+group = 3;
+haveChildren = 0;
+isRadio = 0;
+isfix = 1;
+modifyuser = "";
+originalCatId = 12;
+parent = "app_1";
+phoneColumnProperty =             {
+"android_template" = "bloomberg/bloomberg-column-index";
+cname = "\U91d1\U878d";
+color = "140,198,62";
+ename = "Markets & Finance";
+"iphone_template" = "column-iphone";
+isindex = 0;
+link = "";
+name = "\U91d1\U878d";
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 0;
+notinTodayExtension = 0;
+picture =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/12/iphone/subscript_iphone.png";
+},
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/12/iphone/arrow_iphone@2x.png";
+},
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/cat_12/iphone/subscript_iphone.png";
+},
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/cat_12/iphone/arrow_iphone@2x.png";
+}
+);
+positionNum = 1;
+"subscriptPicture_l" =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/issue_0/category/2015/1020/56260bcc2a11d_480x270.png";
+}
+);
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_12";
+type = 0;
+updatetime = 1456196319;
+},
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = "\U79d1\U6280";
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 1;
+devices = "1,2";
+enablesubscribe = 1;
+group = 3;
+haveChildren = 0;
+isRadio = 0;
+isfix = 1;
+modifyuser = "";
+originalCatId = 11;
+parent = "app_1";
+phoneColumnProperty =             {
+"android_template" = "bloomberg/bloomberg-column-index";
+cname = "\U79d1\U6280";
+color = "235,3,13";
+ename = Technology;
+"iphone_template" = "column-iphone";
+isindex = 0;
+link = "";
+name = "\U79d1\U6280";
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 0;
+notinTodayExtension = 0;
+picture =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/11/iphone/subscript_iphone.png";
+},
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/11/iphone/arrow_iphone@2x.png";
+},
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/cat_11/iphone/subscript_iphone.png";
+},
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/cat_11/iphone/arrow_iphone@2x.png";
+}
+);
+positionNum = 1;
+"subscriptPicture_l" =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/issue_0/category/2015/1020/56260bdb441dc_480x270.png";
+}
+);
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_11";
+type = 0;
+updatetime = 1456196319;
+},
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = "\U7279\U5199";
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 1;
+devices = "1,2";
+enablesubscribe = 1;
+group = 3;
+haveChildren = 0;
+isRadio = 0;
+isfix = 1;
+modifyuser = "";
+originalCatId = 18;
+parent = "app_1";
+phoneColumnProperty =             {
+"android_template" = "bloomberg/bloomberg-column-index";
+cname = "\U7279\U5199";
+color = "176,189,205";
+ename = Features;
+"iphone_template" = "column-iphone";
+isindex = 0;
+link = "";
+name = "\U7279\U5199";
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 0;
+notinTodayExtension = 0;
+picture =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/18/iphone/arrow_iphone@2x.png";
+},
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/cat_18/iphone/arrow_iphone@2x.png";
+}
+);
+positionNum = 1;
+style = 3;
+"subscriptPicture_l" =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/issue_0/category/2015/1020/56260c0796d3e_480x270.png";
+}
+);
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_18";
+type = 0;
+updatetime = 1456196319;
+},
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = "\U89c6\U9891";
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 1;
+devices = "1,2";
+enablesubscribe = 1;
+group = 3;
+haveChildren = 0;
+isRadio = 0;
+isfix = 1;
+modifyuser = "";
+originalCatId = 14;
+parent = "app_1";
+phoneColumnProperty =             {
+"android_template" = "bloomberg/bloomberg-column-index";
+cname = "\U89c6\U9891";
+color = "255,0,102";
+ename = Video;
+"iphone_template" = "column-iphone";
+isindex = 0;
+link = "";
+name = "\U89c6\U9891";
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 0;
+notinTodayExtension = 0;
+picture =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/14/iphone/arrow_iphone@2x.png";
+},
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/14/iphone/arrow_iphone.png";
+},
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/cat_14/iphone/arrow_iphone@2x.png";
+},
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/cat_14/iphone/arrow_iphone.png";
+}
+);
+positionNum = 1;
+style = 3;
+"subscriptPicture_l" =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/issue_0/category/2015/1020/56260c2267f5a_480x270.png";
+}
+);
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_14";
+type = 0;
+updatetime = 1456196319;
+},
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = "\U4e13\U680f";
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 1;
+devices = "1,2";
+enablesubscribe = 1;
+group = 3;
+haveChildren = 0;
+isRadio = 0;
+isfix = 1;
+modifyuser = "";
+originalCatId = 244;
+parent = "app_1";
+phoneColumnProperty =             {
+"android_template" = "bloomberg/bloomberg-column-index";
+cname = "\U4e13\U680f";
+color = "252,83,86";
+ename = Columns;
+"iphone_template" = "column-iphone";
+isindex = 0;
+link = "";
+name = "\U4e13\U680f";
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 0;
+notinTodayExtension = 0;
+picture =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/244/iphone/arrow_iphone@2x.png";
+},
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/cat_244/iphone/arrow_iphone@2x.png";
+}
+);
+positionNum = 1;
+style = 1;
+"subscriptPicture_l" =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/issue_0/category/2015/1020/56260c3178cc6_480x270.png";
+}
+);
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_244";
+type = 0;
+updatetime = 1456196319;
+},
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = "\U5168\U7403";
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 1;
+devices = "1,2";
+enablesubscribe = 1;
+group = 3;
+haveChildren = 0;
+isRadio = 0;
+isfix = 1;
+modifyuser = "";
+originalCatId = 19;
+parent = "app_1";
+phoneColumnProperty =             {
+"android_template" = "bloomberg/bloomberg-column-index";
+cname = "\U5168\U7403";
+color = "0,114,188";
+ename = "Global Economics";
+"iphone_template" = "column-iphone";
+isindex = 0;
+link = "";
+name = "\U5168\U7403";
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 0;
+notinTodayExtension = 0;
+picture =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/19/iphone/arrow_iphone@2x.png";
+},
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/cat_19/iphone/arrow_iphone@2x.png";
+}
+);
+positionNum = 1;
+"subscriptPicture_l" =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/issue_0/category/2015/1020/56260c3d8ecc9_480x270.png";
+}
+);
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_19";
+type = 0;
+updatetime = 1456196319;
+},
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = "\U653f\U7b56";
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 1;
+devices = "1,2";
+enablesubscribe = 1;
+group = 3;
+haveChildren = 0;
+isRadio = 0;
+isfix = 1;
+modifyuser = "";
+originalCatId = 21;
+parent = "app_1";
+phoneColumnProperty =             {
+"android_template" = "bloomberg/bloomberg-column-index";
+cname = "\U653f\U7b56";
+color = "1,170,173";
+ename = "Politics & Policy";
+"iphone_template" = "column-iphone";
+isindex = 0;
+link = "";
+name = "Politics & Policy \U653f\U6cbb\U4e0e\U653f\U7b56";
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 0;
+notinTodayExtension = 0;
+picture =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/21/iphone/arrow_iphone@2x.png";
+},
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/cat_21/iphone/arrow_iphone@2x.png";
+}
+);
+positionNum = 1;
+"subscriptPicture_l" =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/issue_0/category/2015/1020/56260c4ce02cf_480x270.png";
+}
+);
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_21";
+type = 0;
+updatetime = 1456196319;
+},
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = "\U5927\U9009";
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 1;
+devices = "1,2";
+enablesubscribe = 1;
+group = 3;
+haveChildren = 0;
+isRadio = 0;
+isfix = 1;
+modifyuser = "";
+originalCatId = 1403;
+parent = "app_1";
+phoneColumnProperty =             {
+"android_template" = "bloomberg/bloomberg-column-index";
+cname = "\U5927\U9009";
+color = "51,136,201";
+ename = Election;
+"iphone_template" = "column-iphone";
+isindex = 0;
+link = "";
+name = "\U5927\U9009";
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 0;
+notinTodayExtension = 0;
+positionNum = 1;
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_1403";
+type = 0;
+updatetime = 1456196319;
+},
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = "\U80fd\U6e90\U3001\U533b\U7597\U3001\U822a\U7a7a";
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 1;
+devices = "1,2";
+enablesubscribe = 1;
+group = 3;
+haveChildren = 0;
+isRadio = 0;
+isfix = 1;
+modifyuser = "";
+originalCatId = 304;
+parent = "app_1";
+phoneColumnProperty =             {
+"android_template" = "bloomberg/bloomberg-column-index";
+cname = "\U80fd\U6e90\U3001\U533b\U7597\U3001\U822a\U7a7a";
+color = "34,142,213";
+ename = "Lead to Imagination";
+"iphone_template" = "column-iphone";
+isindex = 0;
+link = "";
+name = "Lead to Imagination \U80fd\U6e90\U3001\U533b\U7597\U3001\U822a\U7a7a";
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 1;
+notinTodayExtension = 0;
+picture =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/304/iphone/arrow_iphone@2x.png";
+},
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/cat_304/iphone/arrow_iphone@2x.png";
+}
+);
+positionNum = 1;
+"subscriptPicture_l" =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/issue_0/category/2015/1020/56260ca3ad0d1_480x270.png";
+}
+);
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_304";
+type = 0;
+updatetime = 1456196319;
+},
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = "\U516c\U53f8";
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 1;
+devices = "1,2";
+enablesubscribe = 1;
+group = 3;
+haveChildren = 0;
+isRadio = 0;
+isfix = 1;
+modifyuser = "";
+originalCatId = 20;
+parent = "app_1";
+phoneColumnProperty =             {
+"android_template" = "bloomberg/bloomberg-column-index";
+cname = "\U516c\U53f8";
+color = "123,27,114";
+ename = "Companies & Industries";
+"iphone_template" = "column-iphone";
+isindex = 0;
+link = "";
+name = "\U516c\U53f8";
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 0;
+notinTodayExtension = 0;
+picture =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/20/iphone/arrow_iphone@2x.png";
+},
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/cat_20/iphone/arrow_iphone@2x.png";
+}
+);
+positionNum = 1;
+"subscriptPicture_l" =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/issue_0/category/2016/0125/56a5959441e47_480x270.png";
+}
+);
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_20";
+type = 0;
+updatetime = 1456196319;
+},
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = "\U751f\U6d3b";
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 1;
+devices = "1,2";
+enablesubscribe = 1;
+group = 3;
+haveChildren = 0;
+isRadio = 0;
+isfix = 1;
+modifyuser = "";
+originalCatId = 13;
+parent = "app_1";
+phoneColumnProperty =             {
+"android_template" = "bloomberg/bloomberg-column-index";
+cname = "\U751f\U6d3b";
+color = "255,194,15";
+ename = "Etc.";
+"iphone_template" = "column-iphone";
+isindex = 0;
+link = "";
+name = "\U751f\U6d3b";
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 0;
+notinTodayExtension = 0;
+picture =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/13/iphone/arrow_iphone@2x.png";
+},
+{
+url = "http://s.qiniu.bb.bbwc.cn/statics/cat/default/cat_13/iphone/arrow_iphone@2x.png";
+}
+);
+positionNum = 1;
+"subscriptPicture_l" =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/issue_0/category/2015/1020/56260c97578bf_480x270.png";
+}
+);
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_13";
+type = 0;
+updatetime = 1456196319;
+},
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = "\U4e66\U8bc4";
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 0;
+devices = "1,2";
+enablesubscribe = 1;
+group = 6;
+haveChildren = 0;
+isRadio = 0;
+isfix = 0;
+modifyuser = "";
+originalCatId = 1098;
+parent = "app_1";
+phoneColumnProperty =             {
+cname = "\U4e66\U8bc4";
+color = "25,67,171";
+ename = "\U4e66\U8bc4";
+isindex = 0;
+link = "";
+name = "\U4e66\U8bc4";
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 0;
+notinTodayExtension = 0;
+positionNum = 1;
+"subscriptPicture_l" =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/issue_0/category/2015/1105/563b328be2862_480x270.png";
+}
+);
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_1098";
+type = 0;
+updatetime = 1456196319;
+},
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = "\U5a31\U4e50";
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 0;
+devices = "1,2";
+enablesubscribe = 1;
+group = 6;
+haveChildren = 0;
+isRadio = 0;
+isfix = 0;
+modifyuser = "";
+originalCatId = 1121;
+parent = "app_1";
+phoneColumnProperty =             {
+cname = "\U5a31\U4e50";
+color = "25,67,171";
+ename = "\U5a31\U4e50";
+isindex = 0;
+link = "";
+name = "\U5a31\U4e50";
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 0;
+notinTodayExtension = 0;
+positionNum = 1;
+"subscriptPicture_l" =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/issue_0/category/2015/1020/56260ce747592_480x270.png";
+}
+);
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_1121";
+type = 0;
+updatetime = 1456196319;
+},
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = "\U80fd\U6e90";
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 0;
+devices = "1,2";
+enablesubscribe = 1;
+group = 6;
+haveChildren = 0;
+isRadio = 0;
+isfix = 0;
+modifyuser = "";
+originalCatId = 1185;
+parent = "app_1";
+phoneColumnProperty =             {
+cname = "\U80fd\U6e90";
+color = "25,67,171";
+ename = "\U80fd\U6e90";
+isindex = 0;
+link = "";
+name = "\U80fd\U6e90";
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 0;
+notinTodayExtension = 0;
+positionNum = 1;
+"subscriptPicture_l" =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/issue_0/category/2015/1105/563b3226c9590_480x270.png";
+}
+);
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_1185";
+type = 0;
+updatetime = 1456196319;
+},
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = "\U82f9\U679c";
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 0;
+devices = "1,2";
+enablesubscribe = 1;
+group = 6;
+haveChildren = 0;
+isRadio = 0;
+isfix = 0;
+modifyuser = "";
+originalCatId = 1322;
+parent = "app_1";
+phoneColumnProperty =             {
+cname = "\U82f9\U679c";
+color = "25,67,171";
+ename = "\U82f9\U679c";
+isindex = 0;
+link = "";
+name = "\U82f9\U679c";
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 0;
+notinTodayExtension = 0;
+positionNum = 1;
+"subscriptPicture_l" =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/issue_0/category/2015/1020/56260d1c4f96f_480x270.png";
+}
+);
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_1322";
+type = 0;
+updatetime = 1456196319;
+},
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = "\U94b1\U4f53\U80b2";
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 0;
+devices = "1,2";
+enablesubscribe = 1;
+group = 3;
+haveChildren = 0;
+isRadio = 0;
+isfix = 0;
+modifyuser = "";
+originalCatId = 1440;
+parent = "app_1";
+phoneColumnProperty =             {
+"android_template" = "bloomberg/bloomberg-column-index";
+cname = "\U94b1\U4f53\U80b2";
+color = "39,101,186";
+ename = "Money Sport";
+"iphone_template" = "column-iphone";
+isindex = 0;
+link = "";
+name = "Money Sport \U94b1\U4f53\U80b2";
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 0;
+notinTodayExtension = 0;
+positionNum = 1;
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_1440";
+type = 0;
+updatetime = 1456196319;
+},
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = "\U5546\U65c5";
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 0;
+devices = "1,2";
+enablesubscribe = 1;
+group = 6;
+haveChildren = 0;
+isRadio = 0;
+isfix = 0;
+modifyuser = "";
+originalCatId = 1463;
+parent = "app_1";
+phoneColumnProperty =             {
+cname = "\U5546\U65c5";
+color = "25,67,171";
+ename = "\U5546\U65c5";
+isindex = 0;
+link = "";
+name = "\U5546\U65c5";
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 0;
+notinTodayExtension = 0;
+positionNum = 1;
+"subscriptPicture_l" =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/issue_0/category/2015/1105/563b3253bfd10_480x270.png";
+}
+);
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_1463";
+type = 0;
+updatetime = 1456196319;
+},
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = "\U8bbe\U8ba1";
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 0;
+devices = "1,2";
+enablesubscribe = 1;
+group = 6;
+haveChildren = 0;
+isRadio = 0;
+isfix = 0;
+modifyuser = "";
+originalCatId = 1460;
+parent = "app_1";
+phoneColumnProperty =             {
+cname = "\U8bbe\U8ba1";
+color = "25,67,171";
+ename = "\U8bbe\U8ba1";
+isindex = 0;
+link = "";
+name = "\U8bbe\U8ba1";
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 0;
+notinTodayExtension = 0;
+positionNum = 1;
+"subscriptPicture_l" =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/issue_0/category/2015/1020/56260ccc02a97_480x270.png";
+}
+);
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_1460";
+type = 0;
+updatetime = 1456196319;
+},
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = "\U4e9a\U9a6c\U900a";
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 0;
+devices = "1,2";
+enablesubscribe = 1;
+group = 6;
+haveChildren = 0;
+isRadio = 0;
+isfix = 0;
+modifyuser = "";
+originalCatId = 1456;
+parent = "app_1";
+phoneColumnProperty =             {
+cname = "\U4e9a\U9a6c\U900a";
+color = "25,67,171";
+ename = "\U4e9a\U9a6c\U900a";
+isindex = 0;
+link = "";
+name = "\U4e9a\U9a6c\U900a";
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 0;
+notinTodayExtension = 0;
+positionNum = 1;
+"subscriptPicture_l" =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/issue_0/category/2015/1020/56260d297fb73_480x270.png";
+}
+);
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_1456";
+type = 0;
+updatetime = 1456196319;
+},
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = "\U9a6c\U4e91";
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 0;
+devices = "1,2";
+enablesubscribe = 1;
+group = 6;
+haveChildren = 0;
+isRadio = 0;
+isfix = 0;
+modifyuser = "";
+originalCatId = 1457;
+parent = "app_1";
+phoneColumnProperty =             {
+cname = "\U9a6c\U4e91";
+color = "25,67,171";
+ename = "\U9a6c\U4e91";
+isindex = 0;
+link = "";
+name = "\U9a6c\U4e91";
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 0;
+notinTodayExtension = 0;
+positionNum = 1;
+"subscriptPicture_l" =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/issue_0/category/2015/1020/56260d44b7b70_480x270.png";
+}
+);
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_1457";
+type = 0;
+updatetime = 1456196319;
+},
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = "\U793e\U4ea4";
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 0;
+devices = "1,2";
+enablesubscribe = 1;
+group = 6;
+haveChildren = 0;
+isRadio = 0;
+isfix = 0;
+modifyuser = "";
+originalCatId = 1154;
+parent = "app_1";
+phoneColumnProperty =             {
+cname = "\U793e\U4ea4";
+color = "25,67,171";
+ename = "\U793e\U4ea4";
+isindex = 0;
+link = "";
+name = "\U793e\U4ea4";
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 0;
+notinTodayExtension = 0;
+positionNum = 1;
+"subscriptPicture_l" =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/issue_0/category/2015/1020/56260d3681648_480x270.png";
+}
+);
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_1154";
+type = 0;
+updatetime = 1456196319;
+},
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = uber;
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 0;
+devices = "1,2";
+enablesubscribe = 1;
+group = 6;
+haveChildren = 0;
+isRadio = 0;
+isfix = 0;
+modifyuser = "";
+originalCatId = 1458;
+parent = "app_1";
+phoneColumnProperty =             {
+cname = uber;
+color = "25,67,171";
+ename = uber;
+isindex = 0;
+link = "";
+name = uber;
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 0;
+notinTodayExtension = 0;
+positionNum = 1;
+"subscriptPicture_l" =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/issue_0/category/2015/1020/56260d58aeee2_480x270.png";
+}
+);
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_1458";
+type = 0;
+updatetime = 1456196319;
+},
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = "\U7845\U8c37";
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 0;
+devices = "1,2";
+enablesubscribe = 1;
+group = 6;
+haveChildren = 0;
+isRadio = 0;
+isfix = 0;
+modifyuser = "";
+originalCatId = 1328;
+parent = "app_1";
+phoneColumnProperty =             {
+cname = "\U7845\U8c37";
+color = "25,67,171";
+ename = "\U7845\U8c37";
+isindex = 0;
+link = "";
+name = "\U7845\U8c37";
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 0;
+notinTodayExtension = 0;
+positionNum = 1;
+"subscriptPicture_l" =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/issue_0/category/2015/1020/56260d77e9da5_480x270.png";
+}
+);
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_1328";
+type = 0;
+updatetime = 1456196319;
+},
+{
+advUpdateTime = 1456128269;
+appid = 1;
+articleupdatetime = 1456196319;
+catname = "\U6e2f\U6fb3\U53f0";
+coloumnupdatetime = 1456196319;
+columntype = normal;
+defaultsubscribe = 0;
+devices = "1,2";
+enablesubscribe = 1;
+group = 6;
+haveChildren = 0;
+isRadio = 0;
+isfix = 0;
+modifyuser = "";
+originalCatId = 1464;
+parent = "app_1";
+phoneColumnProperty =             {
+cname = "\U6e2f\U6fb3\U53f0";
+color = "25,67,171";
+ename = "\U6e2f\U6fb3\U53f0";
+isindex = 0;
+link = "";
+name = "\U6e2f\U6fb3\U53f0";
+noColumn = 0;
+noLeftMenu = 0;
+noMenuBar = 0;
+notinTodayExtension = 0;
+positionNum = 1;
+"subscriptPicture_l" =                 (
+{
+url = "http://s.qiniu.bb.bbwc.cn/issue_0/category/2015/1020/56260d8412884_480x270.png";
+}
+);
+};
+publishstatus = 0;
+publishtime = 0;
+publishuser = "";
+tagLevel = 1;
+tagname = "cat_1464";
+type = 0;
+updatetime = 1456196319;
+}
+);
+}

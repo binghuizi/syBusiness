@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface RecommendViewController : UIViewController
-
+@property(nonatomic,strong) NSString *catString;
+@property(nonatomic,strong) NSString *catName;
 @end

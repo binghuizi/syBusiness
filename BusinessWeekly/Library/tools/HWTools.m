@@ -21,12 +21,10 @@
     
     NSString *showTime = [formater1 stringFromDate:date];
     
-    
-    
     return showTime;
     
-    
 }
+
 + (NSDate *)getSystemNowDate{
     //创建一个NSDataFormatter显示刷新时间
     NSDateFormatter *df = [[NSDateFormatter alloc] init ];
@@ -36,9 +34,44 @@
     return date;
 }
 
+
 +(CGFloat )getTextHeightWithText:(NSString *)text   Bigsize:(CGSize)bigSize textFont:(CGFloat)font{
     
     CGRect textRect = [text boundingRectWithSize:bigSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:font]} context:nil];
     return textRect.size.height;
 }
+
+
++(NSMutableArray *)arrayWithString:(NSString *)colorString{
+    
+    NSMutableArray *numberArray = [NSMutableArray new];
+    
+    NSString *string = colorString;
+    NSArray  *array = [string componentsSeparatedByString:@","]; //从字符A中分隔成2个元素的数组
+    for (int i = 0; i < array.count; i++) {
+        NSString *originalString = array[i];
+        // Intermediate
+        NSMutableString *numberString = [[NSMutableString alloc] init] ;
+        NSString *tempStr;
+        NSScanner *scanner = [NSScanner scannerWithString:originalString];
+        NSCharacterSet *numbers = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+        
+        while (![scanner isAtEnd]) {
+            // Throw away characters before the first number.
+            [scanner scanUpToCharactersFromSet:numbers intoString:NULL];
+            // Collect numbers.
+            [scanner scanCharactersFromSet:numbers intoString:&tempStr];
+            [numberString appendString:tempStr];
+            tempStr = @"";
+            
+        }
+        [numberArray addObject:numberString];
+        
+}
+    return numberArray;
+}
+
+
+
 @end
+

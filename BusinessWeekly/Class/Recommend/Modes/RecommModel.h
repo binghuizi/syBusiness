@@ -11,7 +11,12 @@
 @interface RecommModel : NSObject
 @property(nonatomic,strong) NSString *groupdisplayname;
 @property(nonatomic,strong) NSString *url;
+@property(nonatomic,strong) NSString *pictureUrl;
 @property(nonatomic,strong) NSString *title;
 @property(nonatomic,strong) NSString *desc;
+@property(nonatomic,strong) NSString *groupdisplaycolor;
+@property(nonatomic,strong) NSString *tagname;
+@property(nonatomic,strong) NSString *fromtagname;
+@property(nonatomic,strong) NSString *webUrl;
 - (instancetype) initWithDictionary:(NSDictionary *)dict;
 @end

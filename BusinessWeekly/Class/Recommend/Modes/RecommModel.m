@@ -15,6 +15,11 @@
         self.title = dict[@"title"];
         self.desc = dict[@"desc"];
         self.groupdisplayname = dict[@"groupdisplayname"];
+        self.groupdisplaycolor = dict[@"groupdisplaycolor"];
+        self.tagname = dict[@"tagname"];
+        self.fromtagname = dict[@"fromtagname"];
+       // self.webUrl = dict[@"weburl"];
+        
     }
     return self;
 }

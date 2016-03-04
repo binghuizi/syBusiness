@@ -12,5 +12,6 @@
 @property(nonatomic,strong) NSString *advUpdateTime;
 @property(nonatomic,strong) NSString *catname;
 @property(nonatomic,strong) NSString *color;
+@property(nonatomic,strong) NSString *tagname;
 - (instancetype) initWithDictionary:(NSDictionary *)dict;
 @end

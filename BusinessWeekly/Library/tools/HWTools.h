@@ -15,4 +15,6 @@
 
 #pragma mark --- 根据文字  最大显示 返回高度
 +(CGFloat )getTextHeightWithText:(NSString *)text    Bigsize:(CGSize)bigSize textFont:(CGFloat)font;
+//颜色设置
++(NSMutableArray *)arrayWithString:(NSString *)colorString;
 @end

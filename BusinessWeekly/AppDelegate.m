@@ -8,16 +8,27 @@
 
 #import "AppDelegate.h"
 #import "RecommendViewController.h"
-@interface AppDelegate ()
+#import "WeiboSDK.h"
+#import "WXApi.h"
+@interface AppDelegate ()<WeiboSDKDelegate,WXApiDelegate>
 
 @end
 
 @implementation AppDelegate
-
+@synthesize wbtoken;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+   //微博 注册
+    
+    [WeiboSDK enableDebugMode:YES];
+    [WeiboSDK registerApp:kAppKey];
+    
+  //微信注册
+    [WXApi registerApp:kAppId];
+    
     
     RecommendViewController *recomVc = [[RecommendViewController alloc]init];
     
@@ -31,7 +42,16 @@
     [self.window makeKeyAndVisible];
     return YES;
 }
-
+//重写APPDelegate
+-(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options{
+    return [WeiboSDK handleOpenURL:url delegate:self];
+    return [WXApi handleOpenURL:url delegate:self];
+}
+-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+    return [WeiboSDK handleOpenURL:url delegate:self];
+    return [WXApi handleOpenURL:url delegate:self];
+    
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

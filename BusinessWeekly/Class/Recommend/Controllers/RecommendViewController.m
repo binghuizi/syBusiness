@@ -13,6 +13,11 @@
 #import "ProgressHUD.h"
 #import "RecommModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "DateTableViewCell.h"
+#import "Date2TableViewCell.h"
+#import "FeatureAndTVTableViewCell.h"
+#import "DetailsViewController.h"
+#import "AddsubScribeViewController.h"
 @interface RecommendViewController ()<UITableViewDataSource,UITableViewDelegate,PullingRefreshTableViewDelegate>{
      NSInteger _pageCount;//定义请求页码
 }
@@ -21,13 +26,26 @@
 @property(nonatomic,assign) BOOL refreshing;
 @property(nonatomic,strong) NSArray *articleArray;
 @property(nonatomic,strong) NSMutableArray *headTitleArray;
-@property(nonatomic,strong) NSMutableArray *numberArray;
+@property(nonatomic,strong) NSArray *numberArray;
 @property(nonatomic,strong) NSMutableArray *recomDataArray;
+@property(nonatomic,strong) NSMutableArray *allRecomDataArray;
 @property(nonatomic,strong) NSMutableArray *bigPictureArray;
+@property(nonatomic,strong) NSMutableArray *allBigPictureArray;
 @property(nonatomic,strong) NSMutableArray *smalPictureArray;
+@property(nonatomic,strong) NSMutableArray *allSmalPictureArray;
+@property(nonatomic,strong) NSMutableArray *pictureTitleArray;
+@property(nonatomic,strong) NSMutableArray *addSubscriptArray;
+@property(nonatomic,strong) NSMutableArray *tageNameArray;
+@property(nonatomic,strong) NSMutableArray *cateNameArray;
+@property(nonatomic,strong) NSMutableArray *webUrlArray;
+@property(nonatomic,strong) NSMutableArray *allWebUrlArray;
 @property(nonatomic,strong) UIScrollView *scrollView;
 @property(nonatomic,strong) UIPageControl *pageControl;
 @property(nonatomic,strong) NSTimer *timer;//定时器用于图片滚动
+@property(nonatomic,strong) UIButton *addButton;
+
+
+
 @end
 
 @implementation RecommendViewController
@@ -38,6 +56,15 @@
     
     self.title = @"推荐";
 
+    //导航栏上的颜色
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(rightBarAction)];
+    
+    
+    self.navigationItem.rightBarButtonItem = rightBarButton;
+    
+    
+    
 //网络请求数据
     [self heardTitle];
     //多余的tableView内容
@@ -45,12 +72,28 @@
     [self.view addSubview:self.headTableView];
     [self.view addSubview:self.tableView];
     
-    //自定义头部cell
-    [self configTableView];
-
-    //网络数据
-    [self loadData];
+    [self.tableView registerNib:[UINib nibWithNibName:@"DateTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"Date2TableViewCell" bundle:nil] forCellReuseIdentifier:@"cell2"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"FeatureAndTVTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell3"];
+    
     [self startTimer];
+//添加按钮
+    
+    
+    
+}
+//点击导航栏上的添加按钮
+-(void)rightBarAction{
+    AddsubScribeViewController *addSubScribeView= [[AddsubScribeViewController alloc]initWithNibName:@"AddsubViewController" bundle:nil];
+  //传值 获取网络图片路径 传值给 页面
+    addSubScribeView.addSubScribeArray = self.addSubscriptArray;
+ //网上解析数据根据tagename 将tagename传值给页面  进行解析
+    addSubScribeView.tageNameArray = self.tageNameArray;
+    addSubScribeView.cateNameArray = self.cateNameArray;
+    [self.navigationController pushViewController:addSubScribeView animated:YES];
+    
 }
 #pragma mark ------网络请求解析 获得数据
 //解析标题 推荐 金融 科技 特写......
@@ -60,14 +103,30 @@
     [sessionManager GET:kHeadTitle parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         ZJHLog(@"%@",downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        ZJHLog(@"%@",responseObject);
+       // ZJHLog(@"%@",responseObject);
         //解析成功
         NSDictionary *resultDic = responseObject;
         self.articleArray = resultDic[@"articletag"];
+     //   AddsubScribeViewController *addSubScribe = [[AddsubScribeViewController alloc]init];
+      //订阅管理
+        
+        
+        
         for (NSDictionary *dic in self.articleArray) {
             ArticleModel *model = [[ArticleModel alloc]initWithDictionary:dic];
             [self.headTitleArray addObject:model];
+//标题加入数组
+            [self.cateNameArray addObject:model.catname];
+//tagname加入数组
+            [self.tageNameArray addObject:dic[@"tagname"]];
+            NSArray *addSubScriptArray =dic[@"phoneColumnProperty"][@"subscriptPicture_l"];
+          //将订阅管理的图片存入数组中
+            for (NSDictionary *subDic in addSubScriptArray) {
+                [self.addSubscriptArray addObject:subDic[@"url"]];
+            }
+            
         }
+       
         [self.headTableView reloadData];//刷新数据
    
         
@@ -80,29 +139,51 @@
     UIView *tableHeaderView = [[UIView alloc]init];
     tableHeaderView.frame = CGRectMake(0, 0, kWideth, 240);
     [tableHeaderView addSubview:self.scrollView];
+    
+    
+//判断需要几张图片
+   NSInteger numberCount;
+    if ([self.catString isEqualToString:@"cat_15"]) {
+        numberCount = self.allBigPictureArray.count;
+    }else{
+        numberCount = 1;
+    }
     //圆点个数
-    self.pageControl.numberOfPages = self.bigPictureArray.count;
+    self.pageControl.numberOfPages = numberCount;
     [tableHeaderView addSubview:self.pageControl];
 #pragma mark ---给scrollView 添加图片
-    self.scrollView.contentSize = CGSizeMake(self.bigPictureArray.count * kWideth, 240);
+    self.scrollView.contentSize = CGSizeMake(numberCount * kWideth, 240);
 
-    for (int i = 0; i < self.bigPictureArray.count; i++) {
+    for (int i = 0; i < numberCount; i++) {
         UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(kWideth * i, 0, kWideth, 240)];
+        //图片上的文字
+        UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(kWideth * i, 200, kWideth, 40)];
+        titleLabel.backgroundColor = [UIColor blackColor];
+        titleLabel.alpha = 0.6;
+        titleLabel.font = [UIFont systemFontOfSize:13];
+        titleLabel.tintColor = [UIColor redColor];
+        
+        titleLabel.text = self.pictureTitleArray[i];
+        NSLog(@"%@",titleLabel.text);
+       
+        
     
         imageView.userInteractionEnabled = YES;
         
-        [imageView sd_setImageWithURL:[NSURL URLWithString:self.bigPictureArray[i]] placeholderImage:nil];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:self.allBigPictureArray[i]] placeholderImage:nil];
+       
         [self.scrollView addSubview:imageView];
-        
-        
+        //[imageView addSubview:titleLabel];
+        [self.scrollView addSubview:titleLabel];
         
         UIButton *touchButton = [UIButton buttonWithType:UIButtonTypeCustom];
         touchButton.frame = imageView.frame;
-        touchButton.tag = 200 + i;
+        touchButton.tag = i;
         [touchButton addTarget:self action:@selector(adTouchAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.scrollView addSubview:touchButton];
         
     }
+    
     //区头添加
     self.tableView.tableHeaderView = tableHeaderView;
 
@@ -137,10 +218,10 @@
 //每两秒执行该方法
 -(void)updateTimer{
     //当self.adArray.count数据组元素个数为0当对0取于时候没有意义
-    if (self.bigPictureArray.count > 0) {
+    if (self.allBigPictureArray.count > 0) {
         //当前页数加1
         NSInteger page = self.pageControl.currentPage + 1;
-        CGFloat offSex = page % self.bigPictureArray.count;
+        CGFloat offSex = page % self.allBigPictureArray.count;
         self.pageControl.currentPage = offSex;
         [self touchActionPage:self.pageControl];
     }
@@ -163,7 +244,14 @@
        
         return self.articleArray.count - 14;
     }else if ([tableView isEqual:self.tableView]){
-      return 26;
+        if ([self.catName isEqualToString:@"cat_15"]) {
+            NSLog(@"66666%ld",self.allRecomDataArray.count);
+            return self.allRecomDataArray.count - self.allBigPictureArray.count;
+            
+        }else{
+            return self.allRecomDataArray.count - 1;
+        }
+      
     }
     return 0;
 }
@@ -187,12 +275,34 @@
         return cell;
 
     }else if ([tableView isEqual:self.tableView]){
-        static NSString *idenPull = @"idenPullCell";
-        UITableViewCell *cellPull = [tableView dequeueReusableCellWithIdentifier:idenPull];
-        if (cellPull == nil) {
-            cellPull = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:idenPull];
+        
+       
+        RecommModel *model = self.allRecomDataArray[indexPath.row];
+        
+        if ([model.fromtagname isEqualToString:@"cat_15"]) {
+             DateTableViewCell *dateCell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+            
+            dateCell.recomModel = self.allRecomDataArray[indexPath.row+self.allBigPictureArray.count];
+            dateCell.recomModel.url = self.allSmalPictureArray[indexPath.row+self.allBigPictureArray.count];
+           
+            
+            return dateCell;
+        }else if ([model.fromtagname isEqualToString:@"cat_18"]||[model.fromtagname isEqualToString:@"cat_14"]){
+            FeatureAndTVTableViewCell *featureCell = [tableView dequeueReusableCellWithIdentifier:@"cell3" forIndexPath:indexPath];
+            featureCell.model = self.allRecomDataArray[indexPath.row + 1];
+            featureCell.model.pictureUrl = self.allBigPictureArray[indexPath.row + 1];
+            return featureCell;
+            
+            
+            
+        }else{
+            Date2TableViewCell *date2Cell = [tableView dequeueReusableCellWithIdentifier:@"cell2" forIndexPath:indexPath];
+            date2Cell.recomModel     = self.allRecomDataArray[indexPath.row + 1];
+            date2Cell.recomModel.url = self.allSmalPictureArray[indexPath.row + 1];
+            
+            return date2Cell;
         }
-        return cellPull;
+        
     }
     return nil;
     
@@ -205,43 +315,37 @@
        
         return height + 20;
     }else if ([tableView isEqual:self.tableView]){
-        return 40;
-    }
+        if ([self.catString isEqualToString:@"cat_15"]) {
+            return 125;
+        }else if ([self.catString isEqualToString:@"cat_18"]|| [self.catString isEqualToString:@"cat_14"]){
+            return 260;
+        }else{
+        return 105;
+        }}
     return 40;
     
 }
 //点击事件
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if ([tableView isEqual:self.headTableView]) {
-        
-  
-    self.numberArray = [NSMutableArray new];
+    
+    
     ArticleModel *model = self.headTitleArray[indexPath.row];
     
-    NSString*string =model.color;
-    NSArray *array = [string componentsSeparatedByString:@","]; //从字符A中分隔成2个元素的数组
-    for (int i = 0; i < array.count; i++) {
-        NSString *originalString = array[i];
-        // Intermediate
-        NSMutableString *numberString = [[NSMutableString alloc] init] ;
-        NSString *tempStr;
-        NSScanner *scanner = [NSScanner scannerWithString:originalString];
-        NSCharacterSet *numbers = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+    if ([tableView isEqual:self.headTableView]) {
         
-        while (![scanner isAtEnd]) {
-            // Throw away characters before the first number.
-            [scanner scanUpToCharactersFromSet:numbers intoString:NULL];
-            // Collect numbers.
-            [scanner scanCharactersFromSet:numbers intoString:&tempStr];
-            [numberString appendString:tempStr];
-            tempStr = @"";
-           
+        if (self.allRecomDataArray.count > 0) {
+            [self.allRecomDataArray   removeAllObjects];
+            [self.allSmalPictureArray removeAllObjects];
+            [self.allBigPictureArray  removeAllObjects];
+            [self.allWebUrlArray removeAllObjects];
         }
-        [self.numberArray addObject:numberString];
-    }
-     //设置选中时tableview的颜色
+    
+    self.numberArray = [HWTools arrayWithString:model.color];
+        
+        
+         //设置选中时tableview的颜色
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-        CGFloat number = [self.numberArray[0] floatValue];
+        CGFloat number  = [self.numberArray[0] floatValue];
         CGFloat number1 = [self.numberArray[1] floatValue];
         CGFloat number2 = [self.numberArray[2] floatValue];
         cell.textLabel.highlightedTextColor = [UIColor whiteColor];
@@ -251,8 +355,38 @@
         // [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
       //改变标题
         self.navigationItem.title = model.catname;
+    
+//网络请求传值
+        self.catString = model.tagname;
+        self.catName = model.catname;
+        [self loadData];
+        
+        
+        
 
     }else if ([tableView isEqual:self.tableView]){
+        
+        
+     DetailsViewController *detailsView = [[DetailsViewController alloc]init];
+        
+        if ([self.catName isEqualToString:@"推荐"]) {
+             RecommModel *recomModel = self.allRecomDataArray[indexPath.row+self.allBigPictureArray.count];
+            
+            
+            detailsView.htmlString = self.allWebUrlArray[indexPath.row + self.allBigPictureArray.count];
+            detailsView.shareTitle = recomModel.title;
+            NSLog(@"%@",detailsView.htmlString);
+            
+        }else{
+            RecommModel *recomModel = self.allRecomDataArray[indexPath.row+1];
+           
+            detailsView.htmlString = self.allWebUrlArray[indexPath.row + 1];
+          //  detailsView.htmlString = recomModel.webUrl;
+            detailsView.shareTitle = recomModel.title;
+        }
+        
+        [self.navigationController pushViewController:detailsView animated:YES];
+        
         
     }
     
@@ -287,36 +421,56 @@
 -(void)loadData{
     AFHTTPSessionManager *sessionManager = [[AFHTTPSessionManager alloc]init];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-    [ProgressHUD show:@"推荐加载中"];
-    [sessionManager GET:[NSString stringWithFormat:@"%@updatetime=%@",kRecommend,@"1454062401"] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [ProgressHUD show:[NSString stringWithFormat:@"%@加载中",self.catName]];
+   
+   //解析数据
+    [sessionManager GET:[NSString stringWithFormat:@"%@%@%@",kRecommend,self.catString,@"/articlelist?updatetime=1454062401"] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         ZJHLog(@"%@",downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         ZJHLog("%@",responseObject);
-        [ProgressHUD showSuccess:@"推荐加载成功"];
+        [ProgressHUD showSuccess:[NSString stringWithFormat:@"%@加载成功",self.catName]];
+        
         NSDictionary *resultdic = responseObject;
         NSArray *arctiyArray = resultdic[@"articletag"];
         NSDictionary *dic = arctiyArray[0];
         NSArray *dataArray = dic[@"article"];
-       // NSArray *thumbArray = dataArray [@"thumb"];
+       
         for (NSDictionary *dataDic in dataArray) {
             RecommModel *recomModel = [[RecommModel alloc]initWithDictionary:dataDic];
             [self.recomDataArray addObject:recomModel];
+            [self.pictureTitleArray addObject:recomModel.title];
+            
+//详情内容web地址
+            
+            NSArray *phonepageArray = dataDic[@"phonepagelist"];
+            for (NSDictionary *phoneDic in phonepageArray) {
+                recomModel.webUrl = phoneDic[@"url"];
+                [self.webUrlArray addObject:phoneDic[@"url"]];
+            }
+            
+            
+            
+            
+            
             NSArray *bigArray = dataDic[@"picture"];
 //将大图片添加到数组中
             for (NSDictionary *bigDic in bigArray) {
+                
                 [self.bigPictureArray addObject:bigDic[@"url"]];
+                recomModel.pictureUrl = bigDic[@"url"];
             }
             NSArray *smalArray = dataDic[@"thumb"];
 //将小图片添加到数组中
             for (NSDictionary *smalDic in smalArray) {
+                recomModel.url = smalDic[@"url"];
                 [self.smalPictureArray addObject:smalDic[@"url"]];
             }
-        }
-        NSLog(@"%ld %ld",self.bigPictureArray.count,self.smalPictureArray.count);
 
+            
+        }
         
-        //刷新数据 重新加载该方法configTableView
-        [self configTableView];
+        [self reloadAction];
+
       
 
         
@@ -325,6 +479,31 @@
         
     }];
     
+}
+-(void)reloadAction{
+    
+        self.allRecomDataArray   = self.recomDataArray;
+        self.allSmalPictureArray = self.smalPictureArray;
+        self.allBigPictureArray  = self.bigPictureArray;
+             self.allWebUrlArray = self.webUrlArray;
+    
+    [self.tableView tableViewDidFinishedLoading];//完成加载
+   
+    //刷新数据
+        [self.tableView reloadData];
+        //刷新数据 重新加载该方法configTableView
+        [self configTableView];
+    
+    
+
+}
+//点击图片触发事件
+-(void)adTouchAction:(UIButton *)btn{
+    DetailsViewController *detailView = [[DetailsViewController alloc]init];
+    detailView.htmlString = self.allWebUrlArray[btn.tag];
+    NSLog(@"%@",detailView.htmlString);
+       [self.navigationController pushViewController:detailView animated:YES];
+
 }
 #pragma mark --懒加载
 //懒加载
@@ -354,23 +533,49 @@
     
     return _headTableView;
 }
+//标题懒加载
 -(NSMutableArray *)headTitleArray{
     if (_headTitleArray == nil) {
         self.headTitleArray = [NSMutableArray new];
     }
     return _headTitleArray;
 }
+-(NSMutableArray *)recomDataArray{
+    if (_recomDataArray == nil) {
+        self.recomDataArray = [NSMutableArray new];
+    }
+    return _recomDataArray;
+}
+-(NSMutableArray *)allRecomDataArray{
+    if (_allRecomDataArray == nil) {
+        self.allRecomDataArray = [NSMutableArray new];
+    }
+    return _allRecomDataArray;
+}
+
 -(NSMutableArray *)bigPictureArray{
     if (_bigPictureArray == nil) {
         self.bigPictureArray = [NSMutableArray new];
     }
     return _bigPictureArray;
 }
+-(NSMutableArray *)allBigPictureArray{
+    if (_allBigPictureArray == nil) {
+        self.allBigPictureArray = [NSMutableArray new];
+    }
+    return _allBigPictureArray;
+}
 -(NSMutableArray *)smalPictureArray{
     if (_smalPictureArray == nil) {
         self.smalPictureArray = [NSMutableArray new];
     }
     return _smalPictureArray;
+}
+-(NSMutableArray *)allSmalPictureArray{
+    if (_allSmalPictureArray == nil) {
+        self.allBigPictureArray = [NSMutableArray new];
+    }
+    return _allSmalPictureArray;
 }
 -(UIScrollView *)scrollView{
     if (_scrollView == nil) {
@@ -397,6 +602,49 @@
         self.pageControl.currentPage = 0;
     }
     return _pageControl;
+}
+//轮番图片上的标题
+-(NSMutableArray *)pictureTitleArray{
+    if (_pictureTitleArray == nil) {
+        self.pictureTitleArray = [NSMutableArray new];
+    }
+    return _pictureTitleArray;
+}
+//点击导航栏上的添加   数组懒加载
+-(NSMutableArray *)addSubscriptArray{
+    if (_addSubscriptArray == nil) {
+        self.addSubscriptArray = [NSMutableArray new];
+    }
+    return _addSubscriptArray;
+}
+//给订阅传递解析网址的tageName
+-(NSMutableArray *)tageNameArray{
+    if (_tageNameArray == nil) {
+        self.tageNameArray = [[NSMutableArray alloc]init];
+    }
+    return _tageNameArray;
+}
+//大图片点击是  网上数据路径 数组懒加载
+-(NSMutableArray *)webUrlArray{
+    if (_webUrlArray == nil) {
+        self.webUrlArray = [[NSMutableArray alloc]init];
+    }
+    return _webUrlArray;
+}
+//cateName标题数组
+-(NSMutableArray *)cateNameArray{
+    if (_cateNameArray == nil) {
+        self.cateNameArray = [[NSMutableArray alloc]init];
+        
+    }
+    return _cateNameArray;
+}
+//webAllArray
+-(NSMutableArray *)allWebUrlArray{
+    if (_webUrlArray == nil) {
+        self.webUrlArray = [NSMutableArray new];
+    }
+    return _webUrlArray;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

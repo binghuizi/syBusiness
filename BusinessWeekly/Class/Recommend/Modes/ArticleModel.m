@@ -15,6 +15,7 @@
         self.advUpdateTime = dict[@"advUpdateTime"];
         self.catname = dict[@"catname"];
         self.color = dict[@"phoneColumnProperty"][@"color"];
+        self.tagname = dict[@"tagname"];
     }
     return self;
 }
