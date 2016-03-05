@@ -19,7 +19,7 @@
 #import "DetailsViewController.h"
 #import "AddsubScribeViewController.h"
 #import "LeftRevealViewController.h"
-@interface RecommendViewController ()<UITableViewDataSource,UITableViewDelegate,PullingRefreshTableViewDelegate>{
+@interface RecommendViewController ()<UITableViewDataSource,UITableViewDelegate,PullingRefreshTableViewDelegate,LeftRevealViewControllerDelegate>{
      NSInteger _pageCount;//定义请求页码
     LeftRevealViewController *_leftVc;
     
@@ -49,6 +49,7 @@
 @property(nonatomic,strong) NSMutableArray *colorArray;
 
 
+
 @end
 
 @implementation RecommendViewController
@@ -75,7 +76,7 @@
     
     [self.mainView addSubview:self.headTableView];
     [self.mainView addSubview:self.tableView];
-    
+    [self.mainView addSubview:self.addButton];
     
     
     
@@ -86,9 +87,17 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"FeatureAndTVTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell3"];
     
-    
-    
     [self startTimer];
+    self.catString = @"cat_15";
+    [self loadData];
+   
+    
+  //  NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:10 inSection:0];
+    
+    
+    
+  
+    
 //添加按钮
     
 }
@@ -121,7 +130,10 @@
 #pragma mark --- 点击左按钮 抽象视图出现
         _leftVc.titleArray = self.cateNameArray;
         _leftVc.leftColorArray = self.colorArray;
-        NSLog(@"lllll%ld",_leftVc.leftColorArray.count);
+       
+        _leftVc.tageNameArray = self.tageNameArray;
+       
+        
         [_leftVc.tableView reloadData];
         
         
@@ -174,6 +186,27 @@
         _mainView.layer.shadowOffset = CGSizeMake(5, 0);
     }
 }
+#pragma mark --- 遵循leftRevealViewController 代理方法
+-(void)leftData:(NSString *)tageName cateName:(NSString *)catename number:(NSInteger)num{
+//main视图推出
+    [self setmainViewX:0];
+//颜色消失
+    [self.headTableView deselectRowAtIndexPath:self.indexrow animated:YES];
+//重新设置self.headTableView位置
+    [UIView animateWithDuration:1.0 animations:^{
+        self.headTableView.contentOffset =  CGPointMake(0, num * self.cellHeight);
+        
+        
+    }];
+    
+//加载数据 时传递catstring
+    self.catString = tageName;
+//传递   ...加载成功
+    self.catName = catename;
+    
+//重新加载数据 解析
+    [self loadData];
+}
 
 #pragma mark ------网络请求解析 获得数据
 //解析标题 推荐 金融 科技 特写......
@@ -208,7 +241,7 @@
             
         }
        
-        NSLog(@"ddd%ld",self.cateNameArray.count);
+        
         
         [self.headTableView reloadData];//刷新数据
    
@@ -247,7 +280,7 @@
         titleLabel.tintColor = [UIColor redColor];
         
         titleLabel.text = self.pictureTitleArray[i];
-        NSLog(@"%@",titleLabel.text);
+      
        
         
     
@@ -280,6 +313,9 @@
     //偏移量除以宽度就是圆点的个数
     NSInteger pageNumber = offSet.x /pageWidth;
     self.pageControl.currentPage = pageNumber;
+    
+    
+    
 }
 #pragma mark --- 圆点动视图也动
 -(void)touchActionPage:(UIPageControl *)pageControl{
@@ -328,7 +364,8 @@
         return self.articleArray.count - 14;
     }else if ([tableView isEqual:self.tableView]){
         if ([self.catName isEqualToString:@"cat_15"]) {
-            NSLog(@"66666%ld",self.allRecomDataArray.count);
+            
+            
             return self.allRecomDataArray.count - self.allBigPictureArray.count;
             
         }else{
@@ -352,7 +389,7 @@
         cell.transform = CGAffineTransformMakeRotation(M_PI / 2);
         ArticleModel *model = self.headTitleArray[indexPath.row];
         cell.textLabel.text = model.catname;
-        //NSLog(@"%@",self.headTitleArray[indexPath.row]);
+        
         cell.textLabel.font = [UIFont systemFontOfSize:13.0];
        
         return cell;
@@ -395,7 +432,7 @@
     if ([tableView isEqual:self.headTableView]) {
         ArticleModel *model = self.headTitleArray[indexPath.row];
        CGFloat height = [HWTools getTextHeightWithText:model.catname Bigsize:CGSizeMake(20,900) textFont:13.0];
-       
+        self.cellHeight = height + 20;
         return height + 20;
     }else if ([tableView isEqual:self.tableView]){
         if ([self.catString isEqualToString:@"cat_15"]) {
@@ -412,16 +449,12 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
+    
     ArticleModel *model = self.headTitleArray[indexPath.row];
-    NSLog(@"%@",model.catname);
+    
     if ([tableView isEqual:self.headTableView]) {
         
-        if (self.allRecomDataArray.count > 0) {
-            [self.allRecomDataArray   removeAllObjects];
-            [self.allSmalPictureArray removeAllObjects];
-            [self.allBigPictureArray  removeAllObjects];
-            [self.allWebUrlArray removeAllObjects];
-        }
+        self.indexrow = indexPath;
     
     self.numberArray = [HWTools arrayWithString:model.color];
         
@@ -444,7 +477,8 @@
         self.catName = model.catname;
         [self loadData];
         
-        
+      
+  
         
 
     }else if ([tableView isEqual:self.tableView]){
@@ -458,7 +492,7 @@
             
             detailsView.htmlString = self.allWebUrlArray[indexPath.row + self.allBigPictureArray.count];
             detailsView.shareTitle = recomModel.title;
-            NSLog(@"%@",detailsView.htmlString);
+           
             
         }else{
             RecommModel *recomModel = self.allRecomDataArray[indexPath.row+1];
@@ -474,6 +508,10 @@
     }
     
 }
+
+
+
+
 #pragma mark --- pullingdelagate
 //tableview开始算新的时候调用 //下拉
 -(void)pullingTableViewDidStartRefreshing:(PullingRefreshTableView *)tableView{
@@ -510,13 +548,19 @@
     [sessionManager GET:[NSString stringWithFormat:@"%@%@%@",kRecommend,self.catString,@"/articlelist?updatetime=1454062401"] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         ZJHLog(@"%@",downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        ZJHLog("%@",responseObject);
+        //ZJHLog("%@",responseObject);
         [ProgressHUD showSuccess:[NSString stringWithFormat:@"%@加载成功",self.catName]];
         
         NSDictionary *resultdic = responseObject;
         NSArray *arctiyArray = resultdic[@"articletag"];
         NSDictionary *dic = arctiyArray[0];
         NSArray *dataArray = dic[@"article"];
+        if (self.allRecomDataArray.count > 0) {
+            [self.allRecomDataArray   removeAllObjects];
+            [self.allSmalPictureArray removeAllObjects];
+            [self.allBigPictureArray  removeAllObjects];
+            [self.allWebUrlArray removeAllObjects];
+        }
        
         for (NSDictionary *dataDic in dataArray) {
             RecommModel *recomModel = [[RecommModel alloc]initWithDictionary:dataDic];
@@ -584,7 +628,7 @@
 -(void)adTouchAction:(UIButton *)btn{
     DetailsViewController *detailView = [[DetailsViewController alloc]init];
     detailView.htmlString = self.allWebUrlArray[btn.tag];
-    NSLog(@"%@",detailView.htmlString);
+   
        [self.navigationController pushViewController:detailView animated:YES];
 
 }
@@ -741,6 +785,13 @@
     
     return _colorArray;
 }
+////点击添加按钮
+//-(UIButton *)addButton{
+//    if (_addButton == nil) {
+//        self.addButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//       // self.addButton.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
+//    }
+//}
 #pragma mark ---- 抽屉视图加载
 
 //
@@ -753,7 +804,7 @@
         
         _leftVc.view.frame = self.leftView.bounds;
         
-       
+        _leftVc.leftDelegate = self;
     }
     
     

@@ -16,5 +16,7 @@
 @property(nonatomic,retain) UIView *leftView;
 @property(nonatomic,retain) UIView *rightView;
 @property(nonatomic,retain) UIView *contentView;
-
+@property(nonatomic,assign) NSInteger cellHeight;
+@property(nonatomic,assign) NSIndexPath *indexrow;
+-(void)setmainViewX:(CGFloat)endX;
 @end

@@ -65,7 +65,9 @@
             tempStr = @"";
             
         }
+      
         [numberArray addObject:numberString];
+        
         
 }
     return numberArray;

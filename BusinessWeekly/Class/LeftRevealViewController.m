@@ -27,8 +27,7 @@
     [self.view addSubview:self.tableView];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"LeftRevealTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
-    NSLog(@"%@",self.titleArray);
-    NSLog(@"进来标题数组个数%ld",self.titleArray.count);
+   
 
 }
 #pragma mark --- 代理方法
@@ -55,7 +54,13 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"%@",self.leftColorArray[indexPath.row]);
+    //消除点击显示的颜色
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+  
+   
+    [self.leftDelegate leftData:self.tageNameArray[indexPath.row] cateName:self.titleArray[indexPath.row] number:indexPath.row];
+    
+    
 }
 //懒加载
 -(UITableView *)tableView{
