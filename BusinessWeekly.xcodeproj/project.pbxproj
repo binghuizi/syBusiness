@@ -46,6 +46,9 @@
 		7AC986461C7DB1C500A2A806 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AC986451C7DB1C500A2A806 /* CoreGraphics.framework */; };
 		7AC986481C7DB1D700A2A806 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AC986471C7DB1D700A2A806 /* libz.tbd */; };
 		7AC9864A1C7DB1EA00A2A806 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AC986491C7DB1EA00A2A806 /* libsqlite3.tbd */; };
+		7AD728361C896E2100ED41F7 /* LeftRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD728351C896E2100ED41F7 /* LeftRevealViewController.m */; };
+		7AD7283C1C89B36300ED41F7 /* LeftRevealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7283A1C89B36300ED41F7 /* LeftRevealTableViewCell.m */; };
+		7AD7283D1C89B36300ED41F7 /* LeftRevealTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD7283B1C89B36300ED41F7 /* LeftRevealTableViewCell.xib */; };
 		7AE10A301C7ADFFA00CA9187 /* SubScribleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE10A2F1C7ADFFA00CA9187 /* SubScribleViewController.m */; };
 		7AE10A321C7AE5DD00CA9187 /* daxuan.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE10A311C7AE5DD00CA9187 /* daxuan.png */; };
 		7AE10A361C7AE6CE00CA9187 /* tiyu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE10A351C7AE6CE00CA9187 /* tiyu.png */; };
@@ -124,6 +127,11 @@
 		7AC986451C7DB1C500A2A806 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		7AC986471C7DB1D700A2A806 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		7AC986491C7DB1EA00A2A806 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		7AD728341C896E2100ED41F7 /* LeftRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftRevealViewController.h; sourceTree = "<group>"; };
+		7AD728351C896E2100ED41F7 /* LeftRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftRevealViewController.m; sourceTree = "<group>"; };
+		7AD728391C89B36300ED41F7 /* LeftRevealTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftRevealTableViewCell.h; sourceTree = "<group>"; };
+		7AD7283A1C89B36300ED41F7 /* LeftRevealTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftRevealTableViewCell.m; sourceTree = "<group>"; };
+		7AD7283B1C89B36300ED41F7 /* LeftRevealTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftRevealTableViewCell.xib; sourceTree = "<group>"; };
 		7AE10A2E1C7ADFFA00CA9187 /* SubScribleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubScribleViewController.h; sourceTree = "<group>"; };
 		7AE10A2F1C7ADFFA00CA9187 /* SubScribleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubScribleViewController.m; sourceTree = "<group>"; };
 		7AE10A311C7AE5DD00CA9187 /* daxuan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daxuan.png; sourceTree = "<group>"; };
@@ -263,9 +271,46 @@
 			path = libWeiboSDK;
 			sourceTree = "<group>";
 		};
+		7AD7282F1C896AF700ED41F7 /* LeftRevealSide */ = {
+			isa = PBXGroup;
+			children = (
+				7AD728331C896B9300ED41F7 /* Views */,
+				7AD728321C896B7000ED41F7 /* Modes */,
+				7AD728301C896B3D00ED41F7 /* Controllers */,
+			);
+			name = LeftRevealSide;
+			sourceTree = "<group>";
+		};
+		7AD728301C896B3D00ED41F7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7AD728341C896E2100ED41F7 /* LeftRevealViewController.h */,
+				7AD728351C896E2100ED41F7 /* LeftRevealViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		7AD728321C896B7000ED41F7 /* Modes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Modes;
+			sourceTree = "<group>";
+		};
+		7AD728331C896B9300ED41F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7AD728391C89B36300ED41F7 /* LeftRevealTableViewCell.h */,
+				7AD7283A1C89B36300ED41F7 /* LeftRevealTableViewCell.m */,
+				7AD7283B1C89B36300ED41F7 /* LeftRevealTableViewCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		7AE5ADD31C5B520900979ABA /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				7AD7282F1C896AF700ED41F7 /* LeftRevealSide */,
 				7AE5ADD41C5B520900979ABA /* Recommend */,
 			);
 			path = Class;
@@ -448,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A02F19A1C5C79BD00652756 /* 29号标题.plist in Resources */,
+				7AD7283D1C89B36300ED41F7 /* LeftRevealTableViewCell.xib in Resources */,
 				7AA2628C1C61C7DB000A1659 /* 金融.plist in Resources */,
 				7AE5ADE41C5B5B0A00979ABA /* blueArrow.png in Resources */,
 				7A02F1A11C5CBEAB00652756 /* ProgressHUD.bundle in Resources */,
@@ -526,6 +572,7 @@
 				7A3EA48C1C7BF05B00830403 /* DingYueTableViewCell.m in Sources */,
 				7A8F7B8B1C5E234F008AEDA9 /* DateTableViewCell.m in Sources */,
 				7AE5ADE61C5B5B0A00979ABA /* PullingRefreshTableView.m in Sources */,
+				7AD7283C1C89B36300ED41F7 /* LeftRevealTableViewCell.m in Sources */,
 				7A056F051C79672F0025967F /* DetailsViewController.m in Sources */,
 				7A056F2B1C79C5840025967F /* AddsubScribeViewController.m in Sources */,
 				7AE5ADEC1C5B958E00979ABA /* ArticleModel.m in Sources */,
@@ -536,6 +583,7 @@
 				7A8F9F091C579BAC0095E755 /* main.m in Sources */,
 				7AE5ADE91C5B626100979ABA /* HWTools.m in Sources */,
 				7AE10A301C7ADFFA00CA9187 /* SubScribleViewController.m in Sources */,
+				7AD728361C896E2100ED41F7 /* LeftRevealViewController.m in Sources */,
 				7AE5ADDB1C5B526000979ABA /* RecommendViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

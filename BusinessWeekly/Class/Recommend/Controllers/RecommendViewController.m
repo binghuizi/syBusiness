@@ -18,8 +18,11 @@
 #import "FeatureAndTVTableViewCell.h"
 #import "DetailsViewController.h"
 #import "AddsubScribeViewController.h"
+#import "LeftRevealViewController.h"
 @interface RecommendViewController ()<UITableViewDataSource,UITableViewDelegate,PullingRefreshTableViewDelegate>{
      NSInteger _pageCount;//定义请求页码
+    LeftRevealViewController *_leftVc;
+    
 }
 @property(nonatomic,strong) PullingRefreshTableView *tableView;
 @property(nonatomic,strong) UITableView *headTableView;
@@ -43,7 +46,7 @@
 @property(nonatomic,strong) UIPageControl *pageControl;
 @property(nonatomic,strong) NSTimer *timer;//定时器用于图片滚动
 @property(nonatomic,strong) UIButton *addButton;
-
+@property(nonatomic,strong) NSMutableArray *colorArray;
 
 
 @end
@@ -55,22 +58,27 @@
     // Do any additional setup after loading the view.
     
     self.title = @"推荐";
-
-    //导航栏上的颜色
-    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
-    UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(rightBarAction)];
+//设置 navigationController 左右按钮
+    [self navigationAction];
     
     
-    self.navigationItem.rightBarButtonItem = rightBarButton;
-    
-    
-    
-//网络请求数据
+//标题网络请求数据
     [self heardTitle];
     //多余的tableView内容
     self.automaticallyAdjustsScrollViewInsets = NO;
-    [self.view addSubview:self.headTableView];
-    [self.view addSubview:self.tableView];
+//抽屉效果 三个View
+    
+    [self.view addSubview:self.leftView];
+    [self.view addSubview:self.mainView];
+    
+    [self.leftView addSubview:_leftVc.view];
+    
+    [self.mainView addSubview:self.headTableView];
+    [self.mainView addSubview:self.tableView];
+    
+    
+    
+    
     
     [self.tableView registerNib:[UINib nibWithNibName:@"DateTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     
@@ -78,23 +86,95 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"FeatureAndTVTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell3"];
     
+    
+    
     [self startTimer];
 //添加按钮
     
-    
-    
 }
+#pragma mark ---navigationController  左右按钮设置
+-(void)navigationAction{
+    //导航栏上的颜色
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemPause target:self action:@selector(BarAction:)];
+    leftBarButton.tag = 2;
+    
+    UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(BarAction:)];
+    rightBarButton.tag = 1;
+    
+    self.navigationItem.rightBarButtonItem = rightBarButton;
+    self.navigationItem.leftBarButtonItem = leftBarButton;
+}
+
 //点击导航栏上的添加按钮
--(void)rightBarAction{
-    AddsubScribeViewController *addSubScribeView= [[AddsubScribeViewController alloc]initWithNibName:@"AddsubViewController" bundle:nil];
-  //传值 获取网络图片路径 传值给 页面
-    addSubScribeView.addSubScribeArray = self.addSubscriptArray;
- //网上解析数据根据tagename 将tagename传值给页面  进行解析
-    addSubScribeView.tageNameArray = self.tageNameArray;
-    addSubScribeView.cateNameArray = self.cateNameArray;
-    [self.navigationController pushViewController:addSubScribeView animated:YES];
+-(void)BarAction:(UIBarButtonItem *)btn{
+    if (btn.tag == 1) {
+        AddsubScribeViewController *addSubScribeView= [[AddsubScribeViewController alloc]initWithNibName:@"AddsubViewController" bundle:nil];
+        //传值 获取网络图片路径 传值给 页面
+        addSubScribeView.addSubScribeArray = self.addSubscriptArray;
+        //网上解析数据根据tagename 将tagename传值给页面  进行解析
+        addSubScribeView.tageNameArray = self.tageNameArray;
+        addSubScribeView.cateNameArray = self.cateNameArray;
+        [self.navigationController pushViewController:addSubScribeView animated:YES];
+    }else{
+        
+#pragma mark --- 点击左按钮 抽象视图出现
+        _leftVc.titleArray = self.cateNameArray;
+        _leftVc.leftColorArray = self.colorArray;
+        NSLog(@"lllll%ld",_leftVc.leftColorArray.count);
+        [_leftVc.tableView reloadData];
+        
+        
+        CGFloat startX = _mainView.frame.origin.x;
+        
+//为mainView添加阴影效果
+        [self addShadowFormainViewWithEndX:1];
+// 定义一个临时变量
+        CGFloat tempEndX = 0;
+        _leftView.hidden = NO;
+        if (startX == 0) {
+            tempEndX = kLeftWidth;
+            
+        }else if (startX == kLeftWidth){
+            tempEndX = 0;
+        }
+        
+//最后设置mainView的x
+        [self setmainViewX:tempEndX];
+        
+        
+        
+    }
+    
     
 }
+//
+// 抽取出来的公共代码,设置mainView的x,参数是endX
+-(void)setmainViewX:(CGFloat)endX{
+    CGRect frame = self.mainView.frame;
+    frame.origin.x = endX;
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        self.mainView.frame=frame;
+    }];
+}
+//添加阴影图层
+-(void)addShadowFormainViewWithEndX:(CGFloat)endX{
+    // 1,点击工程,加号,导入第3方框架 #import <QuartzCore/QuartzCore.h>
+    
+    // 2,拿到mainView所在的图层,设置阴影 参数
+    
+    // NSLog(@"调用频率很高---");
+    _mainView.layer.shadowColor = [UIColor blackColor].CGColor;
+    _mainView.layer.shadowOpacity = 0.5;
+    
+    if (endX >= 0) {
+        _mainView.layer.shadowOffset = CGSizeMake(-5, 0);
+    } else {
+        _mainView.layer.shadowOffset = CGSizeMake(5, 0);
+    }
+}
+
 #pragma mark ------网络请求解析 获得数据
 //解析标题 推荐 金融 科技 特写......
 -(void)heardTitle{
@@ -114,6 +194,7 @@
         
         for (NSDictionary *dic in self.articleArray) {
             ArticleModel *model = [[ArticleModel alloc]initWithDictionary:dic];
+            [self.colorArray addObject:model.color];
             [self.headTitleArray addObject:model];
 //标题加入数组
             [self.cateNameArray addObject:model.catname];
@@ -127,6 +208,8 @@
             
         }
        
+        NSLog(@"ddd%ld",self.cateNameArray.count);
+        
         [self.headTableView reloadData];//刷新数据
    
         
@@ -134,7 +217,7 @@
         ZJHLog(@"%@",error);
     }];
 }
-#pragma mark ------自定义tableView头部
+#pragma mark  
 - (void)configTableView{
     UIView *tableHeaderView = [[UIView alloc]init];
     tableHeaderView.frame = CGRectMake(0, 0, kWideth, 240);
@@ -311,7 +394,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if ([tableView isEqual:self.headTableView]) {
         ArticleModel *model = self.headTitleArray[indexPath.row];
-       CGFloat height = [HWTools getTextHeightWithText:model.catname Bigsize:CGSizeMake( 5 ,900) textFont:13.0];
+       CGFloat height = [HWTools getTextHeightWithText:model.catname Bigsize:CGSizeMake(20,900) textFont:13.0];
        
         return height + 20;
     }else if ([tableView isEqual:self.tableView]){
@@ -330,7 +413,7 @@
     
     
     ArticleModel *model = self.headTitleArray[indexPath.row];
-    
+    NSLog(@"%@",model.catname);
     if ([tableView isEqual:self.headTableView]) {
         
         if (self.allRecomDataArray.count > 0) {
@@ -510,6 +593,7 @@
 -(PullingRefreshTableView *)tableView{
     if (_tableView == nil) {
         self.tableView = [[PullingRefreshTableView alloc]initWithFrame:CGRectMake(0, 120, kWideth, kHeight)];
+        
         self.tableView.dataSource = self;
         self.tableView.delegate = self;
         self.tableView.backgroundColor = [UIColor lightGrayColor];
@@ -520,7 +604,10 @@
 }
 -(UITableView *)headTableView{
     if (_headTableView == nil) {
-        self.headTableView = [[UITableView alloc]initWithFrame:CGRectMake(200, -80, kWideth - 400, kWideth - 20) style:UITableViewStylePlain];
+        self.headTableView = [[UITableView alloc]initWithFrame:CGRectMake(140, -80, kWideth - 300, kWideth - 20) style:UITableViewStylePlain];
+        
+       // self.headTableView.backgroundColor = [UIColor redColor];
+        
         self.headTableView.dataSource = self;
         self.headTableView.delegate = self;
        // self.headTableView.backgroundColor = [UIColor magentaColor];
@@ -646,6 +733,44 @@
     }
     return _webUrlArray;
 }
+//颜色数组
+-(NSMutableArray *)colorArray{
+    if (_colorArray == nil) {
+        self.colorArray = [NSMutableArray new];
+    }
+    
+    return _colorArray;
+}
+#pragma mark ---- 抽屉视图加载
+
+//
+-(UIView *)leftView{
+    if (_leftView == nil) {
+        self.leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWideth-100, kHeight)];
+        _leftVc = [[LeftRevealViewController alloc]init];
+        
+        //_leftVc.view.frame = self.leftView.bounds;
+        
+        _leftVc.view.frame = self.leftView.bounds;
+        
+       
+    }
+    
+    
+    
+    return _leftView;
+}
+
+-(UIView *)mainView{
+    if (_mainView == nil) {
+        self.mainView = [[UIView alloc]initWithFrame:self.view.frame];
+    }
+    return _mainView;
+}
+
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

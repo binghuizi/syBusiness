@@ -25,3 +25,10 @@
 //微信
 #define kAppId @"wx1216e4abc902018c"
 
+// 手势结束时的x
+#define kEndX frame.origin.x
+// 左view的宽度
+#define kLeftWidth _leftView.frame.size.width
+
+// 右view的宽度
+#define kRightWidth _rightView.frame.size.width
