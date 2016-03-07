@@ -8,10 +8,11 @@
 
 #import "LeftRevealViewController.h"
 #import "LeftRevealTableViewCell.h"
+#import "AddsubScribeViewController.h"
 @interface LeftRevealViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)NSArray *number;
-
+@property(nonatomic,retain) UIButton *magazineButton;
 @end
 
 @implementation LeftRevealViewController
@@ -22,8 +23,10 @@
 
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, kWideth/6, kWideth, 140)];
     imageView.image = [UIImage imageNamed:@"bloo"];
-    [self.view addSubview:imageView];
     
+    
+    [self.view addSubview:self.magazineButton];
+    [self.view addSubview:imageView];
     [self.view addSubview:self.tableView];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"LeftRevealTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
@@ -32,7 +35,7 @@
 }
 #pragma mark --- 代理方法
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.titleArray.count - 14;
+    return self.titleArray.count - 13;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -62,10 +65,14 @@
     
     
 }
+-(void)addMaganize{
+    NSLog(@"进入管理杂志页面");
+    [self.leftDelegate pushAddSubviweController];
+}
 //懒加载
 -(UITableView *)tableView{
     if (_tableView == nil) {
-        self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, kWideth/6 + 140, kWideth, kHeight) style:UITableViewStylePlain];
+        self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, kWideth/6 + 140, kWideth, kHeight - 300) style:UITableViewStylePlain];
         self.tableView.dataSource = self;
         self.tableView.delegate = self;
     }
@@ -88,6 +95,20 @@
         self.number = [NSArray new];
     }
     return _number;
+}
+#pragma mark --- 管理杂志按钮
+-(UIButton *)magazineButton{
+    if (_magazineButton == nil) {
+        self.magazineButton =[UIButton buttonWithType:UIButtonTypeCustom];
+        self.magazineButton.frame  = CGRectMake(0, 600, kWideth - 100, 50);
+        // self.magazineButton.backgroundColor = [UIColor magentaColor];
+        [self.magazineButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [self.magazineButton setImage:[UIImage imageNamed:@"addButton2"] forState:UIControlStateNormal];
+        [self.magazineButton setTitle:@"管理我的主题杂志" forState:UIControlStateNormal];
+        
+        [self.magazineButton addTarget:self action:@selector(addMaganize) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _magazineButton;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

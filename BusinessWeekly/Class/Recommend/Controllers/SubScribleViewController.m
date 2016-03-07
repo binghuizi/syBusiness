@@ -77,7 +77,7 @@
 //上拉  Implement this method if headerOnly is false
 - (void)pullingTableViewDidStartLoading:(PullingRefreshTableView *)tableView{
     _pageCount +=1;
-    self.refreshing = NO;
+    self.refreshing = YES;
     [self performSelector:@selector(loadDataAction) withObject:nil afterDelay:1.f];
 }
 

@@ -46,6 +46,10 @@
 		7AC986461C7DB1C500A2A806 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AC986451C7DB1C500A2A806 /* CoreGraphics.framework */; };
 		7AC986481C7DB1D700A2A806 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AC986471C7DB1D700A2A806 /* libz.tbd */; };
 		7AC9864A1C7DB1EA00A2A806 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AC986491C7DB1EA00A2A806 /* libsqlite3.tbd */; };
+		7AD694A11C8C2171008D5877 /* RightRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD6949F1C8C2171008D5877 /* RightRevealViewController.m */; };
+		7AD694A21C8C2171008D5877 /* RightRevealViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD694A01C8C2171008D5877 /* RightRevealViewController.xib */; };
+		7AD694AA1C8C4954008D5877 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD694A81C8C4954008D5877 /* LoginViewController.m */; };
+		7AD694AB1C8C4954008D5877 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD694A91C8C4954008D5877 /* LoginViewController.xib */; };
 		7AD728361C896E2100ED41F7 /* LeftRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD728351C896E2100ED41F7 /* LeftRevealViewController.m */; };
 		7AD7283C1C89B36300ED41F7 /* LeftRevealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD7283A1C89B36300ED41F7 /* LeftRevealTableViewCell.m */; };
 		7AD7283D1C89B36300ED41F7 /* LeftRevealTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD7283B1C89B36300ED41F7 /* LeftRevealTableViewCell.xib */; };
@@ -127,6 +131,12 @@
 		7AC986451C7DB1C500A2A806 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		7AC986471C7DB1D700A2A806 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		7AC986491C7DB1EA00A2A806 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		7AD6949E1C8C2171008D5877 /* RightRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightRevealViewController.h; sourceTree = "<group>"; };
+		7AD6949F1C8C2171008D5877 /* RightRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightRevealViewController.m; sourceTree = "<group>"; };
+		7AD694A01C8C2171008D5877 /* RightRevealViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightRevealViewController.xib; sourceTree = "<group>"; };
+		7AD694A71C8C4954008D5877 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		7AD694A81C8C4954008D5877 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		7AD694A91C8C4954008D5877 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		7AD728341C896E2100ED41F7 /* LeftRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftRevealViewController.h; sourceTree = "<group>"; };
 		7AD728351C896E2100ED41F7 /* LeftRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftRevealViewController.m; sourceTree = "<group>"; };
 		7AD728391C89B36300ED41F7 /* LeftRevealTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftRevealTableViewCell.h; sourceTree = "<group>"; };
@@ -271,6 +281,74 @@
 			path = libWeiboSDK;
 			sourceTree = "<group>";
 		};
+		7AD694951C8C1EFD008D5877 /* RightRevealSide */ = {
+			isa = PBXGroup;
+			children = (
+				7AD694981C8C1F3D008D5877 /* Views */,
+				7AD694971C8C1F33008D5877 /* Modes */,
+				7AD694961C8C1F19008D5877 /* Controllers */,
+			);
+			name = RightRevealSide;
+			sourceTree = "<group>";
+		};
+		7AD694961C8C1F19008D5877 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7AD6949E1C8C2171008D5877 /* RightRevealViewController.h */,
+				7AD6949F1C8C2171008D5877 /* RightRevealViewController.m */,
+				7AD694A01C8C2171008D5877 /* RightRevealViewController.xib */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		7AD694971C8C1F33008D5877 /* Modes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Modes;
+			sourceTree = "<group>";
+		};
+		7AD694981C8C1F3D008D5877 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		7AD694A31C8C480E008D5877 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7AD694A61C8C4851008D5877 /* Views */,
+				7AD694A51C8C483F008D5877 /* Models */,
+				7AD694A41C8C4829008D5877 /* Controlers */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		7AD694A41C8C4829008D5877 /* Controlers */ = {
+			isa = PBXGroup;
+			children = (
+				7AD694A71C8C4954008D5877 /* LoginViewController.h */,
+				7AD694A81C8C4954008D5877 /* LoginViewController.m */,
+				7AD694A91C8C4954008D5877 /* LoginViewController.xib */,
+			);
+			name = Controlers;
+			sourceTree = "<group>";
+		};
+		7AD694A51C8C483F008D5877 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		7AD694A61C8C4851008D5877 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		7AD7282F1C896AF700ED41F7 /* LeftRevealSide */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +388,8 @@
 		7AE5ADD31C5B520900979ABA /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				7AD694A31C8C480E008D5877 /* Login */,
+				7AD694951C8C1EFD008D5877 /* RightRevealSide */,
 				7AD7282F1C896AF700ED41F7 /* LeftRevealSide */,
 				7AE5ADD41C5B520900979ABA /* Recommend */,
 			);
@@ -492,11 +572,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AD694AB1C8C4954008D5877 /* LoginViewController.xib in Resources */,
 				7A02F19A1C5C79BD00652756 /* 29号标题.plist in Resources */,
 				7AD7283D1C89B36300ED41F7 /* LeftRevealTableViewCell.xib in Resources */,
 				7AA2628C1C61C7DB000A1659 /* 金融.plist in Resources */,
 				7AE5ADE41C5B5B0A00979ABA /* blueArrow.png in Resources */,
 				7A02F1A11C5CBEAB00652756 /* ProgressHUD.bundle in Resources */,
+				7AD694A21C8C2171008D5877 /* RightRevealViewController.xib in Resources */,
 				7A8F9F0E1C579BAC0095E755 /* Assets.xcassets in Resources */,
 				7AE10A361C7AE6CE00CA9187 /* tiyu.png in Resources */,
 				7A056F311C79E3640025967F /* AddsubViewController.xib in Resources */,
@@ -570,6 +652,7 @@
 			files = (
 				7A8F9F0C1C579BAC0095E755 /* AppDelegate.m in Sources */,
 				7A3EA48C1C7BF05B00830403 /* DingYueTableViewCell.m in Sources */,
+				7AD694A11C8C2171008D5877 /* RightRevealViewController.m in Sources */,
 				7A8F7B8B1C5E234F008AEDA9 /* DateTableViewCell.m in Sources */,
 				7AE5ADE61C5B5B0A00979ABA /* PullingRefreshTableView.m in Sources */,
 				7AD7283C1C89B36300ED41F7 /* LeftRevealTableViewCell.m in Sources */,
@@ -582,6 +665,7 @@
 				7A3179B31C636D41004B18F2 /* Date2TableViewCell.m in Sources */,
 				7A8F9F091C579BAC0095E755 /* main.m in Sources */,
 				7AE5ADE91C5B626100979ABA /* HWTools.m in Sources */,
+				7AD694AA1C8C4954008D5877 /* LoginViewController.m in Sources */,
 				7AE10A301C7ADFFA00CA9187 /* SubScribleViewController.m in Sources */,
 				7AD728361C896E2100ED41F7 /* LeftRevealViewController.m in Sources */,
 				7AE5ADDB1C5B526000979ABA /* RecommendViewController.m in Sources */,

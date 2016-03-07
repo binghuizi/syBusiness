@@ -8,7 +8,7 @@
 @protocol LeftRevealViewControllerDelegate <NSObject>
 
 -(void)leftData:(NSString *)tageName cateName:(NSString *)catename number:(NSInteger)num;
-
+-(void)pushAddSubviweController;
 @end
 #import <UIKit/UIKit.h>
 @interface LeftRevealViewController : UIViewController

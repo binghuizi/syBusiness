@@ -19,9 +19,13 @@
 #import "DetailsViewController.h"
 #import "AddsubScribeViewController.h"
 #import "LeftRevealViewController.h"
-@interface RecommendViewController ()<UITableViewDataSource,UITableViewDelegate,PullingRefreshTableViewDelegate,LeftRevealViewControllerDelegate>{
+#import "RightRevealViewController.h"
+#import "LoginViewController.h"
+@interface RecommendViewController ()<UITableViewDataSource,UITableViewDelegate,PullingRefreshTableViewDelegate,LeftRevealViewControllerDelegate,RightRevealViewControlDelegate>{
      NSInteger _pageCount;//定义请求页码
     LeftRevealViewController *_leftVc;
+    RightRevealViewController *_rightVc;
+    
     
 }
 @property(nonatomic,strong) PullingRefreshTableView *tableView;
@@ -70,9 +74,11 @@
 //抽屉效果 三个View
     
     [self.view addSubview:self.leftView];
+    [self.view addSubview:self.rightView];
     [self.view addSubview:self.mainView];
     
     [self.leftView addSubview:_leftVc.view];
+    [self.rightView addSubview:_rightVc.view];
     
     [self.mainView addSubview:self.headTableView];
     [self.mainView addSubview:self.tableView];
@@ -89,11 +95,11 @@
     
     [self startTimer];
     self.catString = @"cat_15";
+    self.catName = @"推荐";
     [self loadData];
    
     
-  //  NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:10 inSection:0];
-    
+   
     
     
   
@@ -105,45 +111,54 @@
 -(void)navigationAction{
     //导航栏上的颜色
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
-    UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemPause target:self action:@selector(BarAction:)];
-    leftBarButton.tag = 2;
     
-    UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(BarAction:)];
-    rightBarButton.tag = 1;
+    UIButton *lanmuButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton *personButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    lanmuButton.frame = CGRectMake(0, 0, 40, 40);
+    personButton.frame = CGRectMake(0, 0, 40, 40);
+    
+    [lanmuButton setImage:[UIImage imageNamed:@"lanmu"] forState:UIControlStateNormal];
+    [personButton setImage:[UIImage imageNamed:@"person"] forState:UIControlStateNormal];
+    
+    UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc]initWithCustomView:lanmuButton];
+    
+    
+    UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc]initWithCustomView:personButton];
+   
     
     self.navigationItem.rightBarButtonItem = rightBarButton;
-    self.navigationItem.leftBarButtonItem = leftBarButton;
+    self.navigationItem.leftBarButtonItem  = leftBarButton;
+    
+    [lanmuButton addTarget:self action:@selector(BarAction:) forControlEvents:UIControlEventTouchUpInside];
+    lanmuButton.tag = 1;
+    [personButton addTarget:self action:@selector(BarAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    personButton.tag = 2;
+    
 }
 
 //点击导航栏上的添加按钮
 -(void)BarAction:(UIBarButtonItem *)btn{
     if (btn.tag == 1) {
-        AddsubScribeViewController *addSubScribeView= [[AddsubScribeViewController alloc]initWithNibName:@"AddsubViewController" bundle:nil];
-        //传值 获取网络图片路径 传值给 页面
-        addSubScribeView.addSubScribeArray = self.addSubscriptArray;
-        //网上解析数据根据tagename 将tagename传值给页面  进行解析
-        addSubScribeView.tageNameArray = self.tageNameArray;
-        addSubScribeView.cateNameArray = self.cateNameArray;
-        [self.navigationController pushViewController:addSubScribeView animated:YES];
-    }else{
         
 #pragma mark --- 点击左按钮 抽象视图出现
         _leftVc.titleArray = self.cateNameArray;
         _leftVc.leftColorArray = self.colorArray;
-       
+        
         _leftVc.tageNameArray = self.tageNameArray;
-       
+        
         
         [_leftVc.tableView reloadData];
         
         
         CGFloat startX = _mainView.frame.origin.x;
         
-//为mainView添加阴影效果
+        //为mainView添加阴影效果
         [self addShadowFormainViewWithEndX:1];
-// 定义一个临时变量
+        // 定义一个临时变量
         CGFloat tempEndX = 0;
         _leftView.hidden = NO;
+        _rightView.hidden = YES;
         if (startX == 0) {
             tempEndX = kLeftWidth;
             
@@ -151,11 +166,40 @@
             tempEndX = 0;
         }
         
-//最后设置mainView的x
+        //最后设置mainView的x
+        [self setmainViewX:tempEndX];
+        
+    }else if (btn.tag == 2){
+        
+         CGFloat startX = _mainView.frame.origin.x;
+        //为mainView添加阴影效果
+        [self addShadowFormainViewWithEndX:-1];
+        // 定义一个临时变量
+        CGFloat tempEndX = 0;
+        _leftView.hidden = YES;
+        _rightView.hidden = NO;
+        
+        if (startX == 0) {
+            tempEndX = - kRightWidth;
+        }else if (startX == - kRightWidth){
+            tempEndX = 0;
+        }
+        
         [self setmainViewX:tempEndX];
         
         
         
+        
+        
+        
+    }else{
+        AddsubScribeViewController *addSubScribeView= [[AddsubScribeViewController alloc]initWithNibName:@"AddsubViewController" bundle:nil];
+        //传值 获取网络图片路径 传值给 页面
+        addSubScribeView.addSubScribeArray = self.addSubscriptArray;
+        //网上解析数据根据tagename 将tagename传值给页面  进行解析
+        addSubScribeView.tageNameArray = self.tageNameArray;
+        addSubScribeView.cateNameArray = self.cateNameArray;
+        [self.navigationController pushViewController:addSubScribeView animated:YES];
     }
     
     
@@ -203,11 +247,27 @@
     self.catString = tageName;
 //传递   ...加载成功
     self.catName = catename;
-    
+    self.navigationItem.title = self.catName;
 //重新加载数据 解析
     [self loadData];
 }
-
+-(void)pushAddSubviweController{
+   AddsubScribeViewController *addSubScribeView= [[AddsubScribeViewController alloc]initWithNibName:@"AddsubViewController" bundle:nil];
+    //传值 获取网络图片路径 传值给 页面
+    addSubScribeView.addSubScribeArray = self.addSubscriptArray;
+    //网上解析数据根据tagename 将tagename传值给页面  进行解析
+    addSubScribeView.tageNameArray = self.tageNameArray;
+    addSubScribeView.cateNameArray = self.cateNameArray;
+    
+    [self.navigationController pushViewController:addSubScribeView animated:YES];
+}
+//右边的抽屉页面遵循代理
+-(void)popViewController{
+    LoginViewController *loginView = [[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
+    
+    [self  presentViewController:loginView animated:YES completion:nil];
+  
+}
 #pragma mark ------网络请求解析 获得数据
 //解析标题 推荐 金融 科技 特写......
 -(void)heardTitle{
@@ -361,12 +421,12 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if ([tableView isEqual:self.headTableView]) {
        
-        return self.articleArray.count - 14;
+        return self.articleArray.count - 13;
     }else if ([tableView isEqual:self.tableView]){
         if ([self.catName isEqualToString:@"cat_15"]) {
             
-            
-            return self.allRecomDataArray.count - self.allBigPictureArray.count;
+           // return self.allRecomDataArray.count - self.bigPictureArray.count;
+            return self.allRecomDataArray.count - 4;
             
         }else{
             return self.allRecomDataArray.count - 1;
@@ -402,15 +462,26 @@
         if ([model.fromtagname isEqualToString:@"cat_15"]) {
              DateTableViewCell *dateCell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
             
-            dateCell.recomModel = self.allRecomDataArray[indexPath.row+self.allBigPictureArray.count];
-            dateCell.recomModel.url = self.allSmalPictureArray[indexPath.row+self.allBigPictureArray.count];
+//            dateCell.recomModel = self.allRecomDataArray[indexPath.row+self.allBigPictureArray.count];
+//            dateCell.recomModel.url = self.allSmalPictureArray[indexPath.row+self.allBigPictureArray.count];
+            
+            dateCell.recomModel = self.allRecomDataArray[indexPath.row+4];
+            dateCell.recomModel.url = self.allSmalPictureArray[indexPath.row+4];
+            
+            
+//            dateCell.recomModel = self.allRecomDataArray[indexPath.row];
+//            dateCell.recomModel.url = self.allSmalPictureArray[indexPath.row];
            
+            NSLog(@"cell = %ld",self.allRecomDataArray.count);
+            
             
             return dateCell;
         }else if ([model.fromtagname isEqualToString:@"cat_18"]||[model.fromtagname isEqualToString:@"cat_14"]){
             FeatureAndTVTableViewCell *featureCell = [tableView dequeueReusableCellWithIdentifier:@"cell3" forIndexPath:indexPath];
             featureCell.model = self.allRecomDataArray[indexPath.row + 1];
             featureCell.model.pictureUrl = self.allBigPictureArray[indexPath.row + 1];
+            
+            NSLog(@"%ld",self.allRecomDataArray.count);
             return featureCell;
             
             
@@ -521,6 +592,12 @@
     [self performSelector:@selector(loadData) withObject:nil afterDelay:1.0];
     
 }
+//上拉  Implement this method if headerOnly is false
+- (void)pullingTableViewDidStartLoading:(PullingRefreshTableView *)tableView{
+    _pageCount +=1;
+    self.refreshing = NO;
+    [self performSelector:@selector(loadData) withObject:nil afterDelay:1.f];
+}
 //刷新完成时间
 - (NSDate *)pullingTableViewRefreshingFinishedDate{
     
@@ -560,6 +637,14 @@
             [self.allSmalPictureArray removeAllObjects];
             [self.allBigPictureArray  removeAllObjects];
             [self.allWebUrlArray removeAllObjects];
+        }
+        if (self.refreshing) {
+            if (self.allRecomDataArray.count > 0) {
+                [self.allRecomDataArray   removeAllObjects];
+                [self.allSmalPictureArray removeAllObjects];
+                [self.allBigPictureArray  removeAllObjects];
+                [self.allWebUrlArray removeAllObjects];
+            }
         }
        
         for (NSDictionary *dataDic in dataArray) {
@@ -786,13 +871,26 @@
     return _colorArray;
 }
 ////点击添加按钮
-//-(UIButton *)addButton{
-//    if (_addButton == nil) {
-//        self.addButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//       // self.addButton.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
-//    }
-//}
+-(UIButton *)addButton{
+    if (_addButton == nil) {
+        self.addButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.addButton.frame = CGRectMake(328,self.headTableView.frame.size.height-40, 50 , 102);
+        //self.addButton.backgroundColor = [UIColor redColor];
+        [self.addButton setImage:[UIImage imageNamed:@"addButton2"] forState:UIControlStateNormal];
+        
+        [self.addButton addTarget:self action:@selector(BarAction:) forControlEvents:UIControlEventTouchUpInside];
+        self.addButton.tag = 3;
+    }
+    return _addButton;
+}
 #pragma mark ---- 抽屉视图加载
+
+-(UIView *)mainView{
+    if (_mainView == nil) {
+        self.mainView = [[UIView alloc]initWithFrame:self.view.frame];
+    }
+    return _mainView;
+}
 
 //
 -(UIView *)leftView{
@@ -812,13 +910,17 @@
     return _leftView;
 }
 
--(UIView *)mainView{
-    if (_mainView == nil) {
-        self.mainView = [[UIView alloc]initWithFrame:self.view.frame];
+-(UIView *)rightView{
+    if (_rightView == nil) {
+        self.rightView = [[UIView alloc]initWithFrame:CGRectMake(kWideth/3, 0, kWideth - 100, kHeight)];
+        _rightVc = [[RightRevealViewController alloc]initWithNibName:@"RightRevealViewController" bundle:nil];
+        
+        _rightVc.view.frame = self.rightView.bounds;
+        _rightVc.rightDelegate = self;
+        
     }
-    return _mainView;
+    return _rightView;
 }
-
 
 
 
