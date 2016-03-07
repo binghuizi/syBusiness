@@ -21,10 +21,13 @@
 #import "LeftRevealViewController.h"
 #import "RightRevealViewController.h"
 #import "LoginViewController.h"
+#import "SuccessLoginRightViewController.h"
+
 @interface RecommendViewController ()<UITableViewDataSource,UITableViewDelegate,PullingRefreshTableViewDelegate,LeftRevealViewControllerDelegate,RightRevealViewControlDelegate>{
      NSInteger _pageCount;//定义请求页码
     LeftRevealViewController *_leftVc;
     RightRevealViewController *_rightVc;
+    SuccessLoginRightViewController *_succLoginRightVc;
     
     
 }
@@ -107,6 +110,7 @@
 //添加按钮
     
 }
+
 #pragma mark ---navigationController  左右按钮设置
 -(void)navigationAction{
     //导航栏上的颜色
@@ -340,7 +344,7 @@
         titleLabel.tintColor = [UIColor redColor];
         
         titleLabel.text = self.pictureTitleArray[i];
-      
+        NSLog(@"%@",self.pictureTitleArray[i]);
        
         
     
@@ -426,7 +430,7 @@
         if ([self.catName isEqualToString:@"cat_15"]) {
             
            // return self.allRecomDataArray.count - self.bigPictureArray.count;
-            return self.allRecomDataArray.count - 4;
+            return self.allRecomDataArray.count - self.allBigPictureArray.count;
             
         }else{
             return self.allRecomDataArray.count - 1;
@@ -465,8 +469,8 @@
 //            dateCell.recomModel = self.allRecomDataArray[indexPath.row+self.allBigPictureArray.count];
 //            dateCell.recomModel.url = self.allSmalPictureArray[indexPath.row+self.allBigPictureArray.count];
             
-            dateCell.recomModel = self.allRecomDataArray[indexPath.row+4];
-            dateCell.recomModel.url = self.allSmalPictureArray[indexPath.row+4];
+            dateCell.recomModel = self.allRecomDataArray[indexPath.row+self.allBigPictureArray.count];
+            dateCell.recomModel.url = self.allSmalPictureArray[indexPath.row+self.allBigPictureArray.count];
             
             
 //            dateCell.recomModel = self.allRecomDataArray[indexPath.row];
@@ -625,7 +629,7 @@
     [sessionManager GET:[NSString stringWithFormat:@"%@%@%@",kRecommend,self.catString,@"/articlelist?updatetime=1454062401"] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         ZJHLog(@"%@",downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        //ZJHLog("%@",responseObject);
+        ZJHLog("%@",responseObject);
         [ProgressHUD showSuccess:[NSString stringWithFormat:@"%@加载成功",self.catName]];
         
         NSDictionary *resultdic = responseObject;
@@ -709,11 +713,13 @@
     
 
 }
+#pragma mark --- 给图片触发点击事件
 //点击图片触发事件
 -(void)adTouchAction:(UIButton *)btn{
     DetailsViewController *detailView = [[DetailsViewController alloc]init];
     detailView.htmlString = self.allWebUrlArray[btn.tag];
-   
+    detailView.shareTitle = self.pictureTitleArray[btn.tag];
+    NSLog(@"%@",detailView.shareTitle);
        [self.navigationController pushViewController:detailView animated:YES];
 
 }
@@ -913,10 +919,26 @@
 -(UIView *)rightView{
     if (_rightView == nil) {
         self.rightView = [[UIView alloc]initWithFrame:CGRectMake(kWideth/3, 0, kWideth - 100, kHeight)];
-        _rightVc = [[RightRevealViewController alloc]initWithNibName:@"RightRevealViewController" bundle:nil];
         
-        _rightVc.view.frame = self.rightView.bounds;
-        _rightVc.rightDelegate = self;
+        AppDelegate *myDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+        
+        if (myDelegate.isLogin == NO) {
+            _rightVc = [[RightRevealViewController alloc]initWithNibName:@"RightRevealViewController" bundle:nil];
+            
+            _rightVc.view.frame = self.rightView.bounds;
+            _rightVc.rightDelegate = self;
+        }else{
+            
+            _succLoginRightVc = [[SuccessLoginRightViewController alloc]initWithNibName:@"SuccessLoginRightViewController" bundle:nil];
+            _succLoginRightVc.view.frame = self.rightView.bounds;
+            
+            
+        }
+        
+       
+        
+        
+        
         
     }
     return _rightView;

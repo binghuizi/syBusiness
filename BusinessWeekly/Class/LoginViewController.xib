@@ -18,17 +18,23 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email或者手机号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i2x-ZL-XTh">
-                    <rect key="frame" x="57" y="266" width="294" height="30"/>
+                    <rect key="frame" x="57" y="366" width="294" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="r0O-bU-A6y"/>
+                    </connections>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zxy-iy-qfW">
-                    <rect key="frame" x="51" y="319" width="294" height="30"/>
+                    <rect key="frame" x="51" y="419" width="294" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="ABj-Xh-gHO"/>
+                    </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6c8-7P-fal">
-                    <rect key="frame" x="43" y="407" width="119" height="34"/>
+                    <rect key="frame" x="43" y="507" width="119" height="34"/>
                     <color key="backgroundColor" red="0.89216222916444898" green="0.89900657327708" blue="0.91953960561497317" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="注册">
                         <color key="titleColor" red="0.044211647727272707" green="0.011781330291313371" blue="0.0095332468969686768" alpha="1" colorSpace="calibratedRGB"/>
@@ -38,7 +44,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoF-vH-plS">
-                    <rect key="frame" x="227" y="407" width="116" height="33"/>
+                    <rect key="frame" x="227" y="507" width="116" height="33"/>
                     <color key="backgroundColor" red="1" green="0.0" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="登录">
                         <color key="titleColor" red="0.044211647729999998" green="0.011781330289999999" blue="0.0095332468970000007" alpha="1" colorSpace="calibratedRGB"/>
@@ -56,17 +62,17 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eM6-iG-AQB">
-                    <rect key="frame" x="36" y="310" width="307" height="1"/>
+                    <rect key="frame" x="36" y="410" width="307" height="1"/>
                     <color key="backgroundColor" red="0.41553834113589277" green="0.41759481994880576" blue="0.68373765225787286" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ioS-Xm-Yvv">
-                    <rect key="frame" x="38" y="371" width="307" height="1"/>
+                    <rect key="frame" x="38" y="471" width="307" height="1"/>
                     <color key="backgroundColor" red="0.65778764000000001" green="0.65938359499999999" blue="0.68373765230000005" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <point key="canvasLocation" x="432.5" y="348.5"/>
+            <point key="canvasLocation" x="718.5" y="349.5"/>
         </view>
     </objects>
     <resources>

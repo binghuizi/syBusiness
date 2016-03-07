@@ -9,6 +9,9 @@
 #import "RightRevealViewController.h"
 
 @interface RightRevealViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -17,6 +20,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+- (void)viewWillAppear:(BOOL)animated{
+    AppDelegate *myDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    if (myDelegate.isLogin) {
+        self.loginBtn.hidden = YES;
+        self.userNameLabel.text = myDelegate.userName;
+        self.imageView.image = [UIImage imageNamed:@"meimei.jpg"];
+        self.imageView.layer.cornerRadius = 50;
+    }
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

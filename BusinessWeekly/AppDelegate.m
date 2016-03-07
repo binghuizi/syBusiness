@@ -10,6 +10,7 @@
 #import "RecommendViewController.h"
 #import "WeiboSDK.h"
 #import "WXApi.h"
+#import <BmobSDK/Bmob.h>
 @interface AppDelegate ()<WeiboSDKDelegate,WXApiDelegate>
 
 @end
@@ -28,7 +29,8 @@
     
   //微信注册
     [WXApi registerApp:kAppId];
-    
+  //云端注册
+    [Bmob registerWithAppKey:kBmobAppk];
     
     RecommendViewController *recomVc = [[RecommendViewController alloc]init];
     

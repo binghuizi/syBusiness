@@ -7,6 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RightRevealViewController">
             <connections>
+                <outlet property="imageView" destination="x3O-Z0-8Yr" id="yEA-dc-jcs"/>
+                <outlet property="loginBtn" destination="P0H-Cw-p4j" id="AO7-uA-PfJ"/>
+                <outlet property="userNameLabel" destination="fHH-lC-dAt" id="0Vd-cx-ytZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,7 +29,7 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headPhon" translatesAutoresizingMaskIntoConstraints="NO" id="x3O-Z0-8Yr">
-                    <rect key="frame" x="44" y="84" width="113" height="82"/>
+                    <rect key="frame" x="44" y="84" width="100" height="100"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grayLine" translatesAutoresizingMaskIntoConstraints="NO" id="w89-r9-S2S">
                     <rect key="frame" x="8" y="313" width="247" height="1"/>
@@ -92,10 +95,16 @@
                     <rect key="frame" x="53" y="517" width="39" height="31"/>
                     <color key="backgroundColor" red="0.050980392159999999" green="0.33725490200000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHH-lC-dAt">
+                    <rect key="frame" x="29" y="181" width="191" height="60"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <point key="canvasLocation" x="482.5" y="348.5"/>
+            <point key="canvasLocation" x="631.5" y="370.5"/>
         </view>
     </objects>
     <resources>

@@ -15,6 +15,7 @@
 #import <UIKit/UIKit.h>
 
 #import "HWTools.h"
+#import "AppDelegate.h"
 //标题
 #define kHeadTitle @"http://content.cdn.bb.bbwc.cn/slateInterface/v7/app_1/android/tag/app_1/subscribelistcol?datatype=2&firstColumnHaveChild=1&fetch_all=0&firephp=1"
 //首页
@@ -24,6 +25,11 @@
 #define kRedirectURI @"https://api.weibo.com/oauth2/default.html"
 //微信
 #define kAppId @"wx1216e4abc902018c"
+
+//云端
+#define kBmobAppk @"b3f3a34c916ec956e3aa80f52d9ec5cf"
+
+
 
 // 手势结束时的x
 #define kEndX frame.origin.x
