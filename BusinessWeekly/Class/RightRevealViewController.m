@@ -7,11 +7,12 @@
 //
 
 #import "RightRevealViewController.h"
-
+#import "LoginViewController.h"
 @interface RightRevealViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+- (IBAction)headPhonBtnAction:(id)sender;
 
 @end
 
@@ -27,7 +28,7 @@
         self.loginBtn.hidden = YES;
         self.userNameLabel.text = myDelegate.userName;
         self.imageView.image = [UIImage imageNamed:@"meimei.jpg"];
-        self.imageView.layer.cornerRadius = 50;
+        self.imageView.layer.cornerRadius = 20;
     }
     
     
@@ -52,5 +53,13 @@
 - (IBAction)loginViewButton:(id)sender {
     
     [self.rightDelegate popViewController];
+}
+- (IBAction)headPhonBtnAction:(id)sender {
+    
+    
+    [self.rightDelegate popViewController];
+    
+    
+    
 }
 @end

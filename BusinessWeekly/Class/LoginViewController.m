@@ -11,8 +11,11 @@
 #import <BmobSDK/BmobObject.h>
 #import <BmobSDK/BmobUser.h>
 #import "AppDelegate.h"
+#import "SuccessRegisterViewController.h"
+#import "RecommendViewController.h"
 @interface LoginViewController ()<UITextFieldDelegate>
-
+- (IBAction)updatePasswordBtn:(id)sender;
+@property(nonatomic,strong) NSString *userName;
 @end
 
 @implementation LoginViewController
@@ -25,7 +28,9 @@
     
     //在输入手机号文本框  键盘return键变成下一行 next 键
     self.numberTextFiewld.returnKeyType = UIReturnKeyNext;
-
+  //加密
+    self.passwordTextField.secureTextEntry = YES;
+    
     
 
 }
@@ -46,9 +51,13 @@
 */
 //取消按钮
 - (IBAction)cancelButton:(id)sender {
+
+        [self dismissViewControllerAnimated:YES completion:nil];
+  
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
+#pragma mark ----注册功能
 //注册按钮
 - (IBAction)regsiterButton:(id)sender {
     if (![self cheakOut]) {
@@ -60,6 +69,28 @@
     [bUser signUpInBackgroundWithBlock:^(BOOL isSuccessful, NSError *error) {
         if (isSuccessful) {
             NSLog(@"注册成功");
+
+           
+            AppDelegate *myAppdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+            
+            myAppdelegate.isLogin = YES;//登录成功
+            
+            NSString *stringName = self.numberTextFiewld.text;
+            NSRange rang = [stringName rangeOfString:@"@"];
+            
+
+            
+            
+            
+            myAppdelegate.userName =  [stringName substringToIndex:rang.location];;
+            
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
+           
+            
+            
+            
         }else{
             NSLog(@"%@",error);
         }
@@ -80,17 +111,30 @@
             
             AppDelegate *appDele = (AppDelegate *)[[UIApplication sharedApplication] delegate];
             appDele.isLogin = YES;
-            
+           
             NSString *stringName = self.numberTextFiewld.text;
             NSRange rang = [stringName rangeOfString:@"@"];
-            
-            appDele.userName = [stringName substringToIndex:rang.location];
+         
+                    
+            appDele.userName =  [stringName substringToIndex:rang.location];
             
             [self dismissViewControllerAnimated:YES completion:nil];
             
             
         }else{
-            NSLog(@"%@",error);
+           
+            UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:@"提示" message:@"密码或邮箱有误" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+            }];
+            
+           
+            [NSTimer scheduledTimerWithTimeInterval:1.5f target:self selector:@selector(timerFireMethod:) userInfo:alertVc repeats:YES];
+            
+            
+            [alertVc addAction:alertAction];
+            [self presentViewController:alertVc animated:YES completion:nil];
+            
         }
     }];
     
@@ -282,20 +326,25 @@
     }
         return YES;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#pragma mark --- 密码重置
+//点击重置密码
+- (IBAction)updatePasswordBtn:(id)sender {
+    
+    UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:@"提示" message:[NSString stringWithFormat:@"点击确定，重置密码的邮件将会发送到你的邮箱%@,点击取消不会发送",self.numberTextFiewld.text] preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [BmobUser requestPasswordResetInBackgroundWithEmail:self.numberTextFiewld.text];
+    }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    [alertVc addAction:cancelAction];
+    
+    [alertVc addAction:alertAction];
+    [self presentViewController:alertVc animated:YES completion:nil];
+    
+    
+    NSLog(@"密码重置");
+}
 @end

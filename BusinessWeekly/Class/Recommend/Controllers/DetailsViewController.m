@@ -65,17 +65,25 @@
    // [self.activityView stopAnimating];
     [ProgressHUD showSuccess:@"加载完成"];
 }
+#pragma mark --- 点击分享按钮
 //点击导航栏上右按钮触发事件
 - (void)touchAction{
     
     AppDelegate *appDele =  (AppDelegate*)[[UIApplication sharedApplication]delegate];
     if (appDele.isLogin == NO) {
         UIAlertController *alertColler = [UIAlertController alertControllerWithTitle:@"提示" message:@"点击分享请先登录" preferredStyle:UIAlertControllerStyleAlert];
-        
+                
         UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             LoginViewController *loginVc = [[LoginViewController alloc]init];
             [self presentViewController:loginVc animated:YES completion:nil];
         }];
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        
+        
+        [alertColler addAction:cancelAction];
         [alertColler addAction:action];
         [self presentViewController:alertColler animated:YES completion:nil];
         

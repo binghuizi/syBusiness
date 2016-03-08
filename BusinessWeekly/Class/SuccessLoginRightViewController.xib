@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SuccessLoginRightViewController">
             <connections>
+                <outlet property="userNameLabel" destination="ftx-64-YO2" id="Xng-iM-cBQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,82 +17,89 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auX-le-2T2">
-                    <rect key="frame" x="128" y="373" width="74" height="38"/>
+                    <rect key="frame" x="124" y="373" width="74" height="38"/>
                     <state key="normal" title="浏览发现">
                         <color key="titleColor" red="0.0056818181820000001" green="0.0026282305230000001" blue="0.001235813674" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grayLine" translatesAutoresizingMaskIntoConstraints="NO" id="fgW-3n-uTl">
-                    <rect key="frame" x="43" y="337" width="247" height="1"/>
+                    <rect key="frame" x="39" y="337" width="247" height="1"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bsh-M2-bgZ">
-                    <rect key="frame" x="84" y="347" width="15" height="15"/>
+                    <rect key="frame" x="80" y="347" width="15" height="15"/>
                     <color key="backgroundColor" red="0.050980392159999999" green="0.33725490200000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FD2-Nn-qFs">
-                    <rect key="frame" x="128" y="337" width="74" height="38"/>
+                    <rect key="frame" x="124" y="337" width="74" height="38"/>
                     <state key="normal" title="我的首页">
                         <color key="titleColor" red="0.0056818181820000001" green="0.0026282305230000001" blue="0.001235813674" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BOOKBusiness" translatesAutoresizingMaskIntoConstraints="NO" id="XFH-wb-ZFR">
-                    <rect key="frame" x="75" y="307" width="35" height="30"/>
+                    <rect key="frame" x="71" y="307" width="35" height="30"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHu-th-sSp">
-                    <rect key="frame" x="131" y="504" width="74" height="38"/>
+                    <rect key="frame" x="127" y="504" width="74" height="38"/>
                     <state key="normal" title="设置">
                         <color key="titleColor" red="0.0056818181820000001" green="0.0026282305230000001" blue="0.001235813674" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grayLine" translatesAutoresizingMaskIntoConstraints="NO" id="QUd-kc-9Vf">
-                    <rect key="frame" x="37" y="303" width="247" height="1"/>
+                    <rect key="frame" x="33" y="303" width="247" height="1"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grayLine" translatesAutoresizingMaskIntoConstraints="NO" id="66c-KW-RyT">
-                    <rect key="frame" x="41" y="449" width="247" height="1"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headPhon" translatesAutoresizingMaskIntoConstraints="NO" id="ML1-d7-hK3">
-                    <rect key="frame" x="73" y="74" width="113" height="82"/>
+                    <rect key="frame" x="37" y="449" width="247" height="1"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grayLine" translatesAutoresizingMaskIntoConstraints="NO" id="oZ7-Oc-pBT">
-                    <rect key="frame" x="43" y="494" width="247" height="1"/>
+                    <rect key="frame" x="39" y="494" width="247" height="1"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xu6-i6-sw4">
-                    <rect key="frame" x="129" y="303" width="74" height="38"/>
+                    <rect key="frame" x="125" y="303" width="74" height="38"/>
                     <state key="normal" title="商业笔记">
                         <color key="titleColor" red="0.0056818181820000001" green="0.0026282305230000001" blue="0.001235813674" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grayLine" translatesAutoresizingMaskIntoConstraints="NO" id="3mw-89-Ykl">
-                    <rect key="frame" x="41" y="373" width="247" height="1"/>
+                    <rect key="frame" x="37" y="373" width="247" height="1"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eKy-u5-oHR">
-                    <rect key="frame" x="84" y="383" width="15" height="15"/>
+                    <rect key="frame" x="80" y="383" width="15" height="15"/>
                     <color key="backgroundColor" red="0.050980392159999999" green="0.33725490200000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shezhi" translatesAutoresizingMaskIntoConstraints="NO" id="Nkr-UH-iy9">
-                    <rect key="frame" x="82" y="507" width="39" height="31"/>
+                    <rect key="frame" x="78" y="507" width="39" height="31"/>
                     <color key="backgroundColor" red="0.050980392159999999" green="0.33725490200000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="xingxing" translatesAutoresizingMaskIntoConstraints="NO" id="F2W-Oy-1ri">
-                    <rect key="frame" x="77" y="453" width="40" height="37"/>
+                    <rect key="frame" x="73" y="453" width="40" height="37"/>
                     <color key="backgroundColor" red="0.050980392159999999" green="0.33725490200000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wif-R9-qUt">
-                    <rect key="frame" x="130" y="454" width="74" height="38"/>
+                    <rect key="frame" x="126" y="454" width="74" height="38"/>
                     <state key="normal" title="我的收藏">
                         <color key="titleColor" red="0.0056818181820000001" green="0.0026282305230000001" blue="0.001235813674" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftx-64-YO2">
-                    <rect key="frame" x="46" y="175" width="209" height="32"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftx-64-YO2">
+                    <rect key="frame" x="37" y="177" width="170" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4y-av-s2k">
+                    <rect key="frame" x="90" y="80" width="72" height="71"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="userButtonAction:" destination="-1" eventType="touchUpInside" id="Ncl-J5-JA5"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headPhon" translatesAutoresizingMaskIntoConstraints="NO" id="ML1-d7-hK3">
+                    <rect key="frame" x="71" y="74" width="113" height="82"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <point key="canvasLocation" x="729.5" y="290.5"/>
+            <point key="canvasLocation" x="975.5" y="219.5"/>
         </view>
     </objects>
     <resources>

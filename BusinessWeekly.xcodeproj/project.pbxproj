@@ -21,6 +21,8 @@
 		7A1BDD661C83CDE700A1F648 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1BDD621C83CDE700A1F648 /* libWeChatSDK.a */; };
 		7A1BDD681C83D0F500A1F648 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1BDD671C83D0F500A1F648 /* libsqlite3.0.tbd */; };
 		7A1BDD6A1C83D11800A1F648 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1BDD691C83D11800A1F648 /* libc++.tbd */; };
+		7A2EAC8B1C8E52B8009903A9 /* SuccessRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EAC891C8E52B8009903A9 /* SuccessRegisterViewController.m */; };
+		7A2EAC8C1C8E52B8009903A9 /* SuccessRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A2EAC8A1C8E52B8009903A9 /* SuccessRegisterViewController.xib */; };
 		7A3179B31C636D41004B18F2 /* Date2TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3179B11C636D41004B18F2 /* Date2TableViewCell.m */; };
 		7A3179B41C636D41004B18F2 /* Date2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A3179B21C636D41004B18F2 /* Date2TableViewCell.xib */; };
 		7A3EA48C1C7BF05B00830403 /* DingYueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3EA48A1C7BF05B00830403 /* DingYueTableViewCell.m */; };
@@ -32,6 +34,8 @@
 		7A8F9F0C1C579BAC0095E755 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F9F0B1C579BAC0095E755 /* AppDelegate.m */; };
 		7A8F9F0E1C579BAC0095E755 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A8F9F0D1C579BAC0095E755 /* Assets.xcassets */; };
 		7A8F9F111C579BAC0095E755 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A8F9F0F1C579BAC0095E755 /* LaunchScreen.storyboard */; };
+		7A943FCC1C8ECFAC00A96301 /* UpdatePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A943FCA1C8ECFAC00A96301 /* UpdatePasswordViewController.m */; };
+		7A943FCD1C8ECFAC00A96301 /* UpdatePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A943FCB1C8ECFAC00A96301 /* UpdatePasswordViewController.xib */; };
 		7AA2628C1C61C7DB000A1659 /* 金融.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AA2628B1C61C7DB000A1659 /* 金融.plist */; };
 		7AC986331C7DB0B300A2A806 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AC986261C7DB0B300A2A806 /* libWeiboSDK.a */; };
 		7AC986341C7DB0B400A2A806 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7AC986301C7DB0B300A2A806 /* WeiboSDK.bundle */; };
@@ -92,6 +96,9 @@
 		7A1BDD651C83CDE700A1F648 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		7A1BDD671C83D0F500A1F648 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		7A1BDD691C83D11800A1F648 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		7A2EAC881C8E52B8009903A9 /* SuccessRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuccessRegisterViewController.h; sourceTree = "<group>"; };
+		7A2EAC891C8E52B8009903A9 /* SuccessRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuccessRegisterViewController.m; sourceTree = "<group>"; };
+		7A2EAC8A1C8E52B8009903A9 /* SuccessRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuccessRegisterViewController.xib; sourceTree = "<group>"; };
 		7A3179B01C636D41004B18F2 /* Date2TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Date2TableViewCell.h; sourceTree = "<group>"; };
 		7A3179B11C636D41004B18F2 /* Date2TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Date2TableViewCell.m; sourceTree = "<group>"; };
 		7A3179B21C636D41004B18F2 /* Date2TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Date2TableViewCell.xib; sourceTree = "<group>"; };
@@ -109,6 +116,9 @@
 		7A8F9F0D1C579BAC0095E755 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A8F9F101C579BAC0095E755 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A8F9F121C579BAC0095E755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A943FC91C8ECFAC00A96301 /* UpdatePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdatePasswordViewController.h; sourceTree = "<group>"; };
+		7A943FCA1C8ECFAC00A96301 /* UpdatePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatePasswordViewController.m; sourceTree = "<group>"; };
+		7A943FCB1C8ECFAC00A96301 /* UpdatePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpdatePasswordViewController.xib; sourceTree = "<group>"; };
 		7AA2628B1C61C7DB000A1659 /* 金融.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "金融.plist"; sourceTree = "<group>"; };
 		7AC986261C7DB0B300A2A806 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
 		7AC986271C7DB0B300A2A806 /* WBHttpRequest+WeiboGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboGame.h"; sourceTree = "<group>"; };
@@ -342,6 +352,12 @@
 				7AD694A71C8C4954008D5877 /* LoginViewController.h */,
 				7AD694A81C8C4954008D5877 /* LoginViewController.m */,
 				7AD694A91C8C4954008D5877 /* LoginViewController.xib */,
+				7A2EAC881C8E52B8009903A9 /* SuccessRegisterViewController.h */,
+				7A2EAC891C8E52B8009903A9 /* SuccessRegisterViewController.m */,
+				7A2EAC8A1C8E52B8009903A9 /* SuccessRegisterViewController.xib */,
+				7A943FC91C8ECFAC00A96301 /* UpdatePasswordViewController.h */,
+				7A943FCA1C8ECFAC00A96301 /* UpdatePasswordViewController.m */,
+				7A943FCB1C8ECFAC00A96301 /* UpdatePasswordViewController.xib */,
 			);
 			name = Controlers;
 			sourceTree = "<group>";
@@ -587,9 +603,11 @@
 				7A02F19A1C5C79BD00652756 /* 29号标题.plist in Resources */,
 				7AD7283D1C89B36300ED41F7 /* LeftRevealTableViewCell.xib in Resources */,
 				7AA2628C1C61C7DB000A1659 /* 金融.plist in Resources */,
+				7A943FCD1C8ECFAC00A96301 /* UpdatePasswordViewController.xib in Resources */,
 				7AE5ADE41C5B5B0A00979ABA /* blueArrow.png in Resources */,
 				7A02F1A11C5CBEAB00652756 /* ProgressHUD.bundle in Resources */,
 				7AD694A21C8C2171008D5877 /* RightRevealViewController.xib in Resources */,
+				7A2EAC8C1C8E52B8009903A9 /* SuccessRegisterViewController.xib in Resources */,
 				7A8F9F0E1C579BAC0095E755 /* Assets.xcassets in Resources */,
 				7AE10A361C7AE6CE00CA9187 /* tiyu.png in Resources */,
 				7A056F311C79E3640025967F /* AddsubViewController.xib in Resources */,
@@ -663,6 +681,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A943FCC1C8ECFAC00A96301 /* UpdatePasswordViewController.m in Sources */,
 				7A8F9F0C1C579BAC0095E755 /* AppDelegate.m in Sources */,
 				7A3EA48C1C7BF05B00830403 /* DingYueTableViewCell.m in Sources */,
 				7AD694A11C8C2171008D5877 /* RightRevealViewController.m in Sources */,
@@ -676,6 +695,7 @@
 				7A02F1A21C5CBEAB00652756 /* ProgressHUD.m in Sources */,
 				7A02F1A71C5CD00100652756 /* RecommModel.m in Sources */,
 				7A3179B31C636D41004B18F2 /* Date2TableViewCell.m in Sources */,
+				7A2EAC8B1C8E52B8009903A9 /* SuccessRegisterViewController.m in Sources */,
 				7AFF19621C8D9E8A00E88E84 /* SuccessLoginRightViewController.m in Sources */,
 				7A8F9F091C579BAC0095E755 /* main.m in Sources */,
 				7AE5ADE91C5B626100979ABA /* HWTools.m in Sources */,

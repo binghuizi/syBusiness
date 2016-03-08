@@ -17,8 +17,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email或者手机号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i2x-ZL-XTh">
-                    <rect key="frame" x="57" y="366" width="294" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email或者手机号码" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="i2x-ZL-XTh">
+                    <rect key="frame" x="40" y="372" width="294" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
@@ -26,7 +26,7 @@
                     </connections>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zxy-iy-qfW">
-                    <rect key="frame" x="51" y="419" width="294" height="30"/>
+                    <rect key="frame" x="46" y="441" width="294" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
@@ -69,10 +69,17 @@
                     <rect key="frame" x="38" y="471" width="307" height="1"/>
                     <color key="backgroundColor" red="0.65778764000000001" green="0.65938359499999999" blue="0.68373765230000005" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSg-nc-CbJ">
+                    <rect key="frame" x="96" y="575" width="182" height="19"/>
+                    <state key="normal" title="？密码重置"/>
+                    <connections>
+                        <action selector="updatePasswordBtn:" destination="-1" eventType="touchUpInside" id="xxU-Ps-v4v"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <point key="canvasLocation" x="718.5" y="349.5"/>
+            <point key="canvasLocation" x="1044.5" y="256.5"/>
         </view>
     </objects>
     <resources>

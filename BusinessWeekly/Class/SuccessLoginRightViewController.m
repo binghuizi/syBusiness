@@ -7,8 +7,10 @@
 //
 
 #import "SuccessLoginRightViewController.h"
-
+#import "SuccessRegisterViewController.h"
 @interface SuccessLoginRightViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+- (IBAction)userButtonAction:(id)sender;
 
 @end
 
@@ -17,8 +19,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    AppDelegate *myAppDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    
+    self.userNameLabel.text = myAppDelegate.userName;
+    
+    
 }
-
+#pragma mark ----将要显示的
+-(void)viewWillAppear:(BOOL)animated{
+    AppDelegate *myAppDelagete =(AppDelegate *)[[UIApplication sharedApplication]delegate];
+    
+    self.userNameLabel.text = myAppDelagete.userName;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -34,4 +47,11 @@
 }
 */
 
+- (IBAction)userButtonAction:(id)sender {
+//    SuccessRegisterViewController *succReg = [[SuccessRegisterViewController alloc]init];
+//    [self presentViewController:succReg animated:YES completion:nil];
+    
+    [self.succLoginRightDelagate pushView];
+    
+}
 @end

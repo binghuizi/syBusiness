@@ -19,4 +19,5 @@
 @property(nonatomic,assign) NSInteger cellHeight;
 @property(nonatomic,assign) NSIndexPath *indexrow;
 -(void)setmainViewX:(CGFloat)endX;
+-(void)BarAction:(UIButton *)btn;
 @end

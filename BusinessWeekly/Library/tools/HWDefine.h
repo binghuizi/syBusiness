@@ -38,3 +38,9 @@
 
 // 右view的宽度
 #define kRightWidth _rightView.frame.size.width
+
+
+
+
+
+

@@ -22,8 +22,9 @@
 #import "RightRevealViewController.h"
 #import "LoginViewController.h"
 #import "SuccessLoginRightViewController.h"
+#import "SuccessRegisterViewController.h"
 
-@interface RecommendViewController ()<UITableViewDataSource,UITableViewDelegate,PullingRefreshTableViewDelegate,LeftRevealViewControllerDelegate,RightRevealViewControlDelegate>{
+@interface RecommendViewController ()<UITableViewDataSource,UITableViewDelegate,PullingRefreshTableViewDelegate,LeftRevealViewControllerDelegate,RightRevealViewControlDelegate,successLoginRightViewControllerDelagate>{
      NSInteger _pageCount;//定义请求页码
     LeftRevealViewController *_leftVc;
     RightRevealViewController *_rightVc;
@@ -54,7 +55,8 @@
 @property(nonatomic,strong) NSTimer *timer;//定时器用于图片滚动
 @property(nonatomic,strong) UIButton *addButton;
 @property(nonatomic,strong) NSMutableArray *colorArray;
-
+@property(nonatomic,strong) UIBarButtonItem *rightBarButton;
+@property(nonatomic,strong) UIButton *personButton;
 
 
 @end
@@ -81,7 +83,8 @@
     [self.view addSubview:self.mainView];
     
     [self.leftView addSubview:_leftVc.view];
-    [self.rightView addSubview:_rightVc.view];
+    
+   
     
     [self.mainView addSubview:self.headTableView];
     [self.mainView addSubview:self.tableView];
@@ -101,8 +104,7 @@
     self.catName = @"推荐";
     [self loadData];
    
-    
-   
+ 
     
     
   
@@ -110,39 +112,63 @@
 //添加按钮
     
 }
-
+#pragma mark ---- 将要显示 触发事件
+-(void)viewWillAppear:(BOOL)animated{
+    AppDelegate *myDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+   
+    if (myDelegate.isLogin == NO) {
+        //登录界面
+        _rightVc = [[RightRevealViewController alloc]init];
+        
+        _rightVc.view.frame = self.rightView.bounds;
+        _rightVc.rightDelegate = self;
+        [self.rightView addSubview:_rightVc.view];
+      
+    }else{
+        
+        //登录成功的页面
+        _succLoginRightVc = [[SuccessLoginRightViewController alloc]init];
+        _succLoginRightVc.view.frame = self.rightView.bounds;
+        _succLoginRightVc.succLoginRightDelagate = self;
+         [self.rightView addSubview:_succLoginRightVc.view];
+        
+    }
+}
 #pragma mark ---navigationController  左右按钮设置
 -(void)navigationAction{
     //导航栏上的颜色
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     
     UIButton *lanmuButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    UIButton *personButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    
     lanmuButton.frame = CGRectMake(0, 0, 40, 40);
-    personButton.frame = CGRectMake(0, 0, 40, 40);
+   
+    lanmuButton.tag = 1;
+    
     
     [lanmuButton setImage:[UIImage imageNamed:@"lanmu"] forState:UIControlStateNormal];
-    [personButton setImage:[UIImage imageNamed:@"person"] forState:UIControlStateNormal];
+    [self.personButton setImage:[UIImage imageNamed:@"person"] forState:UIControlStateNormal];
     
     UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc]initWithCustomView:lanmuButton];
     
     
-    UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc]initWithCustomView:personButton];
+    self.rightBarButton = [[UIBarButtonItem alloc]initWithCustomView:self.personButton];
    
     
-    self.navigationItem.rightBarButtonItem = rightBarButton;
+    self.navigationItem.rightBarButtonItem = self.rightBarButton;
     self.navigationItem.leftBarButtonItem  = leftBarButton;
     
     [lanmuButton addTarget:self action:@selector(BarAction:) forControlEvents:UIControlEventTouchUpInside];
     lanmuButton.tag = 1;
-    [personButton addTarget:self action:@selector(BarAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.personButton addTarget:self action:@selector(BarAction:) forControlEvents:UIControlEventTouchUpInside];
     
-    personButton.tag = 2;
+    
     
 }
 
 //点击导航栏上的添加按钮
--(void)BarAction:(UIBarButtonItem *)btn{
+-(void)BarAction:(UIButton *)btn{
+  
     if (btn.tag == 1) {
         
 #pragma mark --- 点击左按钮 抽象视图出现
@@ -174,6 +200,8 @@
         [self setmainViewX:tempEndX];
         
     }else if (btn.tag == 2){
+        
+        
         
          CGFloat startX = _mainView.frame.origin.x;
         //为mainView添加阴影效果
@@ -265,13 +293,19 @@
     
     [self.navigationController pushViewController:addSubScribeView animated:YES];
 }
-//右边的抽屉页面遵循代理
+//右边登录界面的抽屉页面遵循代理
 -(void)popViewController{
     LoginViewController *loginView = [[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
     
     [self  presentViewController:loginView animated:YES completion:nil];
   
 }
+//右边登录成功抽屉界面
+-(void)pushView{
+    SuccessRegisterViewController *succRegVc = [[SuccessRegisterViewController alloc]init];
+    [self presentViewController:succRegVc animated:YES completion:nil];
+}
+
 #pragma mark ------网络请求解析 获得数据
 //解析标题 推荐 金融 科技 特写......
 -(void)heardTitle{
@@ -889,6 +923,15 @@
     }
     return _addButton;
 }
+//右按钮懒加载
+-(UIButton *)personButton{
+    if (_personButton == nil) {
+        self.personButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.personButton.frame = CGRectMake(0, 0, 40, 40);
+        self.personButton.tag = 2;
+    }
+    return _personButton;
+}
 #pragma mark ---- 抽屉视图加载
 
 -(UIView *)mainView{
@@ -920,26 +963,7 @@
     if (_rightView == nil) {
         self.rightView = [[UIView alloc]initWithFrame:CGRectMake(kWideth/3, 0, kWideth - 100, kHeight)];
         
-        AppDelegate *myDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-        
-        if (myDelegate.isLogin == NO) {
-            _rightVc = [[RightRevealViewController alloc]initWithNibName:@"RightRevealViewController" bundle:nil];
-            
-            _rightVc.view.frame = self.rightView.bounds;
-            _rightVc.rightDelegate = self;
-        }else{
-            
-            _succLoginRightVc = [[SuccessLoginRightViewController alloc]initWithNibName:@"SuccessLoginRightViewController" bundle:nil];
-            _succLoginRightVc.view.frame = self.rightView.bounds;
-            
-            
-        }
-        
-       
-        
-        
-        
-        
+               
     }
     return _rightView;
 }
