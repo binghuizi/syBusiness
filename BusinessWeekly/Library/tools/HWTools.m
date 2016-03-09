@@ -73,7 +73,22 @@
     return numberArray;
 }
 
-
++(NSString *)getHourFromString:(NSString *)timestamp{
+    NSTimeInterval timeInterval = [timestamp doubleValue];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    
+    NSDateFormatter *formater1 = [[NSDateFormatter alloc]init];
+    
+    [formater1 setDateFormat:@"HH:mm"];
+    
+    NSString *showTime = [formater1 stringFromDate:date];
+    
+    
+    
+    return showTime;
+    
+    
+}
 
 @end
 

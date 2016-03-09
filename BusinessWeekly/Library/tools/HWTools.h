@@ -17,4 +17,6 @@
 +(CGFloat )getTextHeightWithText:(NSString *)text    Bigsize:(CGSize)bigSize textFont:(CGFloat)font;
 //颜色设置
 +(NSMutableArray *)arrayWithString:(NSString *)colorString;
+//时间设置
++(NSString *)getHourFromString:(NSString *)timestamp;
 @end

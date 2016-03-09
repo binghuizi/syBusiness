@@ -21,6 +21,11 @@
 		7A1BDD661C83CDE700A1F648 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1BDD621C83CDE700A1F648 /* libWeChatSDK.a */; };
 		7A1BDD681C83D0F500A1F648 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1BDD671C83D0F500A1F648 /* libsqlite3.0.tbd */; };
 		7A1BDD6A1C83D11800A1F648 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1BDD691C83D11800A1F648 /* libc++.tbd */; };
+		7A25CD161C8FBA4100301869 /* DiscoverTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A25CD141C8FBA4100301869 /* DiscoverTableViewCell.m */; };
+		7A25CD171C8FBA4100301869 /* DiscoverTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A25CD151C8FBA4100301869 /* DiscoverTableViewCell.xib */; };
+		7A25CD1A1C8FC66C00301869 /* DiscoverLookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A25CD191C8FC66C00301869 /* DiscoverLookViewController.m */; };
+		7A25CD1C1C8FD32D00301869 /* 浏览发现.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A25CD1B1C8FD32D00301869 /* 浏览发现.plist */; };
+		7A25CD1E1C8FD65F00301869 /* 登录成功浏览发现.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A25CD1D1C8FD65F00301869 /* 登录成功浏览发现.plist */; };
 		7A2EAC8B1C8E52B8009903A9 /* SuccessRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EAC891C8E52B8009903A9 /* SuccessRegisterViewController.m */; };
 		7A2EAC8C1C8E52B8009903A9 /* SuccessRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A2EAC8A1C8E52B8009903A9 /* SuccessRegisterViewController.xib */; };
 		7A3179B31C636D41004B18F2 /* Date2TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3179B11C636D41004B18F2 /* Date2TableViewCell.m */; };
@@ -37,6 +42,9 @@
 		7A943FCC1C8ECFAC00A96301 /* UpdatePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A943FCA1C8ECFAC00A96301 /* UpdatePasswordViewController.m */; };
 		7A943FCD1C8ECFAC00A96301 /* UpdatePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A943FCB1C8ECFAC00A96301 /* UpdatePasswordViewController.xib */; };
 		7AA2628C1C61C7DB000A1659 /* 金融.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AA2628B1C61C7DB000A1659 /* 金融.plist */; };
+		7AA73D061C8FF23F00A9E7CF /* 登陆成功发现.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AA73D051C8FF23F00A9E7CF /* 登陆成功发现.plist */; };
+		7AA73D091C8FF32900A9E7CF /* DiscoverModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA73D081C8FF32900A9E7CF /* DiscoverModel.m */; };
+		7AA73D0C1C9008F500A9E7CF /* DiscUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA73D0B1C9008F500A9E7CF /* DiscUserModel.m */; };
 		7AC986331C7DB0B300A2A806 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AC986261C7DB0B300A2A806 /* libWeiboSDK.a */; };
 		7AC986341C7DB0B400A2A806 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7AC986301C7DB0B300A2A806 /* WeiboSDK.bundle */; };
 		7AC986361C7DB14000A2A806 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AC986351C7DB14000A2A806 /* QuartzCore.framework */; };
@@ -96,6 +104,13 @@
 		7A1BDD651C83CDE700A1F648 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		7A1BDD671C83D0F500A1F648 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		7A1BDD691C83D11800A1F648 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		7A25CD131C8FBA4100301869 /* DiscoverTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverTableViewCell.h; sourceTree = "<group>"; };
+		7A25CD141C8FBA4100301869 /* DiscoverTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverTableViewCell.m; sourceTree = "<group>"; };
+		7A25CD151C8FBA4100301869 /* DiscoverTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoverTableViewCell.xib; sourceTree = "<group>"; };
+		7A25CD181C8FC66C00301869 /* DiscoverLookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverLookViewController.h; sourceTree = "<group>"; };
+		7A25CD191C8FC66C00301869 /* DiscoverLookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverLookViewController.m; sourceTree = "<group>"; };
+		7A25CD1B1C8FD32D00301869 /* 浏览发现.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = "浏览发现.plist"; path = "Recommend/Modes/浏览发现.plist"; sourceTree = "<group>"; };
+		7A25CD1D1C8FD65F00301869 /* 登录成功浏览发现.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = "登录成功浏览发现.plist"; path = "Recommend/Modes/登录成功浏览发现.plist"; sourceTree = "<group>"; };
 		7A2EAC881C8E52B8009903A9 /* SuccessRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuccessRegisterViewController.h; sourceTree = "<group>"; };
 		7A2EAC891C8E52B8009903A9 /* SuccessRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuccessRegisterViewController.m; sourceTree = "<group>"; };
 		7A2EAC8A1C8E52B8009903A9 /* SuccessRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuccessRegisterViewController.xib; sourceTree = "<group>"; };
@@ -120,6 +135,11 @@
 		7A943FCA1C8ECFAC00A96301 /* UpdatePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatePasswordViewController.m; sourceTree = "<group>"; };
 		7A943FCB1C8ECFAC00A96301 /* UpdatePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpdatePasswordViewController.xib; sourceTree = "<group>"; };
 		7AA2628B1C61C7DB000A1659 /* 金融.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "金融.plist"; sourceTree = "<group>"; };
+		7AA73D051C8FF23F00A9E7CF /* 登陆成功发现.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = "登陆成功发现.plist"; path = "Recommend/Modes/登陆成功发现.plist"; sourceTree = "<group>"; };
+		7AA73D071C8FF32900A9E7CF /* DiscoverModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverModel.h; sourceTree = "<group>"; };
+		7AA73D081C8FF32900A9E7CF /* DiscoverModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverModel.m; sourceTree = "<group>"; };
+		7AA73D0A1C9008F500A9E7CF /* DiscUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscUserModel.h; sourceTree = "<group>"; };
+		7AA73D0B1C9008F500A9E7CF /* DiscUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscUserModel.m; sourceTree = "<group>"; };
 		7AC986261C7DB0B300A2A806 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
 		7AC986271C7DB0B300A2A806 /* WBHttpRequest+WeiboGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboGame.h"; sourceTree = "<group>"; };
 		7AC986281C7DB0B300A2A806 /* WBHttpRequest+WeiboShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboShare.h"; sourceTree = "<group>"; };
@@ -233,6 +253,49 @@
 				7A1BDD651C83CDE700A1F648 /* WXApiObject.h */,
 			);
 			name = weixinSDK;
+			sourceTree = "<group>";
+		};
+		7A25CD0A1C8FB67E00301869 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				7A25CD0D1C8FB6CE00301869 /* Views */,
+				7A25CD0C1C8FB6C100301869 /* Models */,
+				7A25CD0B1C8FB69A00301869 /* Controllers */,
+			);
+			name = Discover;
+			sourceTree = "<group>";
+		};
+		7A25CD0B1C8FB69A00301869 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7A25CD181C8FC66C00301869 /* DiscoverLookViewController.h */,
+				7A25CD191C8FC66C00301869 /* DiscoverLookViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		7A25CD0C1C8FB6C100301869 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7AA73D071C8FF32900A9E7CF /* DiscoverModel.h */,
+				7AA73D081C8FF32900A9E7CF /* DiscoverModel.m */,
+				7AA73D0A1C9008F500A9E7CF /* DiscUserModel.h */,
+				7AA73D0B1C9008F500A9E7CF /* DiscUserModel.m */,
+				7A25CD1B1C8FD32D00301869 /* 浏览发现.plist */,
+				7A25CD1D1C8FD65F00301869 /* 登录成功浏览发现.plist */,
+				7AA73D051C8FF23F00A9E7CF /* 登陆成功发现.plist */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		7A25CD0D1C8FB6CE00301869 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7A25CD131C8FBA4100301869 /* DiscoverTableViewCell.h */,
+				7A25CD141C8FBA4100301869 /* DiscoverTableViewCell.m */,
+				7A25CD151C8FBA4100301869 /* DiscoverTableViewCell.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		7A8F9EFB1C579BAC0095E755 = {
@@ -415,6 +478,7 @@
 		7AE5ADD31C5B520900979ABA /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				7A25CD0A1C8FB67E00301869 /* Discover */,
 				7AD694A31C8C480E008D5877 /* Login */,
 				7AD694951C8C1EFD008D5877 /* RightRevealSide */,
 				7AD7282F1C896AF700ED41F7 /* LeftRevealSide */,
@@ -604,6 +668,7 @@
 				7AD7283D1C89B36300ED41F7 /* LeftRevealTableViewCell.xib in Resources */,
 				7AA2628C1C61C7DB000A1659 /* 金融.plist in Resources */,
 				7A943FCD1C8ECFAC00A96301 /* UpdatePasswordViewController.xib in Resources */,
+				7A25CD1C1C8FD32D00301869 /* 浏览发现.plist in Resources */,
 				7AE5ADE41C5B5B0A00979ABA /* blueArrow.png in Resources */,
 				7A02F1A11C5CBEAB00652756 /* ProgressHUD.bundle in Resources */,
 				7AD694A21C8C2171008D5877 /* RightRevealViewController.xib in Resources */,
@@ -617,10 +682,13 @@
 				7A3179B41C636D41004B18F2 /* Date2TableViewCell.xib in Resources */,
 				7AE10A321C7AE5DD00CA9187 /* daxuan.png in Resources */,
 				7AE5ADE51C5B5B0A00979ABA /* blueArrowDown.png in Resources */,
+				7A25CD1E1C8FD65F00301869 /* 登录成功浏览发现.plist in Resources */,
+				7A25CD171C8FBA4100301869 /* DiscoverTableViewCell.xib in Resources */,
 				7A3EA48D1C7BF05B00830403 /* DingYueTableViewCell.xib in Resources */,
 				7AFF19651C8DB66E00E88E84 /* meimei.jpg in Resources */,
 				7AC986341C7DB0B400A2A806 /* WeiboSDK.bundle in Resources */,
 				7A3EA48F1C7C036500830403 /* 订阅.plist in Resources */,
+				7AA73D061C8FF23F00A9E7CF /* 登陆成功发现.plist in Resources */,
 				7A02F1A41C5CCD0D00652756 /* 30号主页.plist in Resources */,
 				7A8F7B8C1C5E234F008AEDA9 /* DateTableViewCell.xib in Resources */,
 			);
@@ -684,7 +752,10 @@
 				7A943FCC1C8ECFAC00A96301 /* UpdatePasswordViewController.m in Sources */,
 				7A8F9F0C1C579BAC0095E755 /* AppDelegate.m in Sources */,
 				7A3EA48C1C7BF05B00830403 /* DingYueTableViewCell.m in Sources */,
+				7AA73D0C1C9008F500A9E7CF /* DiscUserModel.m in Sources */,
+				7AA73D091C8FF32900A9E7CF /* DiscoverModel.m in Sources */,
 				7AD694A11C8C2171008D5877 /* RightRevealViewController.m in Sources */,
+				7A25CD1A1C8FC66C00301869 /* DiscoverLookViewController.m in Sources */,
 				7A8F7B8B1C5E234F008AEDA9 /* DateTableViewCell.m in Sources */,
 				7AE5ADE61C5B5B0A00979ABA /* PullingRefreshTableView.m in Sources */,
 				7AD7283C1C89B36300ED41F7 /* LeftRevealTableViewCell.m in Sources */,
@@ -692,6 +763,7 @@
 				7A056F2B1C79C5840025967F /* AddsubScribeViewController.m in Sources */,
 				7AE5ADEC1C5B958E00979ABA /* ArticleModel.m in Sources */,
 				7A0296631C706754008EB049 /* FeatureAndTVTableViewCell.m in Sources */,
+				7A25CD161C8FBA4100301869 /* DiscoverTableViewCell.m in Sources */,
 				7A02F1A21C5CBEAB00652756 /* ProgressHUD.m in Sources */,
 				7A02F1A71C5CD00100652756 /* RecommModel.m in Sources */,
 				7A3179B31C636D41004B18F2 /* Date2TableViewCell.m in Sources */,

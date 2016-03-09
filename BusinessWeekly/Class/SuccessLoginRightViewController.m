@@ -8,10 +8,14 @@
 
 #import "SuccessLoginRightViewController.h"
 #import "SuccessRegisterViewController.h"
+
 @interface SuccessLoginRightViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 - (IBAction)userButtonAction:(id)sender;
+- (IBAction)loginDiscoverBtn:(id)sender;
 
+@property(nonatomic, retain) NSString *path;
+@property(nonatomic, retain) NSData *data;
 @end
 
 @implementation SuccessLoginRightViewController
@@ -23,7 +27,8 @@
     AppDelegate *myAppDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     
     self.userNameLabel.text = myAppDelegate.userName;
-    
+    self.headImageView.layer.cornerRadius = 40;
+    self.headImageView.clipsToBounds = YES;
     
 }
 #pragma mark ----将要显示的
@@ -37,21 +42,29 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
+//-(void)string:(NSString *)path{
+//    
+//}
+//-(void)data:(NSData *)data{
+//    self.path=[NSString stringWithFormat:@"%@,%@",[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],@"ol" ];
+//    
+//    [data writeToFile:self.path atomically:YES];
+//    UIImage *readimage = [UIImage imageWithContentsOfFile:self.path];
+//    self.headImageView.image = readimage;
+//    
+//    
+//    
+//}
 - (IBAction)userButtonAction:(id)sender {
 //    SuccessRegisterViewController *succReg = [[SuccessRegisterViewController alloc]init];
 //    [self presentViewController:succReg animated:YES completion:nil];
     
     [self.succLoginRightDelagate pushView];
     
+}
+
+- (IBAction)loginDiscoverBtn:(id)sender {
+    
+    [self.succLoginRightDelagate pushDiscoverView];
 }
 @end

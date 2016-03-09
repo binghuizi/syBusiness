@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface RecommendViewController : UIViewController
+#import "SuccessRegisterViewController.h"
+@interface RecommendViewController : UIViewController<successRegisterViewControllerDelagate>
 @property(nonatomic,strong) NSString *catString;
 @property(nonatomic,strong) NSString *catName;
 
@@ -18,6 +18,11 @@
 @property(nonatomic,retain) UIView *contentView;
 @property(nonatomic,assign) NSInteger cellHeight;
 @property(nonatomic,assign) NSIndexPath *indexrow;
+@property(nonatomic, retain) NSString *path;
+@property(nonatomic, retain) NSData *data;
+@property(nonatomic, retain) UIImage *readimage;
 -(void)setmainViewX:(CGFloat)endX;
 -(void)BarAction:(UIButton *)btn;
+
+@property(nonatomic,assign) BOOL isImage;
 @end

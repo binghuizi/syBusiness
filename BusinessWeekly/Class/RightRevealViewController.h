@@ -8,7 +8,7 @@
 @protocol RightRevealViewControlDelegate <NSObject>
 
 -(void)popViewController;
-
+-(void)pushDiscoverController;
 @end
 #import <UIKit/UIKit.h>
 

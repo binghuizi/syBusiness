@@ -10,7 +10,7 @@
 #import "RecommendViewController.h"
 #import "LoginViewController.h"
 #import "UpdatePasswordViewController.h"
-@interface SuccessRegisterViewController ()<UITextFieldDelegate>
+@interface SuccessRegisterViewController ()<UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 - (IBAction)cancelActionButton:(id)sender;
 - (IBAction)updateUserBtnAction:(id)sender;
@@ -27,24 +27,52 @@
     AppDelegate *myAppdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     
     self.userNameTextField.text = myAppdelegate.userName;
+    [self imageAction];
     
+}
+-(void)imageAction{
+    self.headImageView.userInteractionEnabled = YES;
+    //圆角设置
+    self.headImageView.layer.cornerRadius = 20;
+    self.headImageView.clipsToBounds = YES;
+    //点击图片获取图片
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(openImage)];
+    [self.headImageView addGestureRecognizer:tap];
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+//打开系统相机
+-(void)openImage{
+    UIImagePickerController *pickerImage = [[UIImagePickerController alloc]init];
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+        pickerImage.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+        pickerImage.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:pickerImage.sourceType];
+        pickerImage.delegate = self;
+        pickerImage.editing = YES;
+        
+        [self presentViewController:pickerImage animated:YES completion:nil];
+        
+    }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+//获取原路径
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    self.image= info[UIImagePickerControllerOriginalImage];
+    self.headImageView.image = self.image;//将图片显示在视图上；
+    
+    self.data = UIImageJPEGRepresentation(self.image, 0.5);
+    self.path = [NSString stringWithFormat:@"%@/%@.png",NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject,@"head"];
+    
+    [self.data writeToFile:self.path atomically:YES];
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    if (self.path.length == 0) {
+        self.isUpdateImage = NO;
+    }else{
+        self.isUpdateImage = YES;
+    }
+    
 }
-*/
 //点击取消按钮
 - (IBAction)cancelActionButton:(id)sender {
     NSLog(@"注册成功取消按钮");
@@ -58,7 +86,18 @@
     
     AppDelegate *myAppDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     myAppDelegate.userName = self.userNameTextField.text;
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    if (self.isUpdateImage == NO) {
+        self.headImageView.image = self.image;
+         [self dismissViewControllerAnimated:YES completion:nil];
+    }else{
+        [self.succDelagate data:self.data :self.path];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+   
+    
+    
+   
     
 }
 //点击退出登录
@@ -88,4 +127,8 @@
 }
 
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 @end

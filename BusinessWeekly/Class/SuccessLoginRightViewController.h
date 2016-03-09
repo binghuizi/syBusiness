@@ -8,10 +8,12 @@
 @protocol successLoginRightViewControllerDelagate <NSObject>
 
 -(void)pushView;
-
+-(void)pushDiscoverView;
 @end
 #import <UIKit/UIKit.h>
 
 @interface SuccessLoginRightViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *headImageView;
 @property(nonatomic,assign) id<successLoginRightViewControllerDelagate>succLoginRightDelagate;
+
 @end

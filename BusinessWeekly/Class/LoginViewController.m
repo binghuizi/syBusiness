@@ -70,29 +70,48 @@
         if (isSuccessful) {
             NSLog(@"注册成功");
 
-           
-            AppDelegate *myAppdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-            
-            myAppdelegate.isLogin = YES;//登录成功
-            
-            NSString *stringName = self.numberTextFiewld.text;
-            NSRange rang = [stringName rangeOfString:@"@"];
-            
-
-            
-            
-            
-            myAppdelegate.userName =  [stringName substringToIndex:rang.location];;
+           //邮箱验证
+            BmobUser *userEmail = [BmobUser getCurrentUser];
+            //用户开启邮箱验证功能
+            if ([userEmail objectForKey:@"emailVerified"]) {
+                //用户没验证过邮箱
+                if (![[userEmail objectForKey:@"emailVerified"] boolValue]) {
+                    [userEmail verifyEmailInBackgroundWithEmailAddress:self.numberTextFiewld.text];
+                }
+            }
             
             
-            [self dismissViewControllerAnimated:YES completion:nil];
+            UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:@"提示" message:@"注册成功，5分钟之内将会给你发送一份邮件，请注意查收" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *action =[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                AppDelegate *myAppdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+                
+                myAppdelegate.isLogin = YES;//登录成功
+                
+                NSString *stringName = self.numberTextFiewld.text;
+                NSRange rang = [stringName rangeOfString:@"@"];
+                
+                myAppdelegate.userName =  [stringName substringToIndex:rang.location];;
+                
+                
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }];
             
-           
+            [alertVc addAction:action];
+            [self presentViewController:alertVc animated:YES completion:nil];
             
             
             
         }else{
             NSLog(@"%@",error);
+            UIAlertController *alertcontroll = [UIAlertController alertControllerWithTitle:@"提示" message:@"该用户已经存在" preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *actionAlert = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+            }];
+            [alertcontroll addAction:actionAlert];
+            [self presentViewController:alertcontroll animated:YES completion:nil];
+            
+            
         }
     }];
     

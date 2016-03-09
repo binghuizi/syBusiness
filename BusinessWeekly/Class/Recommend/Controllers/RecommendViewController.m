@@ -23,7 +23,7 @@
 #import "LoginViewController.h"
 #import "SuccessLoginRightViewController.h"
 #import "SuccessRegisterViewController.h"
-
+#import "DiscoverLookViewController.h"
 @interface RecommendViewController ()<UITableViewDataSource,UITableViewDelegate,PullingRefreshTableViewDelegate,LeftRevealViewControllerDelegate,RightRevealViewControlDelegate,successLoginRightViewControllerDelagate>{
      NSInteger _pageCount;//定义请求页码
     LeftRevealViewController *_leftVc;
@@ -123,6 +123,7 @@
         _rightVc.view.frame = self.rightView.bounds;
         _rightVc.rightDelegate = self;
         [self.rightView addSubview:_rightVc.view];
+       
       
     }else{
         
@@ -130,6 +131,21 @@
         _succLoginRightVc = [[SuccessLoginRightViewController alloc]init];
         _succLoginRightVc.view.frame = self.rightView.bounds;
         _succLoginRightVc.succLoginRightDelagate = self;
+        
+        if (self.isImage == NO) {
+             _succLoginRightVc.headImageView.image = [UIImage imageNamed:@"headPhon"];
+        }else{
+               _succLoginRightVc.headImageView.image = self.readimage;
+        }
+        
+        
+            
+        
+          
+       
+        
+        
+        
          [self.rightView addSubview:_succLoginRightVc.view];
         
     }
@@ -303,9 +319,34 @@
 //右边登录成功抽屉界面
 -(void)pushView{
     SuccessRegisterViewController *succRegVc = [[SuccessRegisterViewController alloc]init];
+    
+    succRegVc.succDelagate = self;
+    
     [self presentViewController:succRegVc animated:YES completion:nil];
 }
 
+
+-(void)data:(NSData *)data :(NSString *)path{
+
+    [data writeToFile:path atomically:YES];
+    self.readimage  = [UIImage imageWithContentsOfFile:path];
+    
+    self.isImage = YES;
+}
+//未登录状态的浏览发现
+-(void)pushDiscoverController{
+    AppDelegate *myAppdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    myAppdelegate.isLogin = NO;
+    DiscoverLookViewController *discoverVc = [[DiscoverLookViewController alloc]init];
+    [self.navigationController pushViewController:discoverVc animated:YES];
+}
+//登陆成功我的发现
+-(void)pushDiscoverView{
+    AppDelegate *myAppdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    myAppdelegate.isLogin = YES;
+    DiscoverLookViewController *discoverVc = [[DiscoverLookViewController alloc]init];
+    [self.navigationController pushViewController:discoverVc animated:YES];
+}
 #pragma mark ------网络请求解析 获得数据
 //解析标题 推荐 金融 科技 特写......
 -(void)heardTitle{

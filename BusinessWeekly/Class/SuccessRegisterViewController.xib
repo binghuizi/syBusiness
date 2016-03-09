@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SuccessRegisterViewController">
             <connections>
+                <outlet property="headImageView" destination="UG1-oQ-91a" id="vRa-1R-keQ"/>
                 <outlet property="userNameTextField" destination="dcS-Ge-bRb" id="dok-be-So2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,7 +24,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headPhon" translatesAutoresizingMaskIntoConstraints="NO" id="UG1-oQ-91a">
-                    <rect key="frame" x="156" y="205" width="49" height="37"/>
+                    <rect key="frame" x="156" y="205" width="40" height="40"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tm0-WF-nPm">
                     <rect key="frame" x="40" y="332" width="297" height="1"/>

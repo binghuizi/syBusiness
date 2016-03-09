@@ -20,6 +20,13 @@
 #define kHeadTitle @"http://content.cdn.bb.bbwc.cn/slateInterface/v7/app_1/android/tag/app_1/subscribelistcol?datatype=2&firstColumnHaveChild=1&fetch_all=0&firephp=1"
 //首页
 #define kRecommend @"http://content.cdn.bb.bbwc.cn/slateInterface/v7/app_1/android/tag/"
+
+//浏览发现 评论发表帖子
+#define discoverData @"http://card.bb.bbwc.cn/vt/app1/card/api/recommendCardList/datatype/2/bottom/0"
+//登录成功浏览发现接口
+#define succLoginDiscoverData @"http://card.bb.bbwc.cn/vt/app1/card/api/recommendCardList/datatype/2/bottom/0/customer_uid/687481"
+
+
 //微博
 #define kAppKey @"1045249744"
 #define kRedirectURI @"https://api.weibo.com/oauth2/default.html"
