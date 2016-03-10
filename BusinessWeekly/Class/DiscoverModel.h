@@ -14,4 +14,5 @@
 @property(nonatomic,strong) NSString *time;
 @property(nonatomic,strong) NSString *contents;
 @property(nonatomic,strong) NSString *uid;
+@property(nonatomic,strong) NSString *timelineid;
 @end

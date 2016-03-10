@@ -24,6 +24,8 @@
 #import "SuccessLoginRightViewController.h"
 #import "SuccessRegisterViewController.h"
 #import "DiscoverLookViewController.h"
+#import "SetUpViewController.h"
+#import "MyViewController.h"
 @interface RecommendViewController ()<UITableViewDataSource,UITableViewDelegate,PullingRefreshTableViewDelegate,LeftRevealViewControllerDelegate,RightRevealViewControlDelegate,successLoginRightViewControllerDelagate>{
      NSInteger _pageCount;//定义请求页码
     LeftRevealViewController *_leftVc;
@@ -99,13 +101,16 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"FeatureAndTVTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell3"];
     
-    [self startTimer];
+    
+
+  [self setUpTime];
+    
     self.catString = @"cat_15";
     self.catName = @"推荐";
     [self loadData];
    
  
-    
+   
     
   
     
@@ -137,12 +142,6 @@
         }else{
                _succLoginRightVc.headImageView.image = self.readimage;
         }
-        
-        
-            
-        
-          
-       
         
         
         
@@ -321,11 +320,12 @@
     SuccessRegisterViewController *succRegVc = [[SuccessRegisterViewController alloc]init];
     
     succRegVc.succDelagate = self;
-    
+    succRegVc.image = _succLoginRightVc.headImageView.image;
+   
     [self presentViewController:succRegVc animated:YES completion:nil];
 }
 
-
+//登录成功设置头像
 -(void)data:(NSData *)data :(NSString *)path{
 
     [data writeToFile:path atomically:YES];
@@ -346,6 +346,17 @@
     myAppdelegate.isLogin = YES;
     DiscoverLookViewController *discoverVc = [[DiscoverLookViewController alloc]init];
     [self.navigationController pushViewController:discoverVc animated:YES];
+}
+//登录成功设置
+-(void)pushSetUpView{
+    SetUpViewController *setView = [[SetUpViewController alloc]init];
+    [self.navigationController pushViewController:setView animated:YES];
+}
+//我的首页
+-(void)pushMyView{
+    MyViewController *myVc = [[MyViewController alloc]init];
+    [self.navigationController pushViewController:myVc animated:YES];
+    
 }
 #pragma mark ------网络请求解析 获得数据
 //解析标题 推荐 金融 科技 特写......
@@ -467,9 +478,18 @@
 }
 #pragma mark --- 开始定时轮番
 -(void)startTimer{
-    if (self.timer != nil) {
+    if (self.timer == nil) {
         return;
     }
+   
+//        self.timer = [NSTimer timerWithTimeInterval:2.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
+//        [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
+
+    
+    
+    }
+//设置定时
+-(void)setUpTime{
     self.timer = [NSTimer timerWithTimeInterval:2.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
@@ -494,7 +514,11 @@
 }
 //拖拽完毕
 -(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
-    [self startTimer];
+    //[self startTimer];
+    
+    [self setUpTime];
+   
+   
 }
 //行
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -504,8 +528,9 @@
     }else if ([tableView isEqual:self.tableView]){
         if ([self.catName isEqualToString:@"cat_15"]) {
             
-           // return self.allRecomDataArray.count - self.bigPictureArray.count;
+            return self.allRecomDataArray.count - self.bigPictureArray.count;
             return self.allRecomDataArray.count - self.allBigPictureArray.count;
+//            return self.allRecomDataArray.count;
             
         }else{
             return self.allRecomDataArray.count - 1;
@@ -546,6 +571,7 @@
             
             dateCell.recomModel = self.allRecomDataArray[indexPath.row+self.allBigPictureArray.count];
             dateCell.recomModel.url = self.allSmalPictureArray[indexPath.row+self.allBigPictureArray.count];
+            
             
             
 //            dateCell.recomModel = self.allRecomDataArray[indexPath.row];
@@ -725,7 +751,8 @@
                 [self.allWebUrlArray removeAllObjects];
             }
         }
-       
+        
+
         for (NSDictionary *dataDic in dataArray) {
             RecommModel *recomModel = [[RecommModel alloc]initWithDictionary:dataDic];
             [self.recomDataArray addObject:recomModel];
@@ -761,7 +788,7 @@
         }
         
         [self reloadAction];
-
+        
       
 
         
@@ -778,14 +805,14 @@
         self.allBigPictureArray  = self.bigPictureArray;
              self.allWebUrlArray = self.webUrlArray;
     
-    [self.tableView tableViewDidFinishedLoading];//完成加载
-   
     //刷新数据
         [self.tableView reloadData];
         //刷新数据 重新加载该方法configTableView
         [self configTableView];
     
-    
+    self.tableView.reachedTheEnd = NO;
+    [self.tableView tableViewDidFinishedLoading];//完成加载
+
 
 }
 #pragma mark --- 给图片触发点击事件
@@ -802,7 +829,7 @@
 //懒加载
 -(PullingRefreshTableView *)tableView{
     if (_tableView == nil) {
-        self.tableView = [[PullingRefreshTableView alloc]initWithFrame:CGRectMake(0, 120, kWideth, kHeight)];
+        self.tableView = [[PullingRefreshTableView alloc]initWithFrame:CGRectMake(0, 120, kWideth, kHeight) pullingDelegate:self];
         
         self.tableView.dataSource = self;
         self.tableView.delegate = self;

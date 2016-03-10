@@ -9,6 +9,8 @@
 
 -(void)pushView;
 -(void)pushDiscoverView;
+-(void)pushSetUpView;
+-(void)pushMyView;
 @end
 #import <UIKit/UIKit.h>
 

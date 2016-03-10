@@ -25,4 +25,5 @@
 @property(nonatomic,assign) id<successRegisterViewControllerDelagate> succDelagate;
 @property(nonatomic,assign) BOOL isUpdateImage;
 @property(nonatomic, retain)UIImage *image;
+@property(nonatomic,strong) NSString *stringImage;
 @end

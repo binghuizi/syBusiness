@@ -25,4 +25,5 @@
 -(void)BarAction:(UIButton *)btn;
 
 @property(nonatomic,assign) BOOL isImage;
+
 @end

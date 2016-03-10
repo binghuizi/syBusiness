@@ -27,8 +27,14 @@
     AppDelegate *myAppdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     
     self.userNameTextField.text = myAppdelegate.userName;
+    
     [self imageAction];
     
+}
+-(void)viewWillAppear:(BOOL)animated{
+    
+        self.headImageView.image = self.image;
+ 
 }
 -(void)imageAction{
     self.headImageView.userInteractionEnabled = YES;

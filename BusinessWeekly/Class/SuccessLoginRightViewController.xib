@@ -35,6 +35,9 @@
                     <state key="normal" title="我的首页">
                         <color key="titleColor" red="0.0056818181820000001" green="0.0026282305230000001" blue="0.001235813674" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="myBtn:" destination="-1" eventType="touchUpInside" id="8AM-c6-29o"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BOOKBusiness" translatesAutoresizingMaskIntoConstraints="NO" id="XFH-wb-ZFR">
                     <rect key="frame" x="71" y="307" width="35" height="30"/>
@@ -44,6 +47,9 @@
                     <state key="normal" title="设置">
                         <color key="titleColor" red="0.0056818181820000001" green="0.0026282305230000001" blue="0.001235813674" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="setUpBtn:" destination="-1" eventType="touchUpInside" id="fQB-lt-Yi3"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grayLine" translatesAutoresizingMaskIntoConstraints="NO" id="QUd-kc-9Vf">
                     <rect key="frame" x="33" y="303" width="247" height="1"/>
@@ -80,6 +86,9 @@
                     <state key="normal" title="我的收藏">
                         <color key="titleColor" red="0.0056818181820000001" green="0.0026282305230000001" blue="0.001235813674" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="shouCangBtn:" destination="-1" eventType="touchUpInside" id="L2M-0n-47o"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftx-64-YO2">
                     <rect key="frame" x="37" y="177" width="170" height="34"/>

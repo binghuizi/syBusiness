@@ -15,7 +15,11 @@
 - (IBAction)loginDiscoverBtn:(id)sender;
 
 @property(nonatomic, retain) NSString *path;
+- (IBAction)setUpBtn:(id)sender;
 @property(nonatomic, retain) NSData *data;
+- (IBAction)myBtn:(id)sender;
+- (IBAction)shouCangBtn:(id)sender;
+
 @end
 
 @implementation SuccessLoginRightViewController
@@ -43,28 +47,31 @@
 }
 
 //-(void)string:(NSString *)path{
-//    
-//}
-//-(void)data:(NSData *)data{
-//    self.path=[NSString stringWithFormat:@"%@,%@",[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],@"ol" ];
-//    
-//    [data writeToFile:self.path atomically:YES];
-//    UIImage *readimage = [UIImage imageWithContentsOfFile:self.path];
-//    self.headImageView.image = readimage;
-//    
-//    
-//    
-//}
+
+//点击头像
 - (IBAction)userButtonAction:(id)sender {
-//    SuccessRegisterViewController *succReg = [[SuccessRegisterViewController alloc]init];
-//    [self presentViewController:succReg animated:YES completion:nil];
+
     
     [self.succLoginRightDelagate pushView];
     
 }
-
+//点击浏览发现
 - (IBAction)loginDiscoverBtn:(id)sender {
     
     [self.succLoginRightDelagate pushDiscoverView];
+}
+//点击设置
+- (IBAction)setUpBtn:(id)sender {
+    [self.succLoginRightDelagate pushSetUpView];
+}
+//点击我的首页
+- (IBAction)myBtn:(id)sender {
+    [self.succLoginRightDelagate pushMyView];
+
+
+}
+//点击我的收藏
+- (IBAction)shouCangBtn:(id)sender {
+    [self.succLoginRightDelagate pushMyView];
 }
 @end

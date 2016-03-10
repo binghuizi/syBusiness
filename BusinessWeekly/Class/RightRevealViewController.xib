@@ -120,7 +120,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1q-SG-fzl">
-                    <rect key="frame" x="52" y="466" width="137" height="35"/>
+                    <rect key="frame" x="52" y="466" width="134" height="86"/>
                     <connections>
                         <action selector="myCollertBtn:" destination="-1" eventType="touchUpInside" id="ZZ1-fW-rUg"/>
                     </connections>

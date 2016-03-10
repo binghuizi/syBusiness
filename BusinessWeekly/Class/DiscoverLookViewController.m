@@ -13,15 +13,19 @@
 #import "DiscoverModel.h"
 #import "DiscUserModel.h"
 #import "MJRefresh.h"
-
+#import "DetailsDiscoverViewController.h"
+#import "LoginViewController.h"
 @interface DiscoverLookViewController ()<PullingRefreshTableViewDelegate,UITableViewDataSource,UITableViewDelegate>{
     NSInteger _pageCount;//定义请求页码;
+    AppDelegate *_myAppdelegate;
 }
 @property(nonatomic,strong) PullingRefreshTableView *tableView;
 @property(nonatomic,assign) BOOL refreshing;
 @property(nonatomic,strong) NSMutableArray *cardArray;
 @property(nonatomic,strong) NSMutableArray *userArray;
+
 @property(nonatomic,strong) NSString *data;
+
 @end
 
 @implementation DiscoverLookViewController
@@ -34,9 +38,9 @@
     [self.view addSubview:self.tableView];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"DiscoverTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
-    AppDelegate *myAppdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    _myAppdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
    // myAppdelegate.isLogin = NO;
-    if (myAppdelegate.isLogin) {
+    if (_myAppdelegate.isLogin) {
        
          self.data = succLoginDiscoverData;
        
@@ -48,10 +52,13 @@
     }
     
     [self loadDataAction];
-    
+    UIBarButtonItem *left = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemReply target:self action:@selector(backAction)];
+    self.navigationItem.leftBarButtonItem = left;
 
 }
-
+-(void)backAction{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.cardArray.count;
 }
@@ -68,8 +75,7 @@
             NSString *userId = model.uid;
             NSString *userId2 = userModel.uid;
             
-            NSLog(@"%@",userId );
-            NSLog(@"%@",userId2 );
+           
             if ([userId isEqualToString:userId2]) {
                 discoverCell.userModel = self.userArray[j];
                 break;
@@ -80,6 +86,33 @@
     
     
     return discoverCell;
+}
+//点击方法
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (_myAppdelegate.isLogin == NO) {
+        LoginViewController *loginVc = [[LoginViewController alloc]init];
+        [self presentViewController:loginVc animated:YES completion:nil];
+    }else{
+        DetailsDiscoverViewController *detailVc = [[DetailsDiscoverViewController alloc]init];
+        DiscoverModel *model = self.cardArray[indexPath.row];
+        detailVc.timeString = model.time;
+        detailVc.contentString = model.contents;
+        detailVc.idString = model.timelineid;
+        for (int i = 0; i < self.userArray.count; i++) {
+            DiscUserModel *userModel = self.userArray[i];
+            if ([model.uid isEqualToString:userModel.uid]) {
+                detailVc.nameString = userModel.nickname;
+                detailVc.imageString = userModel.avatar;
+                break;
+            }
+        }
+        
+        [self.navigationController pushViewController:detailVc animated:YES];
+    }
+    
+    
+    
 }
 //自定义高度
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -191,6 +224,8 @@
     }
     return _userArray;
 }
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

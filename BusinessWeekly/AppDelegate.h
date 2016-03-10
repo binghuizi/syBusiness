@@ -14,6 +14,7 @@
 @property (strong, nonatomic) NSString *wbtoken;
 @property(nonatomic,copy) NSString *userName;
 @property(nonatomic,assign) BOOL isLogin;
+@property(nonatomic,assign) BOOL switchIsOn;
 
 @end
 
