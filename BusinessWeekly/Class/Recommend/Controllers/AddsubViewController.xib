@@ -32,14 +32,23 @@
                         <action selector="editAction:" destination="-1" eventType="touchUpInside" id="mhV-0d-I3V"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grayLine" translatesAutoresizingMaskIntoConstraints="NO" id="t8o-LG-7Ln">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grayLine" translatesAutoresizingMaskIntoConstraints="NO" id="t8o-LG-7Ln">
                     <rect key="frame" x="0.0" y="135" width="375" height="1"/>
                 </imageView>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4xV-WH-mF6">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4xV-WH-mF6">
                     <rect key="frame" x="0.0" y="135" width="375" height="517"/>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="4xV-WH-mF6" secondAttribute="trailing" id="JDL-N1-tBU"/>
+                <constraint firstItem="4xV-WH-mF6" firstAttribute="leading" secondItem="SOT-Gg-bKQ" secondAttribute="leading" id="N3n-JV-AXX"/>
+                <constraint firstAttribute="bottom" secondItem="4xV-WH-mF6" secondAttribute="bottom" constant="15" id="dWb-tJ-FdP"/>
+                <constraint firstAttribute="trailing" secondItem="t8o-LG-7Ln" secondAttribute="trailing" id="inO-8r-nUV"/>
+                <constraint firstItem="t8o-LG-7Ln" firstAttribute="top" secondItem="SOT-Gg-bKQ" secondAttribute="top" constant="135" id="m6Q-pr-Wqx"/>
+                <constraint firstItem="4xV-WH-mF6" firstAttribute="top" secondItem="SOT-Gg-bKQ" secondAttribute="top" constant="135" id="nIw-1V-FIu"/>
+                <constraint firstItem="t8o-LG-7Ln" firstAttribute="leading" secondItem="SOT-Gg-bKQ" secondAttribute="leading" id="oTo-da-Vwf"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="383.5" y="114.5"/>
         </view>

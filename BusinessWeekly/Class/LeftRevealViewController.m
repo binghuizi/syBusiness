@@ -69,10 +69,11 @@
     NSLog(@"进入管理杂志页面");
     [self.leftDelegate pushAddSubviweController];
 }
+#pragma mark --- 懒加载
 //懒加载
 -(UITableView *)tableView{
     if (_tableView == nil) {
-        self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, kWideth/6 + 140, kWideth, kHeight - 300) style:UITableViewStylePlain];
+        self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, kWideth/6 + kWideth * 28/75, kWideth, kHeight - kWideth * 4/5) style:UITableViewStylePlain];
         self.tableView.dataSource = self;
         self.tableView.delegate = self;
     }
@@ -100,7 +101,7 @@
 -(UIButton *)magazineButton{
     if (_magazineButton == nil) {
         self.magazineButton =[UIButton buttonWithType:UIButtonTypeCustom];
-        self.magazineButton.frame  = CGRectMake(0, 600, kWideth - 100, 50);
+        self.magazineButton.frame  = CGRectMake(0, kHeight * 600/667, kWideth - kWideth * 4/15, kWideth * 2/15);
         // self.magazineButton.backgroundColor = [UIColor magentaColor];
         [self.magazineButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [self.magazineButton setImage:[UIImage imageNamed:@"addButton2"] forState:UIControlStateNormal];

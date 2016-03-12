@@ -528,12 +528,12 @@
     }else if ([tableView isEqual:self.tableView]){
         if ([self.catName isEqualToString:@"cat_15"]) {
             
-            return self.allRecomDataArray.count - self.bigPictureArray.count;
-            return self.allRecomDataArray.count - self.allBigPictureArray.count;
+          //  return self.allRecomDataArray.count - self.bigPictureArray.count;
+            return self.allRecomDataArray.count - 5;
 //            return self.allRecomDataArray.count;
             
         }else{
-            return self.allRecomDataArray.count - 1;
+            return self.allRecomDataArray.count - 4;
         }
       
     }
@@ -569,6 +569,7 @@
 //            dateCell.recomModel = self.allRecomDataArray[indexPath.row+self.allBigPictureArray.count];
 //            dateCell.recomModel.url = self.allSmalPictureArray[indexPath.row+self.allBigPictureArray.count];
             
+            NSLog(@"%ld %ld %ld", self.allRecomDataArray.count, indexPath.row, self.allBigPictureArray.count);
             dateCell.recomModel = self.allRecomDataArray[indexPath.row+self.allBigPictureArray.count];
             dateCell.recomModel.url = self.allSmalPictureArray[indexPath.row+self.allBigPictureArray.count];
             
@@ -624,12 +625,8 @@
 //点击事件
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    
-    
-    ArticleModel *model = self.headTitleArray[indexPath.row];
-    
     if ([tableView isEqual:self.headTableView]) {
-        
+         ArticleModel *model = self.headTitleArray[indexPath.row];
         self.indexrow = indexPath;
     
     self.numberArray = [HWTools arrayWithString:model.color];
@@ -829,20 +826,22 @@
 //懒加载
 -(PullingRefreshTableView *)tableView{
     if (_tableView == nil) {
-        self.tableView = [[PullingRefreshTableView alloc]initWithFrame:CGRectMake(0, 120, kWideth, kHeight) pullingDelegate:self];
+        self.tableView = [[PullingRefreshTableView alloc]initWithFrame:CGRectMake(0,kHeight * 120/667, kWideth, kHeight - (kHeight * 100/667)) pullingDelegate:self];
         
         self.tableView.dataSource = self;
         self.tableView.delegate = self;
         self.tableView.backgroundColor = [UIColor lightGrayColor];
         self.tableView.rowHeight = 50;
         
+        
+        
     }
     return _tableView;
 }
 -(UITableView *)headTableView{
     if (_headTableView == nil) {
-        self.headTableView = [[UITableView alloc]initWithFrame:CGRectMake(140, -80, kWideth - 300, kWideth - 20) style:UITableViewStylePlain];
-        
+        //self.headTableView = [[UITableView alloc]initWithFrame:CGRectMake(140, -80, kWideth - 300, kWideth - 20) style:UITableViewStylePlain];
+        self.headTableView = [[UITableView alloc]initWithFrame:CGRectMake(kWideth * 28/75, -(kHeight * 80/667), kWideth/5, kWideth - kWideth * 4/75) style:UITableViewStylePlain];
        // self.headTableView.backgroundColor = [UIColor redColor];
         
         self.headTableView.dataSource = self;
@@ -852,7 +851,9 @@
         self.headTableView.transform = CGAffineTransformMakeRotation(-M_PI_2);
         self.headTableView.bounces = NO;//上啦下拉禁止
         self.headTableView.showsVerticalScrollIndicator = NO;//滚动条隐藏
-    //    self.headTableView.rowHeight = 50;
+  //约束
+       // [self.view addConstraint:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-140-[ self.headTableView]-10-[blueView(==redView)]-10-|" options:<#(NSLayoutFormatOptions)#> metrics:<#(nullable NSDictionary<NSString *,id> *)#> views:<#(nonnull NSDictionary<NSString *,id> *)#>]]
+        
     }
     
     return _headTableView;
@@ -982,7 +983,7 @@
 -(UIButton *)addButton{
     if (_addButton == nil) {
         self.addButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.addButton.frame = CGRectMake(328,self.headTableView.frame.size.height-40, 50 , 102);
+        self.addButton.frame = CGRectMake(kWideth * 350/375,self.headTableView.frame.size.height-kWideth * 8/75, kWideth * 1/15 , kWideth * 102/kWideth);
         //self.addButton.backgroundColor = [UIColor redColor];
         [self.addButton setImage:[UIImage imageNamed:@"addButton2"] forState:UIControlStateNormal];
         

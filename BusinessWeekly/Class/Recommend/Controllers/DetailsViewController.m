@@ -107,13 +107,13 @@
         
         UIButton *weiBoButton = [UIButton buttonWithType:UIButtonTypeCustom];
         
-        weiBoButton.frame = CGRectMake(50, 60, 35, 35);
+        weiBoButton.frame = CGRectMake(kWideth * 50/375,kHeight * 60/667,kWideth * 35/375,kHeight * 35/667);
         [weiBoButton setImage:[UIImage imageNamed:@"sina_normal"] forState:UIControlStateNormal];
         [weiBoButton addTarget:self action:@selector(weiboShareAction:) forControlEvents:UIControlEventTouchUpInside];
         weiBoButton.tag = 1;
         [self.shareView addSubview:weiBoButton];
         
-        UILabel *weiBoLabel = [[UILabel alloc]initWithFrame:CGRectMake(40, 100, 80, 40)];
+        UILabel *weiBoLabel = [[UILabel alloc]initWithFrame:CGRectMake(kWideth * 40/375,kHeight * 100/667,kWideth * 80/375,kHeight * 40/667)];
         weiBoLabel.font = [UIFont systemFontOfSize:13];
         weiBoLabel.text = @"新浪微博";
         [self.shareView addSubview:weiBoLabel];
@@ -122,12 +122,12 @@
         
         UIButton *weiXinButton = [UIButton buttonWithType:UIButtonTypeCustom];
         
-        weiXinButton.frame = CGRectMake(150, 60, 35, 35);
+        weiXinButton.frame = CGRectMake(kWideth * 150/375,kHeight * 60/667,kWideth * 35/375,kHeight * 35/667);
         [weiXinButton setImage:[UIImage imageNamed:@"wx_normal"] forState:UIControlStateNormal];
         [weiXinButton addTarget:self action:@selector(weixinShareAction:) forControlEvents:UIControlEventTouchUpInside];
         weiXinButton.tag = 2;
         
-        UILabel *weixinLabel = [[UILabel alloc]initWithFrame:CGRectMake(155, 100, 80, 40)];
+        UILabel *weixinLabel = [[UILabel alloc]initWithFrame:CGRectMake(kWideth * 155/375,kHeight * 100/667,kWideth * 80/375,kHeight * 40/667)];
         weixinLabel.font = [UIFont systemFontOfSize:13];
         weixinLabel.text = @"微信";
         [self.shareView addSubview:weixinLabel];
@@ -139,10 +139,10 @@
         
         UIButton *friendButton = [UIButton buttonWithType:UIButtonTypeCustom];
         
-        friendButton .frame = CGRectMake(250, 60, 35, 35);
+        friendButton .frame = CGRectMake(kWideth * 250/375,kHeight * 60/667,kWideth * 35/375,kHeight * 35/667);
         [friendButton  setImage:[UIImage imageNamed:@"share"] forState:UIControlStateNormal];
         
-        UILabel *friendLabel = [[UILabel alloc]initWithFrame:CGRectMake(252, 100, 80, 40)];
+        UILabel *friendLabel = [[UILabel alloc]initWithFrame:CGRectMake(kWideth * 252/375,kHeight * 100/667,kWideth * 80/375,kHeight * 40/667)];
         friendLabel.font = [UIFont systemFontOfSize:13];
         friendLabel.text = @"朋友圈";
         
@@ -155,7 +155,7 @@
         
         UIButton *removeButton = [UIButton buttonWithType:UIButtonTypeCustom];
         
-        removeButton .frame = CGRectMake(20, 160,kWideth - 40, 44);
+        removeButton .frame = CGRectMake(kWideth * 20/375,kHeight * 160/667,kWideth - (kWideth * 40/375),kHeight * 44/667);
         
         [removeButton setTitle:@"取消" forState:UIControlStateNormal];
         [removeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];

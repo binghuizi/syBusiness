@@ -53,7 +53,7 @@
     NSInteger number = 0;
     float hangHeight = 0;
     float gao = 0;
-    float lane1Height = 0;
+  //  float lane1Height = 0;
     for (int i = 0; i < row; i++) {
         for (int j = 0; j < 4; j++) {
             if (index >= imageCount-2 ) {
@@ -100,17 +100,17 @@
         }
     }
 //scrollView高度
-    [self.scrollView setContentSize:CGSizeMake(kWideth, (height + rowGap) * row)];
+    [self.scrollView setContentSize:CGSizeMake(kWideth, (height + rowGap) * row + kWideth * 90/375)];
 //添加中间更多订阅栏目
-    UIImageView *lineView1 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 405, kWideth, 2)];
+    UIImageView *lineView1 = [[UIImageView alloc]initWithFrame:CGRectMake(0,kHeight * 390/667, kWideth, 1)];
     lineView1.image = [UIImage imageNamed:@"grayLine"];
     
-    UIImageView *lineView2 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 348, kWideth, 2)];
+    UIImageView *lineView2 = [[UIImageView alloc]initWithFrame:CGRectMake(0,kHeight * 350/667, kWideth, 1)];
     lineView2.image = [UIImage imageNamed:@"grayLine"];
     [self.scrollView addSubview:lineView1];
     [self.scrollView addSubview:lineView2];
 //label 更多订阅栏目
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(kWideth/6, 350, 180, 50)];
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(kWideth/6,kHeight * 350/667,kWideth * 180/375,kWideth * 50/375)];
     label.text = @"更多订阅栏目";
     label.textColor = [UIColor lightGrayColor];
     [self.scrollView addSubview:label];

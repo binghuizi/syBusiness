@@ -34,6 +34,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+   
     
     [self.view addSubview:self.tableView];
     
@@ -55,6 +56,14 @@
     UIBarButtonItem *left = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemReply target:self action:@selector(backAction)];
     self.navigationItem.leftBarButtonItem = left;
 
+}
+-(void)viewWillAppear:(BOOL)animated{
+    if (_myAppdelegate.isLogin == NO) {
+         self.navigationController.title = @"浏览发现";
+        
+    }else{
+         self.navigationController.title = @"我的首页";
+    }
 }
 -(void)backAction{
     [self.navigationController popViewControllerAnimated:YES];

@@ -66,6 +66,7 @@
     BmobUser *bUser = [[BmobUser alloc]init];
     [bUser setUsername:self.numberTextFiewld.text];
     [bUser setPassword:self.passwordTextField.text];
+    [bUser setEmail:self.numberTextFiewld.text];
     [bUser signUpInBackgroundWithBlock:^(BOOL isSuccessful, NSError *error) {
         if (isSuccessful) {
             NSLog(@"注册成功");
