@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SetUpViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UISwitch *switchBtn;
-- (IBAction)switchAction:(id)sender;
+;
+
 
 @end

@@ -125,11 +125,42 @@
 #pragma mark --- 键盘回收
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
+    [UIView animateWithDuration:0.3 animations:^{
+        CGRect frame = self.view.frame;
+        
+        frame.origin.y = 0.0;
+        
+        self.view.frame = frame;
+    }];
+
+    return YES;
+}
+//textField代理方法  实现弹出键盘时，输入框上移至不被隐藏
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    NSLog(@"将要编辑");
+    
+    CGFloat offset = self.view.frame.size.height - (textField.frame.origin.y + textField.frame.size.height +kWideth * 216/375 + kWideth * 150/375);
+    NSLog(@"offset %f",offset);
+    
+    if (offset <= 0) {
+        [UIView animateWithDuration:0.3 animations:^{
+            CGRect frame = self.view.frame;
+            frame.origin.y = offset;
+            self.view.frame = frame;
+        }];
+    }
     return YES;
 }
 //点击空白处键盘回收
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
+    [UIView animateWithDuration:0.3 animations:^{
+        CGRect frame = self.view.frame;
+        
+        frame.origin.y = 0.0;
+        
+        self.view.frame = frame;
+    }];
 }
 
 

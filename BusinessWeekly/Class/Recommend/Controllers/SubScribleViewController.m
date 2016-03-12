@@ -45,7 +45,7 @@
     [dingyueButton addTarget:self action:@selector(dingyueAction) forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithCustomView:dingyueButton];
-    self.navigationItem.rightBarButtonItem = rightButton;
+  //  self.navigationItem.rightBarButtonItem = rightButton;
     
 }
 #pragma mark --- tableView代理方法

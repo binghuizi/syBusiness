@@ -8,7 +8,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetUpViewController">
             <connections>
                 <outlet property="huancunButton" destination="Lbq-ag-oZ8" id="gE4-X3-PlP"/>
-                <outlet property="switchBtn" destination="O6Z-XO-ioe" id="o0r-5K-GlY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,9 +22,6 @@
                     <state key="normal" title="用户反馈" image="icon_user">
                         <color key="titleColor" red="0.019373421719999999" green="0.019373421719999999" blue="0.019373421719999999" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
-                    <connections>
-                        <action selector="userFanKui:" destination="-1" eventType="touchUpInside" id="TL0-CH-ngE"/>
-                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQA-kB-9XX">
                     <rect key="frame" x="9" y="137" width="116" height="36"/>
@@ -48,7 +44,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IgG-kH-ncF">
-                    <rect key="frame" x="9" y="124" width="353" height="1"/>
+                    <rect key="frame" x="10" y="124" width="353" height="1"/>
                     <color key="backgroundColor" red="0.62101483585858586" green="0.62101483585858586" blue="0.62101483585858586" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2bL-0I-3rr">
@@ -64,7 +60,7 @@
                     <color key="backgroundColor" red="0.62101483589999995" green="0.62101483589999995" blue="0.62101483589999995" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JtR-3P-VfD">
-                    <rect key="frame" x="12" y="406" width="353" height="1"/>
+                    <rect key="frame" x="11" y="406" width="353" height="1"/>
                     <color key="backgroundColor" red="0.62101483589999995" green="0.62101483589999995" blue="0.62101483589999995" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="当前情况" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICy-CM-Gtu">
@@ -77,32 +73,6 @@
                     <rect key="frame" x="10" y="305" width="353" height="1"/>
                     <color key="backgroundColor" red="0.62101483589999995" green="0.62101483589999995" blue="0.62101483589999995" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pc1-ey-1Lz">
-                    <rect key="frame" x="14" y="532" width="353" height="1"/>
-                    <color key="backgroundColor" red="0.62101483589999995" green="0.62101483589999995" blue="0.62101483589999995" alpha="1" colorSpace="calibratedRGB"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="功能设置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cD-jm-oJP">
-                    <rect key="frame" x="22" y="444" width="153" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8yl-Os-KEM">
-                    <rect key="frame" x="13" y="480" width="353" height="1"/>
-                    <color key="backgroundColor" red="0.62101483589999995" green="0.62101483589999995" blue="0.62101483589999995" alpha="1" colorSpace="calibratedRGB"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="首页焦点图自动轮番" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cE-gm-XUp">
-                    <rect key="frame" x="19" y="503" width="132" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O6Z-XO-ioe">
-                    <rect key="frame" x="268" y="499" width="51" height="31"/>
-                    <connections>
-                        <action selector="switchAction:" destination="-1" eventType="valueChanged" id="hvZ-tF-Dlr"/>
-                    </connections>
-                </switch>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="商业期刊1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bX-oy-Vsk">
                     <rect key="frame" x="99" y="614" width="159" height="33"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>

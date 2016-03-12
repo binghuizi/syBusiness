@@ -33,13 +33,13 @@
     self.scrollView.scrollEnabled = YES;
     
 //imageView的宽度
-    float width = 78.0f;
+    float width = kWideth * 70.0f/375;
 //高度
-    float height = 100.0f;
+    float height = kWideth * 100.0f/375;
 //列间距，左右间隔
     float columnGap = (kWideth - width*4) / 5;
 //行间距，即上下间隔
-    float rowGap = 15.0f;
+    float rowGap = kWideth * 15.0f/kWideth;
     NSInteger row;
     
 //计算有多少张图片
@@ -74,7 +74,7 @@
                 imageView1.image = [UIImage imageNamed:@"tiyu"];
                 index--;
             }else if (number > 10){
-                gao = 60 ;
+                gao = kWideth * 60/375 ;
                 [imageView1 sd_setImageWithURL:[NSURL URLWithString:self.addSubScribeArray[index]] placeholderImage:nil];
                
 
@@ -102,15 +102,15 @@
 //scrollView高度
     [self.scrollView setContentSize:CGSizeMake(kWideth, (height + rowGap) * row + kWideth * 90/375)];
 //添加中间更多订阅栏目
-    UIImageView *lineView1 = [[UIImageView alloc]initWithFrame:CGRectMake(0,kHeight * 390/667, kWideth, 1)];
+    UIImageView *lineView1 = [[UIImageView alloc]initWithFrame:CGRectMake(0,kWideth * 360/375, kWideth,1)];
     lineView1.image = [UIImage imageNamed:@"grayLine"];
     
-    UIImageView *lineView2 = [[UIImageView alloc]initWithFrame:CGRectMake(0,kHeight * 350/667, kWideth, 1)];
+    UIImageView *lineView2 = [[UIImageView alloc]initWithFrame:CGRectMake(0,kWideth * 410/375, kWideth,1)];
     lineView2.image = [UIImage imageNamed:@"grayLine"];
     [self.scrollView addSubview:lineView1];
     [self.scrollView addSubview:lineView2];
 //label 更多订阅栏目
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(kWideth/6,kHeight * 350/667,kWideth * 180/375,kWideth * 50/375)];
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(kWideth/6,kWideth * 360/375,kWideth * 180/375,kWideth * 50/375)];
     label.text = @"更多订阅栏目";
     label.textColor = [UIColor lightGrayColor];
     [self.scrollView addSubview:label];

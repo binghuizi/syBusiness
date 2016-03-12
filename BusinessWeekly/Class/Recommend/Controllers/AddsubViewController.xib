@@ -7,7 +7,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddsubScribeViewController">
             <connections>
-                <outlet property="editButton" destination="Dxd-7F-PK5" id="RXm-km-W5I"/>
                 <outlet property="scrollView" destination="4xV-WH-mF6" id="4PH-C1-joU"/>
                 <outlet property="view" destination="SOT-Gg-bKQ" id="ZGL-AF-4xz"/>
             </connections>
@@ -23,15 +22,6 @@
                     <color key="textColor" red="0.58224826388888884" green="0.58224826388888884" blue="0.58224826388888884" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dxd-7F-PK5">
-                    <rect key="frame" x="233" y="75" width="92" height="39"/>
-                    <state key="normal" title="编辑">
-                        <color key="titleColor" red="0.80000000000000004" green="0.24313725490196078" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="editAction:" destination="-1" eventType="touchUpInside" id="mhV-0d-I3V"/>
-                    </connections>
-                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grayLine" translatesAutoresizingMaskIntoConstraints="NO" id="t8o-LG-7Ln">
                     <rect key="frame" x="0.0" y="135" width="375" height="1"/>
                 </imageView>

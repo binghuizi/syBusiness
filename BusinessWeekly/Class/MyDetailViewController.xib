@@ -19,37 +19,89 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headPhon" translatesAutoresizingMaskIntoConstraints="NO" id="VVc-hY-GoY">
-                    <rect key="frame" x="30" y="159" width="30" height="30"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headPhon" translatesAutoresizingMaskIntoConstraints="NO" id="VVc-hY-GoY">
+                    <rect key="frame" x="10" y="159" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="ar0-Li-w6S"/>
+                        <constraint firstAttribute="height" constant="30" id="g4j-wm-50E"/>
+                    </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8a-r8-eir">
-                    <rect key="frame" x="47" y="225" width="317" height="170"/>
-                    <string key="text">由于前两天都在学习自动布局的使用，但是又觉得苹果原生的方式太过于麻烦，而且也不易于理解，昨天听人说了有个第三方框架也可以实现自动布局的功能，然后在https://github.com/上找到了Mansonry这个框架，使用起来真的减少了很多时间，而且代码直观，更加容易理解。</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10:10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNb-iZ-iVu">
-                    <rect key="frame" x="241" y="165" width="107" height="23"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <color key="textColor" red="0.58431976009999997" green="0.58431976009999997" blue="0.58431976009999997" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="userName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="012-R2-IFw">
-                    <rect key="frame" x="74" y="161" width="138" height="28"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="userName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="012-R2-IFw">
+                    <rect key="frame" x="42" y="160" width="194" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="OkS-hj-cyU"/>
+                        <constraint firstAttribute="width" constant="173" id="bMX-AG-1CS"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="创建于" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvT-fF-cWA">
-                    <rect key="frame" x="179" y="168" width="54" height="20"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="创建于" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvT-fF-cWA">
+                    <rect key="frame" x="244" y="164" width="54" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="h0v-0P-AZN"/>
+                        <constraint firstAttribute="width" constant="54" id="qUw-ht-LXR"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.50978535349999998" green="0.50978535349999998" blue="0.50978535349999998" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNb-iZ-iVu">
+                    <rect key="frame" x="306" y="165" width="50" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="EJP-0u-bXk"/>
+                        <constraint firstAttribute="height" constant="20" id="QFg-o0-yxA"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.58431976009999997" green="0.58431976009999997" blue="0.58431976009999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8a-r8-eir">
+                    <rect key="frame" x="10" y="215" width="357" height="181"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="170" id="0kj-zW-lSs"/>
+                        <constraint firstAttribute="height" constant="170" id="foa-o7-RjW"/>
+                        <constraint firstAttribute="width" constant="317" id="opb-Uf-gsS"/>
+                        <constraint firstAttribute="width" constant="317" id="vO5-iU-wiT"/>
+                    </constraints>
+                    <string key="text">由于前两天都在学习自动布局的使用，但是又觉得苹果原生的方式太过于麻烦，而且也不易于理解，昨天听人说了有个第三方框架也可以实现自动布局的功能，然后在https://github.com/上找到了Mansonry这个框架，使用起来真的减少了很多时间，而且代码直观，更加容易理解。</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="0kj-zW-lSs"/>
+                            <exclude reference="foa-o7-RjW"/>
+                            <exclude reference="opb-Uf-gsS"/>
+                            <exclude reference="vO5-iU-wiT"/>
+                        </mask>
+                    </variation>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="VVc-hY-GoY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="159" id="1QU-Fn-osq"/>
+                <constraint firstItem="VVc-hY-GoY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="9Qa-vr-coA"/>
+                <constraint firstAttribute="trailing" secondItem="t8a-r8-eir" secondAttribute="trailing" constant="15" id="IIq-P0-Dx4"/>
+                <constraint firstItem="zNb-iZ-iVu" firstAttribute="leading" secondItem="xvT-fF-cWA" secondAttribute="trailing" constant="8" id="J97-5w-Sc5"/>
+                <constraint firstItem="zNb-iZ-iVu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="165" id="KIt-be-jt5"/>
+                <constraint firstItem="012-R2-IFw" firstAttribute="leading" secondItem="VVc-hY-GoY" secondAttribute="trailing" constant="4" id="OOD-7C-4hq"/>
+                <constraint firstItem="xvT-fF-cWA" firstAttribute="leading" secondItem="012-R2-IFw" secondAttribute="trailing" constant="29" id="RBP-hc-wVI"/>
+                <constraint firstItem="012-R2-IFw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="160" id="Zgt-l5-rYS"/>
+                <constraint firstItem="t8a-r8-eir" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="iVM-Pe-B3n"/>
+                <constraint firstAttribute="trailing" secondItem="zNb-iZ-iVu" secondAttribute="trailing" constant="19" id="pSn-lZ-Pcv"/>
+                <constraint firstItem="t8a-r8-eir" firstAttribute="top" secondItem="012-R2-IFw" secondAttribute="bottom" constant="27" id="qBM-Xz-9yI"/>
+                <constraint firstItem="xvT-fF-cWA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="164" id="thp-HH-1LN"/>
+                <constraint firstItem="zNb-iZ-iVu" firstAttribute="leading" secondItem="xvT-fF-cWA" secondAttribute="trailing" constant="8" id="wlA-JN-A1n"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="RBP-hc-wVI"/>
+                    <exclude reference="wlA-JN-A1n"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="26.5" y="262.5"/>
         </view>
     </objects>
     <resources>

@@ -19,37 +19,84 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="headPhon" translatesAutoresizingMaskIntoConstraints="NO" id="vtd-PY-xxa">
-                    <rect key="frame" x="22" y="156" width="30" height="30"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headPhon" translatesAutoresizingMaskIntoConstraints="NO" id="vtd-PY-xxa">
+                    <rect key="frame" x="8" y="156" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="AzR-gD-cYc"/>
+                        <constraint firstAttribute="width" constant="30" id="WRi-jc-UWs"/>
+                    </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="userName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUg-6b-LkS">
-                    <rect key="frame" x="66" y="158" width="138" height="28"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUg-6b-LkS">
+                    <rect key="frame" x="46" y="158" width="171" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="171" id="Jxe-b3-d3X"/>
+                        <constraint firstAttribute="height" constant="28" id="fS1-yp-1XH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10:10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxn-gB-hRQ">
-                    <rect key="frame" x="233" y="162" width="107" height="23"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxn-gB-hRQ">
+                    <rect key="frame" x="304" y="160" width="56" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="u0B-E5-pfk"/>
+                        <constraint firstAttribute="width" constant="56" id="yrr-42-YkH"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.58431976009999997" green="0.58431976009999997" blue="0.58431976009999997" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOD-VG-KRp">
-                    <rect key="frame" x="39" y="222" width="317" height="170"/>
-                    <string key="text">由于前两天都在学习自动布局的使用，但是又觉得苹果原生的方式太过于麻烦，而且也不易于理解，昨天听人说了有个第三方框架也可以实现自动布局的功能，然后在https://github.com/上找到了Mansonry这个框架，使用起来真的减少了很多时间，而且代码直观，更加容易理解。</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="创建于" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Je-fm-N3C">
-                    <rect key="frame" x="171" y="165" width="54" height="20"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="创建于" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Je-fm-N3C">
+                    <rect key="frame" x="242" y="161" width="54" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="fc9-AJ-p0e"/>
+                        <constraint firstAttribute="width" constant="54" id="ltL-5J-0Dk"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.50978535353535359" green="0.50978535353535359" blue="0.50978535353535359" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOD-VG-KRp">
+                    <rect key="frame" x="15" y="221" width="345" height="170"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="170" id="9J6-bW-KKh"/>
+                        <constraint firstAttribute="width" constant="317" id="DTW-U1-AV4"/>
+                    </constraints>
+                    <string key="text">由于前两天都在学习自动布局的使用，但是又觉得苹果原生的方式太过于麻烦，而且也不易于理解，昨天听人说了有个第三方框架也可以实现自动布局的功能，然后在https://github.com/上找到了Mansonry这个框架，使用起来真的减少了很多时间，而且代码直观，更加容易理解。</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="DTW-U1-AV4"/>
+                        </mask>
+                    </variation>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="wxn-gB-hRQ" secondAttribute="trailing" constant="15" id="3Eo-GM-roF"/>
+                <constraint firstAttribute="trailing" secondItem="DOD-VG-KRp" secondAttribute="trailing" constant="15" id="9vz-VD-pMm"/>
+                <constraint firstItem="7Je-fm-N3C" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="161" id="H9o-Bb-x5T"/>
+                <constraint firstItem="DOD-VG-KRp" firstAttribute="top" secondItem="GUg-6b-LkS" secondAttribute="bottom" constant="35" id="Tq2-vr-4Vz"/>
+                <constraint firstItem="7Je-fm-N3C" firstAttribute="leading" secondItem="GUg-6b-LkS" secondAttribute="trailing" constant="8" id="UeN-il-ayJ"/>
+                <constraint firstItem="GUg-6b-LkS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="158" id="ZJI-rC-pSp"/>
+                <constraint firstItem="wxn-gB-hRQ" firstAttribute="leading" secondItem="7Je-fm-N3C" secondAttribute="trailing" constant="8" id="but-tb-Cyd"/>
+                <constraint firstItem="vtd-PY-xxa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="dAw-Ai-Lch"/>
+                <constraint firstItem="wxn-gB-hRQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="160" id="hcE-I8-NzQ"/>
+                <constraint firstItem="vtd-PY-xxa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="156" id="jKk-Hw-gAT"/>
+                <constraint firstItem="wxn-gB-hRQ" firstAttribute="leading" secondItem="7Je-fm-N3C" secondAttribute="trailing" constant="8" id="k1l-46-mza"/>
+                <constraint firstItem="GUg-6b-LkS" firstAttribute="leading" secondItem="vtd-PY-xxa" secondAttribute="trailing" constant="8" id="nwu-dJ-OnQ"/>
+                <constraint firstItem="DOD-VG-KRp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="qVv-eg-q2W"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="UeN-il-ayJ"/>
+                    <exclude reference="but-tb-Cyd"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="164.5" y="262.5"/>
         </view>
     </objects>
     <resources>

@@ -36,16 +36,9 @@
 
 
 
-- (IBAction)switchAction:(id)sender {
-    AppDelegate * myDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-   
-    if (self.switchBtn.on == NO) {
-        myDelegate.switchIsOn = YES;
-    }
 
 
 
-}
 //清除缓存
 - (IBAction)huancunBtn:(id)sender {
 

@@ -235,7 +235,7 @@
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
     NSLog(@"将要编辑");
     
-    CGFloat offset = self.view.frame.size.height - (textField.frame.origin.y + textField.frame.size.height + 216 + 150);
+    CGFloat offset = self.view.frame.size.height - (textField.frame.origin.y + textField.frame.size.height +kWideth * 216/375 + kWideth * 150/375);
     NSLog(@"offset %f",offset);
     
     if (offset <= 0) {
@@ -315,26 +315,10 @@
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
   //密码框内不能输入空格   http://www.cocoachina.com/bbs/read.php?tid=249995
     if ([textField isEqual:self.passwordTextField]) {
-        //只能输入英文或中文
-//        NSCharacterSet * charact;
-//        charact = [NSCharacterSet whitespaceCharacterSet];
-//        
-//        NSString * filtered = [[string componentsSeparatedByCharactersInSet:charact]componentsJoinedByString:@""];
-////        
-//        BOOL canChange = [string isEqualToString:filtered];
-//        if(!canChange) {
-//            //        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请输入英文或中文"
-//            //                                                        delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
-//            //        [alert show];
-//            return NO;
-//        }
-        
-//        NSString *tem = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+ 
         NSString *tem = [[string componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]componentsJoinedByString:@""];
         
-//        if ([tem length] == 0) {
-//            return NO;
-//        }
+
         
         if (![string isEqualToString:tem]) {
             return NO;

@@ -58,9 +58,10 @@
     [user updateCurrentUserPasswordWithOldPassword:self.oldPasswordTextField.text newPassword:self.passNewTextField.text block:^(BOOL isSuccessful, NSError *error) {
         
         if (isSuccessful) {
-            LoginViewController *loginVc = [[LoginViewController alloc]init];
-            
-            [self presentViewController:loginVc animated:YES completion:nil];
+//            LoginViewController *loginVc = [[LoginViewController alloc]init];
+//            
+//            [self presentViewController:loginVc animated:YES completion:nil];
+            [self dismissViewControllerAnimated:YES completion:nil];
             
         }else{
             NSLog(@"改变密码有错误：%@",error);
@@ -72,14 +73,37 @@
     
 }
 
-
+//textField代理方法  实现弹出键盘时，输入框上移至不被隐藏
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    NSLog(@"将要编辑");
+    
+    CGFloat offset = self.view.frame.size.height - (textField.frame.origin.y + textField.frame.size.height +kWideth * 216/375 + kWideth * 150/375);
+    NSLog(@"offset %f",offset);
+    
+    if (offset <= 0) {
+        [UIView animateWithDuration:0.3 animations:^{
+            CGRect frame = self.view.frame;
+            frame.origin.y = offset;
+            self.view.frame = frame;
+        }];
+    }
+    return YES;
+}
 //textField代理方法 待机return
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     if (textField == self.oldPasswordTextField) {
         [self.passNewTextField becomeFirstResponder];//按return键 自动下一行成为焦点
         
     }else{
+        //点击换行 键盘回收
         [textField resignFirstResponder];
+        [UIView animateWithDuration:0.3 animations:^{
+            CGRect frame = self.view.frame;
+            
+            frame.origin.y = 0.0;
+            
+            self.view.frame = frame;
+        }];
     }
     
     return YES;

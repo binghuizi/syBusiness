@@ -103,7 +103,7 @@
     
     
 
-  [self setUpTime];
+  [self startTimer];
     
     self.catString = @"cat_15";
     self.catName = @"推荐";
@@ -478,21 +478,21 @@
 }
 #pragma mark --- 开始定时轮番
 -(void)startTimer{
-    if (self.timer == nil) {
+    if (self.timer !=nil) {
         return;
     }
    
-//        self.timer = [NSTimer timerWithTimeInterval:2.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
-//        [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
+       self.timer = [NSTimer timerWithTimeInterval:2.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
 
     
     
     }
-//设置定时
--(void)setUpTime{
-    self.timer = [NSTimer timerWithTimeInterval:2.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
-    [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
-}
+////设置定时
+//-(void)setUpTime{
+//    self.timer = [NSTimer timerWithTimeInterval:2.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
+//    [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
+//}
 //每两秒执行该方法
 -(void)updateTimer{
     //当self.adArray.count数据组元素个数为0当对0取于时候没有意义
@@ -514,9 +514,9 @@
 }
 //拖拽完毕
 -(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
-    //[self startTimer];
+    [self startTimer];
     
-    [self setUpTime];
+    //[self setUpTime];
    
    
 }
@@ -826,7 +826,7 @@
 //懒加载
 -(PullingRefreshTableView *)tableView{
     if (_tableView == nil) {
-        self.tableView = [[PullingRefreshTableView alloc]initWithFrame:CGRectMake(0,kHeight * 120/667, kWideth, kHeight - (kHeight * 100/667)) pullingDelegate:self];
+        self.tableView = [[PullingRefreshTableView alloc]initWithFrame:CGRectMake(0,kHeight * 150/667, kWideth, kHeight - (kHeight * 100/667)) pullingDelegate:self];
         
         self.tableView.dataSource = self;
         self.tableView.delegate = self;
@@ -841,7 +841,7 @@
 -(UITableView *)headTableView{
     if (_headTableView == nil) {
         //self.headTableView = [[UITableView alloc]initWithFrame:CGRectMake(140, -80, kWideth - 300, kWideth - 20) style:UITableViewStylePlain];
-        self.headTableView = [[UITableView alloc]initWithFrame:CGRectMake(kWideth * 28/75, -(kHeight * 80/667), kWideth/5, kWideth - kWideth * 4/75) style:UITableViewStylePlain];
+        self.headTableView = [[UITableView alloc]initWithFrame:CGRectMake(kWideth * 23/75, -(kWideth * 80/375), kWideth/3, kWideth - kWideth * 4/75) style:UITableViewStylePlain];
        // self.headTableView.backgroundColor = [UIColor redColor];
         
         self.headTableView.dataSource = self;
@@ -983,7 +983,7 @@
 -(UIButton *)addButton{
     if (_addButton == nil) {
         self.addButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.addButton.frame = CGRectMake(kWideth * 350/375,self.headTableView.frame.size.height-kWideth * 8/75, kWideth * 1/15 , kWideth * 102/kWideth);
+        self.addButton.frame = CGRectMake(kWideth * 352/375,self.headTableView.frame.size.height-kWideth * 14/75, kWideth * 1/15 , kWideth * 98/kWideth);
         //self.addButton.backgroundColor = [UIColor redColor];
         [self.addButton setImage:[UIImage imageNamed:@"addButton2"] forState:UIControlStateNormal];
         

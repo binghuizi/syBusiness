@@ -20,9 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.headImageView.layer.masksToBounds = YES;
+    self.headImageView.layer.cornerRadius = 15;
     [self.headImageView sd_setImageWithURL:[NSURL URLWithString:self.imageString] placeholderImage:nil];
     self.nameLabel.text = self.nameString;
-    self.timLabel.text = self.timeString;
+    self.timLabel.text = [HWTools getHourFromString:self.timeString];
     self.contentLabel.text = self.contentString;
     UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(delegateAction)];
     self.navigationItem.rightBarButtonItem = rightBtn;

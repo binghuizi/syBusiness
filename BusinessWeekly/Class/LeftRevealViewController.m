@@ -21,8 +21,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, kWideth/6, kWideth, 140)];
-    imageView.image = [UIImage imageNamed:@"bloo"];
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, kWideth/6, kWideth,kHeight * 140/667)];
+    imageView.image = [UIImage imageNamed:@"bloo2"];
     
     
     [self.view addSubview:self.magazineButton];
