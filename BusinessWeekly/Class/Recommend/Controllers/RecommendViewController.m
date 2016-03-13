@@ -609,8 +609,8 @@
     if ([tableView isEqual:self.headTableView]) {
         ArticleModel *model = self.headTitleArray[indexPath.row];
        CGFloat height = [HWTools getTextHeightWithText:model.catname Bigsize:CGSizeMake(20,900) textFont:13.0];
-        self.cellHeight = height + 20;
-        return height + 20;
+        self.cellHeight = height +kWideth * 40/375;
+        return height +kWideth * 40/375;
     }else if ([tableView isEqual:self.tableView]){
         if ([self.catString isEqualToString:@"cat_15"]) {
             return 125;
